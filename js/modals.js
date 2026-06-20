@@ -66,6 +66,26 @@
       status: '✅ UDYAM Registered',
       image: 'assets/zaid-asim-softwares.png',
       link: '#contact'
+    },
+    'chronos': {
+      title: 'Project Chronos',
+      tagline: 'Causal Fault Diagnostics Infrastructure for Heterogeneous Systems',
+      story: '<h4>The Vision</h4><p>Project Chronos is a hardware-topology-aware multimodal causal evidence fusion platform designed for modern mixed-criticality systems. It resolves timing interactions, cache QoS bottlenecks, and scheduling latencies by reasoning over degraded or incomplete observability data from trace fabrics, PMUs, and hypervisors.</p><h4>The Diagnostics Approach</h4><p>Instead of guessing exact execution paths, Chronos models system states directly through "Pressure Epochs" (sustained states of resource contention) and handles clock domain uncertainties logically within physical platform boundaries, eliminating correlation hallucinations.</p>',
+      learned: 'Building Chronos taught me how hardware interconnects, SMMU mappings, and virtualization layers propagate latency. I learned to model time as a range of uncertainty and use physical topology to bounds causality in distributed environments.',
+      tech: ['Causal Logic', 'Observability', 'PMUs', 'System Tracing', 'Virtualization'],
+      status: '🚧 Research Phase',
+      image: 'assets/chronos.png',
+      link: '#contact'
+    },
+    'titan': {
+      title: 'TITAN',
+      tagline: 'Executable Intelligence Operating System',
+      story: '<h4>The Vision</h4><p>TITAN is an executable intelligence operating system that treats reasoning as a searchable, verifiable process rather than next-token prediction. It organizes knowledge into dynamic graphs, caches references, and coordinates actions via a compact planning core to deliver high-quality, offline intelligence on budget mobile devices.</p><h4>The Architecture</h4><p>TITAN decouples intelligence from parameter scaling by combining a semantic memory store, a knowledge graph, a retrieval engine, candidate generation search, and verification fabrics that automatically test outputs for accuracy prior to release.</p>',
+      learned: 'Designing TITAN taught me that cognitive system architectures can make small models perform with greater precision than large models alone. I learned to structure executable action graphs and integrate compile-time verification loops.',
+      tech: ['Reasoning Graphs', 'Semantic Memory', 'n8n Automation', 'Offline AI', 'Verification Fabric'],
+      status: '🚧 Prototype Phase',
+      image: 'assets/titan.png',
+      link: '#contact'
     }
   };
 
