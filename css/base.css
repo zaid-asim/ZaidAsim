@@ -1,0 +1,318 @@
+/* ============================================================
+   BASE.CSS — Reset, Typography, Global Styles
+   ZaidAsim.com Premium Portfolio
+   ============================================================ */
+
+/* ── Modern CSS Reset ───────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hanging-punctuation: first last;
+  color-scheme: dark;
+}
+
+[data-theme="light"] html,
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  background-image: var(--gradient-bg-mesh);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* ── Selection Colors ───────────────────────────────────── */
+::selection {
+  background: rgba(139, 0, 255, 0.35);
+  color: #FFFFFF;
+}
+
+::-moz-selection {
+  background: rgba(139, 0, 255, 0.35);
+  color: #FFFFFF;
+}
+
+[data-theme="light"] ::selection {
+  background: rgba(109, 40, 217, 0.25);
+  color: #0F172A;
+}
+
+/* ── Focus Styles ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-purple);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+  border-left: 1px solid var(--color-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-accent-blue), var(--color-accent-purple), var(--color-accent-magenta));
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-accent-purple), var(--color-accent-magenta));
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-purple) var(--color-bg-primary);
+}
+
+
+/* ── Typography ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: var(--font-size-section);
+  font-weight: var(--font-weight-extrabold);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+h6 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 70ch;
+  text-wrap: pretty;
+}
+
+/* ── Gradient Text Utility ──────────────────────────────── */
+.gradient-text,
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-accent {
+  color: var(--color-text-accent);
+}
+
+.text-muted {
+  color: var(--color-text-secondary);
+}
+
+/* ── Links ──────────────────────────────────────────────── */
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+}
+
+/* ── Lists ──────────────────────────────────────────────── */
+ul, ol {
+  list-style: none;
+}
+
+/* ── Images & Media ─────────────────────────────────────── */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  image-rendering: auto;
+}
+
+/* ── Form Elements ──────────────────────────────────────── */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ── Table ──────────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ── Misc ───────────────────────────────────────────────── */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-8) 0;
+}
+
+strong, b {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-bg-tertiary);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+pre {
+  font-family: var(--font-mono);
+  background: var(--color-bg-secondary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: var(--font-size-sm);
+}
+
+blockquote {
+  border-left: 3px solid var(--color-accent-purple);
+  padding-left: var(--space-4);
+  margin-left: 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ── Utility Classes ────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.display-font {
+  font-family: var(--font-display);
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Print Styles ───────────────────────────────────────── */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  
+  .nav,
+  .hud,
+  .scroll-progress,
+  .custom-cursor {
+    display: none !important;
+  }
+}

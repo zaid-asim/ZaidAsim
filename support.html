@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zaid Asim Softwares - Customer Support Center">
+    <title>Customer Support | Zaid Asim Softwares</title>
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/v2-upgrades.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Custom page styling -->
+    <style>
+        .support-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .support-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Support Cards */
+        .info-card {
+            background: rgba(30, 30, 30, 0.2);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-card h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-text-primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-channel {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(20, 20, 20, 0.4);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            transition: all var(--duration-fast);
+        }
+
+        .contact-channel:hover {
+            border-color: var(--color-accent-blue);
+            transform: translateX(5px);
+        }
+
+        .channel-icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .channel-details h4 {
+            font-family: var(--font-display);
+            margin: 0 0 0.25rem 0;
+            color: var(--color-text-primary);
+        }
+
+        .channel-details p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Form styling */
+        .support-form-card {
+            background: rgba(20, 20, 20, 0.5);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 0.85rem 1rem;
+            color: var(--color-text-primary);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-accent-blue);
+            box-shadow: 0 0 8px rgba(9, 137, 216, 0.2);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
+            padding-right: 2.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-brand);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-smooth);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 0, 255, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Success Message styling */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .success-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .success-desc {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Nav Bar -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                    <a href="index.html#ideas" class="nav-link">Ideas Lab</a>
+                    <a href="biography.html" class="nav-link">Biography</a>
+                    <a href="index.html#youtube" class="nav-link">YouTube</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Support Hero Section -->
+    <section class="section support-hero" style="padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 900px; margin: 0 auto;" data-animate="fade-up">
+                <span class="section-tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple); padding: 0.35rem 1rem; border-radius: 100px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Help Center</span>
+                <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05; letter-spacing: var(--letter-spacing-tight); margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    Customer <span class="gradient-text">Support</span>
+                </h1>
+                <p class="section-subtitle" style="font-size: 1.25rem; color: var(--color-text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">
+                    We are dedicated to resolving issues quickly. Open a support ticket or find other channels to get in touch.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Content Area -->
+    <div class="support-layout">
+        
+        <!-- Left Side: Channels and Information -->
+        <div class="support-info-column" data-animate="fade-up">
+            <div class="info-card">
+                <h2>Support Channels</h2>
+                <p>Select a direct method of contact or fill out our online ticketing form. Our team typically reviews and replies to all requests within 12-24 business hours.</p>
+                
+                <a href="mailto:support@zaidasim.com" style="text-decoration: none;">
+                    <div class="contact-channel">
+                        <div class="channel-icon">📧</div>
+                        <div class="channel-details">
+                            <h4>Direct Email Address</h4>
+                            <p>support@zaidasim.com</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="contact-channel" id="copySupportEmail" style="cursor: pointer;" data-copy-email="support@zaidasim.com">
+                    <div class="channel-icon">📋</div>
+                    <div class="channel-details">
+                        <h4 id="copyChannelTitle">Copy Support Email</h4>
+                        <p>Click to copy address to clipboard</p>
+                    </div>
+                </div>
+
+                <div class="contact-channel">
+                    <div class="channel-icon">🏢</div>
+                    <div class="channel-details">
+                        <h4>UDYAM Business Entity</h4>
+                        <p>Zaid Asim Softwares · Registration No: UDYAM-KR-15-0069715</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Contact / Ticket Form -->
+        <div class="support-form-column" data-animate="fade-up">
+            <div class="support-form-card">
+                <!-- Active Form -->
+                <form id="supportTicketForm">
+                    <div class="form-group">
+                        <label class="form-label" for="supportName">Your Name</label>
+                        <input type="text" id="supportName" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="supportEmail">Your Email</label>
+                        <input type="email" id="supportEmail" class="form-control" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="supportCategory">Ticket Category</label>
+                        <select id="supportCategory" class="form-control" required>
+                            <option value="" disabled selected>Select category...</option>
+                            <option value="technical">Technical Support / Bug Report</option>
+                            <option value="billing">Billing & Invoices</option>
+                            <option value="projects">Custom Project Inquiry</option>
+                            <option value="general">General Inquiries</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="supportSubject">Subject</label>
+                        <input type="text" id="supportSubject" class="form-control" placeholder="Brief summary of the issue" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="supportMessage">Description</label>
+                        <textarea id="supportMessage" class="form-control" rows="5" placeholder="Detail your issue, project scope, or questions here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Submit Ticket</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+
+                <!-- Success State -->
+                <div class="success-state" id="successState">
+                    <div class="success-icon">✓</div>
+                    <h3 class="success-title">Ticket Submitted!</h3>
+                    <p class="success-desc">
+                        Thank you for contacting customer support. We have generated ticket reference <strong id="ticketRef">#TKT-XXXX</strong> and sent a confirmation log to your inbox.
+                    </p>
+                    <button class="contact-btn primary-btn" id="resetFormBtn" style="padding: 0.75rem 2rem; border-radius: 9999px; margin: 0 auto; display: block; border: none; font-size: 0.9rem;">Submit Another Ticket</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="ZA Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Facebook</a>
+                </div>
+
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="terms-of-use.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Terms of Use</a>
+                    <a href="privacy-policy.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Privacy Policy</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-blue)'" onmouseout="this.style.color='inherit'">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Placeholders to avoid script errors -->
+    <div style="display:none;" id="visionCanvasContainer"></div>
+    <div style="display:none;" id="achievementContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/ScrollToPlugin.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/sound.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/command-palette.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/radar.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/visionary.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <script src="js/v2-upgrades.js"></script>
+
+    <!-- Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('supportTicketForm');
+            var successState = document.getElementById('successState');
+            var ticketRef = document.getElementById('ticketRef');
+            var resetBtn = document.getElementById('resetFormBtn');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Generate a random ticket ID
+                    var randNum = Math.floor(1000 + Math.random() * 9000);
+                    ticketRef.textContent = '#TKT-' + randNum;
+
+                    // Play success sound if audio engine is loaded
+                    if (window.soundEngine && typeof window.soundEngine.playAchievement === 'function') {
+                        window.soundEngine.playAchievement();
+                    }
+
+                    // Toggle visibility
+                    form.style.display = 'none';
+                    successState.style.display = 'block';
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    form.reset();
+                    successState.style.display = 'none';
+                    form.style.display = 'block';
+
+                    if (window.soundEngine && typeof window.soundEngine.playTick === 'function') {
+                        window.soundEngine.playTick();
+                    }
+                });
+            }
+
+            // Copy Email Handler specific for Support Page
+            var copyChannel = document.getElementById('copySupportEmail');
+            if (copyChannel) {
+                copyChannel.addEventListener('click', function() {
+                    var email = copyChannel.getAttribute('data-copy-email') || 'support@zaidasim.com';
+                    navigator.clipboard.writeText(email).then(function() {
+                        var titleEl = document.getElementById('copyChannelTitle');
+                        var original = titleEl.textContent;
+                        titleEl.textContent = '✓ Copied!';
+                        copyChannel.style.borderColor = 'var(--color-accent-teal)';
+
+                        setTimeout(function() {
+                            titleEl.textContent = original;
+                            copyChannel.style.borderColor = '';
+                        }, 2000);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

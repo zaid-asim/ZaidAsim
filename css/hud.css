@@ -1,0 +1,141 @@
+/* ============================================================
+   HUD.CSS — Developer HUD, Command Palette, Toasts, Cursor
+   ZaidAsim.com Premium Portfolio
+   ============================================================ */
+
+/* ── Custom Cursor ──────────────────────────────────────── */
+
+/* Hide browser default cursor on desktop */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"], .social-card, .card {
+    cursor: none !important;
+  }
+}
+
+/* Hide HTML fallback cursors if JS hasn't run or is handling it */
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none !important;
+  position: fixed;
+  z-index: 99999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot,
+  .cursor-ring {
+    display: block;
+  }
+}
+
+/* Hide custom cursor on touch screens */
+@media (hover: none) or (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ── Scroll Progress Bar ───────────────────────────────── */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: calc(var(--scroll-progress, 0) * 100%);
+  background: var(--gradient-brand-90);
+  z-index: 10000;
+  transition: width 0.1s linear;
+}
+
+/* ── Developer HUD Panel ────────────────────────────────── */
+.dev-hud {
+  box-shadow: var(--shadow-glow-brand) !important;
+  transition: transform 0.3s var(--ease-smooth), opacity 0.3s var(--ease-smooth);
+}
+
+.dev-hud:hover {
+  box-shadow: var(--shadow-glow-hover) !important;
+  transform: translateY(-2px);
+}
+
+.dev-hud__sound-btn:hover {
+  border-color: var(--color-accent-purple) !important;
+  background: rgba(139, 0, 255, 0.1) !important;
+}
+
+/* Hide HUD on mobile screens */
+@media (max-width: 768px) {
+  .dev-hud {
+    display: none !important;
+  }
+}
+
+/* ── Achievement Toasts ─────────────────────────────────── */
+.za-toast {
+  box-shadow: var(--shadow-glow-purple) !important;
+}
+
+/* ── Command Palette ────────────────────────────────────── */
+.cmd-palette-overlay {
+  animation: fadeIn 0.2s var(--ease-smooth);
+}
+
+.cmd-palette-modal {
+  animation: scaleIn 0.25s var(--ease-bounce);
+}
+
+.cmd-palette-item {
+  border-left: 3px solid transparent;
+  transition: background 0.15s ease, border-left-color 0.15s ease !important;
+}
+
+.cmd-palette-item:hover {
+  border-left-color: var(--color-accent-purple);
+}
+
+/* Command key badge hint in nav */
+.cmd-hint {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  background: var(--color-bg-tertiary);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.cmd-hint:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-accent-purple);
+  box-shadow: var(--shadow-glow-purple);
+  transform: translateY(-1px);
+}
+
+/* Hide command hint on mobile/touch screens */
+@media (max-width: 768px) {
+  .cmd-hint {
+    display: none !important;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

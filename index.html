@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zaid Asim Softwares — Building intelligent software, games, and AI platforms. UDYAM registered enterprise.">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Game Developer, AI, Swadesh AI, Crafty Kids of India, Software Developer, India">
+    <meta name="author" content="Zaid Asim">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zaid Asim Softwares — Enterprise AI, Game Design & Web Platforms">
+    <meta property="og:description" content="Building intelligent software, games, and AI platforms from India. UDYAM-registered.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zaidasim.com">
+    <meta property="og:image" content="assets/logo.png">
+
+    <title>Zaid Asim Softwares — Enterprise AI, Game Design & Web Platforms</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/v2-upgrades.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Three.js Interactive Particle Canvas -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+
+    <!-- ============================================ -->
+    <!-- MAIN NAVIGATION BAR                          -->
+    <!-- ============================================ -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+
+            <!-- Mobile Hamburger Menu Trigger -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+
+            <!-- Nav Actions Overlay Dropdown -->
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="#hero" class="nav-link active">Home</a>
+                    <a href="#capabilities" class="nav-link">What We Do</a>
+                    <a href="#projects" class="nav-link">Our Work</a>
+                    <a href="biography.html" class="nav-link">Biography</a>
+                    <a href="#ideas" class="nav-link">Ideas Lab</a>
+                    <a href="#youtube" class="nav-link">YouTube</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <!-- Dark/Light Theme Switcher -->
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Visual Mode">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <!-- Command Palette Hotkey Hint -->
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: HERO                              -->
+    <!-- ============================================ -->
+    <section class="section hero-section" id="hero">
+        <div class="hero-content" data-animate="fade-up">
+            <div class="tag">Software Enterprise</div>
+            
+            <!-- Company Name Layout -->
+            <h1 class="hero-name" id="heroName">
+                Zaid Asim<br>
+                <span style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 500; opacity: 0.85;">Softwares</span>
+            </h1>
+
+            <!-- Interactive Typewriter Subtitle -->
+            <div class="hero-tagline">
+                <span class="tagline-text" id="taglineText">AI Platforms · Game Studios · Enterprise Software</span>
+                <span class="tagline-cursor">|</span>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="hero-actions" style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="#projects" class="contact-btn primary-btn">Explore Our Work ↓</a>
+                <a href="#contact" class="contact-btn secondary-btn" style="background: transparent; border: 1px solid var(--color-border);">Contact Us</a>
+            </div>
+
+            <div class="hero-badge" style="margin-top: 3rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>UDYAM-KR-15-0069715 · Est. 2021</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scrollIndicator">
+            <span>Explore Enterprise</span>
+            <div class="scroll-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: WHAT WE DO (CAPABILITIES)         -->
+    <!-- ============================================ -->
+    <section class="section capabilities-section" id="capabilities" style="border-top: 1px solid var(--color-border); background: rgba(10, 10, 10, 0.3);">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="tag">What We Do</span>
+                <h2 class="section-title" style="margin-top: 1.5rem;">We design, build, and ship <span class="gradient-text">software that matters</span>.</h2>
+                <p class="section-subtitle">Bridging cognitive intelligence and engineering execution.</p>
+            </div>
+
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem;" data-animate="stagger-up">
+                <div class="project-card" style="padding: 2.5rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">AI & Intelligent Systems</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">NLP structures, multi-agent cognitive pipelines, semantic context memory integrations, and custom system tools.</p>
+                </div>
+                <div class="project-card" style="padding: 2.5rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎮</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Game Development</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Immersive simulation environments, Open World RPG constructs, multi-season sandbox narratives, and interactive learning concepts.</p>
+                </div>
+                <div class="project-card" style="padding: 2.5rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🌐</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Platform Engineering</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Fast API deployment, cloud architecture layouts, automated programmatic SEO pipelines, and data systems scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: PROJECTS SHOWCASE (Redesigned)    -->
+    <!-- ============================================ -->
+    <section class="section projects-section" id="projects" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up" style="margin-bottom: 6rem;">
+                <span class="tag">Our Work</span>
+                <h2 class="section-title" style="margin-top: 1.5rem;">Corporate <span class="gradient-text">Project Catalog</span></h2>
+                <p class="section-subtitle">Active technologies and software platforms built for scale.</p>
+            </div>
+
+            <!-- Alternating Large Showcases -->
+            <div class="showcase-list" style="display: flex; flex-direction: column; gap: 8rem;">
+                
+                <!-- Showcase 1: Swadesh AI -->
+                <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;" data-animate="fade-up">
+                    <div style="flex: 1 1 450px;" data-tilt>
+                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
+                            <img src="assets/swadesh-ai.png" alt="Swadesh AI" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
+                        <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">AI Platform</span>
+                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Swadesh AI</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                            India's flagship multi-agent AI platform incorporating long-term semantic context loops, vector database tracking, and localized LLM orchestrations.
+                        </p>
+                        <div class="project-tech" style="margin-bottom: 2rem;">
+                            <span>Python</span>
+                            <span>AI/ML</span>
+                            <span>NLP</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="swadesh.html" class="contact-btn primary-btn" style="padding: 0.75rem 2rem; border-radius: 9999px;">View Project →</a>
+                            <button class="project-deep-btn" data-project-id="swadesh-ai" style="padding: 0.75rem 2rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase 2: Crafty Kids of India -->
+                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
+                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
+                        <span class="tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple);">Educational Game</span>
+                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Crafty Kids of India</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                            An interactive cultural crafting game celebrating Indian toy-making traditions, recognized at the national STEM Innovation League.
+                        </p>
+                        <div class="project-tech" style="margin-bottom: 2rem;">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>Game Design</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="project-deep-btn" data-project-id="crafty-kids" style="padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</button>
+                        </div>
+                    </div>
+                    <div style="flex: 1 1 450px;" data-tilt>
+                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
+                            <img src="assets/crafty-kids.png" alt="Crafty Kids of India" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase 3: Storm of Kings -->
+                <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;" data-animate="fade-up">
+                    <div style="flex: 1 1 450px;" data-tilt>
+                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
+                            <img src="assets/storm-of-kings.png" alt="Storm of Kings" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
+                        <span class="tag" style="background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal);">Adventure RPG</span>
+                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Storm of Kings</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                            A 2D adventure RPG layout combining narrative episodic progress, character stats logic, and customized pixel-art environment configurations.
+                        </p>
+                        <div class="project-tech" style="margin-bottom: 2rem;">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>Pixel Art</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="project-deep-btn" data-project-id="storm-of-kings" style="padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer;">Deep Dive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase 4: Homies -->
+                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
+                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
+                        <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Open World Simulator</span>
+                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Homies</h3>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                            An expansive open-world simulator built to configure custom businesses, tracking systems, racing tracks, and multiplayer integrations.
+                        </p>
+                        <div class="project-tech" style="margin-bottom: 2rem;">
+                            <span>Unity</span>
+                            <span>Open World</span>
+                            <span>Multiplayer</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="/homies" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
+                        </div>
+                    </div>
+                    <div style="flex: 1 1 450px;" data-tilt>
+                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
+                            <img src="assets/homies.png" alt="Homies" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: THE FOUNDER (New)                 -->
+    <!-- ============================================ -->
+    <section class="section founder-section" id="founder" style="border-top: 1px solid var(--color-border); background: rgba(15, 15, 15, 0.4);">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header" data-animate="fade-up" style="text-align: center; margin-bottom: 4rem;">
+                <span class="tag">The Founder</span>
+            </div>
+
+            <div class="founder-statement" style="text-align: center;" data-animate="fade-up">
+                <blockquote style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.2; color: var(--color-text-primary); margin-bottom: 2.5rem; font-style: italic;">
+                    "Building the future from India. Releasing it to the world."
+                </blockquote>
+                
+                <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 3rem;">
+                    Zaid Asim is a 15-year-old technologist, game developer, and AI builder. He founded Zaid Asim Softwares as a UDYAM-registered enterprise, shipping products across AI pipelines, open-world simulators, and cultural educational applications.
+                </p>
+
+                <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                    <a href="biography.html" class="contact-btn primary-btn" style="padding: 0.85rem 2.25rem; border-radius: 9999px;">Know About Zaid Asim →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTIVE RESEARCH (IDEAS LAB)       -->
+    <!-- ============================================ -->
+    <section class="section ideas-section" id="ideas" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up" style="margin-bottom: 5rem;">
+                <span class="tag">Blueprints</span>
+                <h2 class="section-title" style="margin-top: 1.5rem;">Active <span class="gradient-text">Research</span></h2>
+                <p class="section-subtitle">Conceptual projects and hardware designs inside the Ideas Lab.</p>
+            </div>
+
+            <div class="ideas-grid" data-animate="stagger-up">
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-id">#01</span>
+                        <span class="idea-status research">Research</span>
+                    </div>
+                    <h3 class="idea-title">AI Memory Bridge</h3>
+                    <p class="idea-desc">Multi-agent cognitive pipelines designed to maintain semantic history and persistent context loops across disjointed API sessions using vector DBs and local models.</p>
+                    <div class="idea-footer">
+                        <span>Target:</span>
+                        <span class="idea-target">Swadesh AI Integration</span>
+                    </div>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-id">#02</span>
+                        <span class="idea-status">Conceptual</span>
+                    </div>
+                    <h3 class="idea-title">Aeroxnet</h3>
+                    <p class="idea-desc">High-performance network branding system conceptualized to deliver ultra-fast regional hosting tools and decentralized file distribution protocols.</p>
+                    <div class="idea-footer">
+                        <span>Target:</span>
+                        <span class="idea-target">Infrastructure LP</span>
+                    </div>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-id">#03</span>
+                        <span class="idea-status pitched">Pitched</span>
+                    </div>
+                    <h3 class="idea-title">Cloud Handheld</h3>
+                    <p class="idea-desc">Hardware proposal and UI designs for an affordable, localized cloud gaming handheld console designed for regional connectivity. Pitched to JioGenNext.</p>
+                    <div class="idea-footer">
+                        <span>Pitch To:</span>
+                        <span class="idea-target">JioGenNext Panels</span>
+                    </div>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-id">#04</span>
+                        <span class="idea-status">Conceptual</span>
+                    </div>
+                    <h3 class="idea-title">ZA Sentinel</h3>
+                    <p class="idea-desc">An active security daemon model designed to run locally, monitoring background networks, validating port states, and displaying system state on an OLED screen.</p>
+                    <div class="idea-footer">
+                        <span>Target:</span>
+                        <span class="idea-target">Security Daemon</span>
+                    </div>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-id">#05</span>
+                        <span class="idea-status research">Research</span>
+                    </div>
+                    <h3 class="idea-title">Cosmos Universe</h3>
+                    <p class="idea-desc">A deep narrative universe with multi-character paths, local histories, and episodic timelines planned for cross-media RPG game adaptation.</p>
+                    <div class="idea-footer">
+                        <span>Target:</span>
+                        <span class="idea-target">Multi-season Narrative</span>
+                    </div>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-id">#06</span>
+                        <span class="idea-status prototype">Prototype</span>
+                    </div>
+                    <h3 class="idea-title">Programmatic SEO</h3>
+                    <p class="idea-desc">An automated site-generation pipeline built with local AI models and n8n scripts that writes and publishes high-quality technical documentations.</p>
+                    <div class="idea-footer">
+                        <span>Status:</span>
+                        <span class="idea-target">Finished Prototype</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: YOUTUBE CONTENT                   -->
+    <!-- ============================================ -->
+    <section class="section youtube-section" id="youtube" style="border-top: 1px solid var(--color-border); background: rgba(10, 10, 10, 0.2);">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up" style="margin-bottom: 5rem;">
+                <span class="tag">Content Broadcast</span>
+                <h2 class="section-title" style="margin-top: 1.5rem;">YouTube <span class="gradient-text">Studio</span></h2>
+                <p class="section-subtitle">Gaming tutorials, technical explorations, comedies, and animations.</p>
+            </div>
+
+            <div class="youtube-card" data-animate="scale-in">
+                <div class="youtube-card-inner">
+                    <div class="youtube-visual">
+                        <div class="youtube-play-btn">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="youtube-static-overlay"></div>
+                    </div>
+                    <div class="youtube-info">
+                        <div class="youtube-channel-header">
+                            <img src="assets/logo.png" alt="Channel Avatar" class="youtube-avatar">
+                            <div>
+                                <h3 class="youtube-channel-name">Zaid Asim</h3>
+                                <span class="youtube-handle">@zaid_asim</span>
+                            </div>
+                        </div>
+                        <p class="youtube-desc">Broadcasting regular update logs on software mechanics, developer tests, pixel storytelling, and gaming walkthroughs.</p>
+                        <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="youtube-subscribe-btn social-card" data-platform="youtube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                            Visit Channel
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Cards -->
+            <div class="youtube-video-grid" style="margin-top: 3rem;" data-animate="stagger-up">
+                <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
+                    <div class="yt-thumb-wrap">
+                        <img src="assets/homies.png" alt="Gaming Walkthrough" class="yt-thumb">
+                        <div class="yt-play-icon">▶</div>
+                    </div>
+                    <div class="yt-video-info">
+                        <span class="yt-video-type">Gaming</span>
+                        <h4 class="yt-video-title">Homies Open World - Alpha Gameplay Walkthrough</h4>
+                        <p class="yt-video-desc">Exploring sandbox mechanics, customized cars, and running businesses inside the city life simulator.</p>
+                    </div>
+                </a>
+                <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
+                    <div class="yt-thumb-wrap">
+                        <img src="assets/swadesh-ai.png" alt="Tech Showcase" class="yt-thumb">
+                        <div class="yt-play-icon">▶</div>
+                    </div>
+                    <div class="yt-video-info">
+                        <span class="yt-video-type">Technology</span>
+                        <h4 class="yt-video-title">Building Multi-Agent Pipelines with n8n and LLMs</h4>
+                        <p class="yt-video-desc">Step-by-step setup of programmatic SEO engines and integrating persistent semantic memory loops.</p>
+                    </div>
+                </a>
+                <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
+                    <div class="yt-thumb-wrap">
+                        <img src="assets/logo.png" alt="Animations" class="yt-thumb">
+                        <div class="yt-play-icon">▶</div>
+                    </div>
+                    <div class="yt-video-info">
+                        <span class="yt-video-type">Animations</span>
+                        <h4 class="yt-video-title">Storytelling through Retro Pixel-Art Animations</h4>
+                        <p class="yt-video-desc">A deep dive into episodic worldbuilding, frame timings, and custom dialogue scripting.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: CONNECTIONS (SOCIALS)             -->
+    <!-- ============================================ -->
+    <section class="section socials-section" id="socials" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up" style="margin-bottom: 5rem;">
+                <span class="tag">Connect</span>
+                <h2 class="section-title" style="margin-top: 1.5rem;">Corporate <span class="gradient-text">Networks</span></h2>
+                <p class="section-subtitle">Explore open source codes, professional networks, and channels.</p>
+            </div>
+
+            <!-- Simplified Clean Social Cards Grid -->
+            <div class="socials-grid" data-animate="stagger-up">
+                <!-- GitHub -->
+                <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-card-front">
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">GitHub</h3>
+                            <span class="social-handle">zaid-asim</span>
+                        </div>
+                        <div class="social-arrow">→</div>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-card-front">
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0h.003z"/></svg>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">LinkedIn</h3>
+                            <span class="social-handle">zaid-asim</span>
+                        </div>
+                        <div class="social-arrow">→</div>
+                    </div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-card-front">
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">Facebook</h3>
+                            <span class="social-handle">zameer.ahmed</span>
+                        </div>
+                        <div class="social-arrow">→</div>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-card-front">
+                        <div class="social-icon-wrap">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        </div>
+                        <div class="social-info">
+                            <h3 class="social-name">Instagram</h3>
+                            <span class="social-handle">zameer.ahmed</span>
+                        </div>
+                        <div class="social-arrow">→</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 8: CONTACT                           -->
+    <!-- ============================================ -->
+    <section class="section contact-section" id="contact" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="contact-content" data-animate="fade-up">
+                <span class="tag">Get In Touch</span>
+                <h2 class="section-title contact-title" style="margin-top: 1.5rem;">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
+                <p class="contact-subtitle">Collaborate on AI models, game engines, or secure platforms.</p>
+
+                <div class="contact-actions">
+                    <a href="mailto:contact@zaidasim.com" class="contact-btn primary-btn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Send an Email
+                    </a>
+                    <button class="contact-btn secondary-btn" id="copyEmail" data-email="contact@zaidasim.com">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span id="copyEmailText">Copy Email Address</span>
+                    </button>
+                </div>
+
+                <div class="contact-email-display">
+                    <code>contact@zaidasim.com</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden canvas placeholder to avoid console errors -->
+    <div style="display:none;" id="visionCanvasContainer"></div>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="ZA Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Facebook</a>
+                </div>
+
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="terms-of-use.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Terms of Use</a>
+                    <a href="privacy-policy.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Privacy Policy</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-blue)'" onmouseout="this.style.color='inherit'">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ambient orbs -->
+    <div class="ambient-orb orb-blue"></div>
+    <div class="ambient-orb orb-purple"></div>
+    <div class="ambient-orb orb-magenta"></div>
+
+    <!-- Achievements -->
+    <div class="achievement-container" id="achievementContainer"></div>
+
+    <!-- Modal detail box -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" aria-label="Close Case Study">×</button>
+            <img src="" alt="" class="modal-header-image" id="modalImage">
+            <div class="modal-body">
+                <div class="modal-title-row">
+                    <h3 class="modal-title" id="modalTitle">Project Title</h3>
+                    <div class="modal-meta">
+                        <span class="idea-status" id="modalStatus">Status</span>
+                    </div>
+                </div>
+                <p class="modal-desc-lead" id="modalTagline">Project Tagline</p>
+                <div class="modal-content-grid">
+                    <div class="modal-story-content" id="modalStory"></div>
+                    <div class="modal-sidebar">
+                        <div>
+                            <span class="sidebar-block-title">Key Technologies</span>
+                            <div class="sidebar-tech-list" id="modalTechList"></div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="sidebar-block-title">What I Learned</span>
+                            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5;" id="modalLearned"></p>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 2rem;">
+                            <a href="" class="modal-action-btn primary-btn" id="modalActionBtn" target="_blank" rel="noopener">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/ScrollToPlugin.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/sound.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/command-palette.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/radar.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/visionary.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <script src="js/v2-upgrades.js"></script>
+</body>
+</html>

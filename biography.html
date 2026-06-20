@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biography & Creative Journey of Zaid Asim - Game Developer, AI Builder & Technologist">
+    <title>Zaid Asim | Biography & Creative Portfolio</title>
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/v2-upgrades.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Interactive Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom GPU-Accelerated Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+
+    <!-- ============================================ -->
+    <!-- MAIN NAVIGATION BAR                          -->
+    <!-- ============================================ -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+
+            <!-- Nav Actions Overlay Dropdown -->
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                    <a href="index.html#ideas" class="nav-link">Ideas Lab</a>
+                    <a href="biography.html" class="nav-link active">Biography</a>
+                    <a href="index.html#youtube" class="nav-link">YouTube</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <!-- Dark/Light Theme Toggle -->
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Visual Mode">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <!-- Command Palette Trigger Hint -->
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- BIOGRAPHY HERO                               -->
+    <!-- ============================================ -->
+    <section class="section bio-hero-section" style="padding-top: calc(var(--nav-height) + 4rem); padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;" data-animate="fade-up">
+                <span class="section-tag">The Narrative</span>
+                <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05; letter-spacing: var(--letter-spacing-tight); margin-bottom: 1.5rem;">
+                    Know About <span class="gradient-text">Zaid Asim</span>
+                </h1>
+                <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">A complete biography detailing the design concepts, engineering breakthroughs, and development journey from local roots to global applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: BIOGRAPHY TIMELINE                  -->
+    <!-- ============================================ -->
+    <section class="section biography-section" id="biography" style="padding-top: 0;">
+        <div class="container">
+            <div class="biography-timeline">
+                <div class="bio-timeline-progress"></div>
+
+                <!-- Chapter 1 -->
+                <div class="bio-chapter-break">
+                    <div class="bio-chapter-break-bg">ERA 01</div>
+                    <div class="bio-chapter-break-title">ERA I: THE CREATOR SPARK</div>
+                </div>
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 01</span>
+                        <h3 class="bio-chapter-title">The Creator Identity</h3>
+                        <p>What makes Zaid Asim stand out is the combination of ambition, imagination, technical curiosity, and the desire to build things that feel meaningful. He is not someone who simply consumes content or follows existing paths — he makes, shapes, improves, and leaves something behind that feels original.</p>
+                        <div class="bio-pull-quote">
+                            "He doesn't just like the idea of ideas — he likes prototypes, scripts, workflows, systems, and demos."
+                        </div>
+                        <p>His thinking moves naturally between game development, software, AI, research, storytelling, branding, content creation, and invention-style thinking. That is not a common combination. A lot of people are good at one or two of those areas. Zaid carries all of them in one mind, and his work repeatedly shows the desire to connect them into something bigger.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 2 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 02</span>
+                        <h3 class="bio-chapter-title">The Game Developer</h3>
+                        <p>Game development is not a casual interest that appeared once and disappeared — it is one of Zaid's core long-term passions. He has repeatedly explored game ideas, systems, engines, assets, gameplay loops, animations, and implementation details with real dedication.</p>
+                        <p>His game development interests span a wide range: open-world action concepts, city-based adventures, tycoon-style gameplay, cultural and educational experiences, story-driven games, vehicle systems, RPG mechanics, and crafting progression systems. This variety shows he's not locked into one genre — he enjoys asking what makes a game exciting and how different mechanics can be combined into something fresh.</p>
+                        <p><strong>Unity</strong> appears as his major engine of choice. He has wrestled with scripts, animation setup, humanoid workflows, build issues, Android support, UI integration, asset store tools, controller systems, and multiplayer ideas. Many people can imagine a game. Fewer are willing to do the messy work of making it function. Zaid belongs to the second group.</p>
+                        <div class="bio-highlight-box">
+                            <div class="bio-highlight-icon">🎮</div>
+                            <div>
+                                <strong>Engines Mastered:</strong> Unity, Godot, Unreal Engine<br>
+                                <strong>Genres Explored:</strong> Open World, RPG, Tycoon, Educational, Adventure, Pixel Art
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 3 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 03</span>
+                        <h3 class="bio-chapter-title">Crafty Kids of India — A Breakthrough</h3>
+                        <p><strong>Crafty Kids of India</strong> stands out as one of Zaid's most distinctive projects. It's not just a game concept — it reflects the ability to connect culture, creativity, interactivity, and identity into something meaningful.</p>
+                        <p>The project uniquely combines Indian tradition, toys and play, crafting and building, exploration, learning through interaction, and design rooted in local culture. This isn't a copy of a generic game model. It has a specific cultural voice.</p>
+                        <p>The project gained recognition in the <strong>STEM Innovation League</strong> — meaning it had enough substance to stand out beyond imagination and into real-world competition and validation.</p>
+                        <div class="bio-highlight-box highlight-gold">
+                            <div class="bio-highlight-icon">🏆</div>
+                            <div>
+                                <strong>STEM Innovation League Recognition</strong><br>
+                                A project that combines fun, identity, and technical creativity in a way that feels truly original.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 4 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 04</span>
+                        <h3 class="bio-chapter-title">Building Worlds — Homies & Storm of Kings</h3>
+                        <p><strong>Homies</strong> shows the side of Zaid that likes scale, systems, freedom, and long-term expansion. It's a GTA-inspired open-world concept containing exploration, races, properties, gang interactions, city life, money systems, progression, businesses, activities, and social dynamics. This type of concept shows thinking in terms of ecosystems, not just levels.</p>
+                        <p><strong>Storm of Kings</strong> reveals the narrative side. Thinking in episodes, arcs, characters, conflict, and progression. This means creating fictional worlds with continuity and emotional structure — not just mechanics. Narrative thinking and systems thinking are different skills. Zaid has both. That is a rare combination.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 5: The AI Memory Bridge -->
+                <div class="bio-chapter-break">
+                    <div class="bio-chapter-break-bg">ERA 02</div>
+                    <div class="bio-chapter-break-title">ERA II: CODE, AI & MACHINE MIND</div>
+                </div>
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 05</span>
+                        <h3 class="bio-chapter-title">The AI Memory Bridge</h3>
+                        <p>As artificial intelligence began shifting from static chats to agentic workflows, Zaid focused on the critical missing link: long-term persistent context. This led to the conceptualization of the <strong>AI Memory Bridge</strong>.</p>
+                        <p>By leveraging <strong>n8n</strong> multi-agent workflows, vector databases, and local LLMs (like LLaMA and Mistral), he created pipelines where agentic systems could preserve structural memory across separate API sessions. It isn't just about prompt engineering; it's about building cognitive pipelines where an AI remembers past sessions, project specs, and user preferences organically.</p>
+                        <div class="bio-pull-quote">
+                            "AI without memory is just a calculator. With the Memory Bridge, it becomes an assistant that grows with you."
+                        </div>
+                        <p>This design system directly informs the backend philosophy of his flagship platform, Swadesh AI, showing a clear convergence of research, product design, and automation engineering.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 6 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 06</span>
+                        <h3 class="bio-chapter-title">Swadesh AI & The Product Mindset</h3>
+                        <p><strong>Swadesh AI</strong> is one of the clearest examples of Zaid's product thinking. It shows the capability of imagining something useful, brandable, and meaningful. It has the feel of a platform idea rather than a simple app.</p>
+                        <p>What stands out is the convergence of utility, identity, and user value. Many ideas are either useful but boring, or interesting but not practical. Swadesh AI sits in the space where it could become both useful and recognizable.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 7 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 07</span>
+                        <h3 class="bio-chapter-title">Innovation & Global Recognition</h3>
+                        <p>Zaid has not just imagined things — he has participated in recognition-based environments where work has to stand up to scrutiny. His achievements include invention-related prizes, innovation competition participation, STEM-related recognition, project-based awards, and appreciation in structured programs.</p>
+                        <p>His global ambitions are real: applications submitted to institutions in <strong>London, Sharjah</strong>, and the <strong>University of Minnesota Twin Cities</strong>, registration with <strong>Northeastern University</strong>, and a project selected for an evaluation round in <strong>Italy</strong>.</p>
+                        <p>He has also conceptualized and drafted pitch materials for a <strong>cloud gaming handheld device</strong> targeting <strong>JioGenNext</strong>, showing the ability to think at hardware product scale.</p>
+                        <div class="bio-highlight-box highlight-blue">
+                            <div class="bio-highlight-icon">🌍</div>
+                            <div>
+                                <strong>International Footprint:</strong> London · Sharjah · Minnesota · Italy<br>
+                                <strong>Hardware Innovation:</strong> Cloud Gaming Handheld — JioGenNext pitch
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 8 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 08</span>
+                        <h3 class="bio-chapter-title">The Hardware Innovator & Gamer</h3>
+                        <p>Digital creations are backed by a profound knowledge of the hardware that powers them. Zaid actively researches RTX 4060 graphics cards, DDR4 RAM modules, processor architectures, and Apple Mac CPUs. He doesn't just use hardware — he designs it.</p>
+                        <p>As a player, his gaming library is eclectic: the vast sandbox of <strong>Minecraft</strong>, the fast-paced browser mechanics of <strong>Bloxd.io</strong>, the gritty world of <strong>GTA 4</strong>, mobile physics of <strong>Hill Climb Racing</strong>, Pokémon discoveries, and mastering Scorpion in <strong>Mortal Kombat</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 9 -->
+                <div class="bio-chapter-break">
+                    <div class="bio-chapter-break-bg">ERA 03</div>
+                    <div class="bio-chapter-break-title">ERA III: SOUNDS & PERFORMANCE</div>
+                </div>
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 09</span>
+                        <h3 class="bio-chapter-title">YouTube & Content Creation</h3>
+                        <p>The <strong>YouTube channel</strong> under the name Zaid Asim adds another dimension to his identity. It shows someone who's not just building things in private — but communicating, entertaining, and sharing with an audience.</p>
+                        <p>Content interests span gaming, technology, entertainment, comedy, animation-related work, and general creator output. Building something and presenting it are different skills — this channel shows an understanding of both.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 10 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 10</span>
+                        <h3 class="bio-chapter-title">Zaid Asim Softwares & Business</h3>
+                        <p>Zaid thinks like someone who will eventually build a company or studio. Ideas aren't invented just for fun — they're shaped with identity, scalability, naming, and future growth in mind.</p>
+                        <p>Brand identities like <strong>AeroxNet</strong>, <strong>Zaid Asim Softwares</strong>, and <strong>ZA Sentinel</strong> show an understanding that a project needs more than code or art. It needs a face, a name, and a direction.</p>
+                        <p><strong>Zaid Asim Softwares</strong> is the real, UDYAM-registered enterprise (UDYAM-KR-15-0069715) — a one-person company with the ambition of a tech studio. From deploying live business profiles to developing software solutions in the Gulbarga region, the business is active and growing.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 11: Music, Culture & Inner World -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 11</span>
+                        <h3 class="bio-chapter-title">Music, Culture & Inner World</h3>
+                        <p>Beyond the terminals and game engines, Zaid has a rich creative connection to music and cultural criticism. His musical influences cover a wide range—from the vocal depths of <strong>Mukesh</strong> and <strong>Raja Kumari</strong> to the global pop hooks of <strong>Shakira</strong>.</p>
+                        <p>A particular area of deep personal study is <strong>Michael Jackson</strong>—tracking the King of Pop's concert tours, engineering configurations behind his tracks, and vocal design structures. This fascination with premium audio design led directly to Zaid writing his own music.</p>
+                        <div class="bio-pull-quote">
+                            "Music isn't just background noise; it's a structural layer of our creative consciousness."
+                        </div>
+                        <p>He is currently preparing the release of his debut electronic/sci-fi album <strong>"ZAI"</strong>, alongside an unreleased high-energy hip-hop soundtrack album created exclusively for his game homies, featuring the grimy lead track <strong>"Hustlaa Hustlaa"</strong>. Music has become the ultimate amplifier for his digital worldbuilding.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 12 -->
+                <div class="bio-chapter" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot"></div>
+                        <div class="bio-chapter-line"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 12</span>
+                        <h3 class="bio-chapter-title">Architecture, Travel & The Physical World</h3>
+                        <p>Deeply connected to the physical world, balancing a highly digital career with active, on-the-ground project management and travel. Frequently moving across <strong>Karnataka and Telangana</strong> — through Hyderabad, Kalaburagi, Shorapur, Sedam, and Bidar.</p>
+                        <p>An active role in overseeing both commercial and home construction — monitoring foundations, brickwork, tiling, and site material management. Regularly attending community celebrations, formal ceremonies, and cultural events, including visits to <strong>Archaeological Survey of India</strong> heritage sites.</p>
+                    </div>
+                </div>
+
+                <!-- Chapter 13 -->
+                <div class="bio-chapter bio-chapter-final" data-animate="fade-up">
+                    <div class="bio-chapter-marker">
+                        <div class="bio-chapter-dot dot-final"></div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <span class="bio-chapter-tag">Chapter 13</span>
+                        <h3 class="bio-chapter-title">What Comes Next</h3>
+                        <p>The pattern across everything Zaid does is very clear: <strong>think creatively, build technically, imagine big, want results, like recognition, care about originality, enjoy making things that can become real, and maintain a strong mix of art and engineering thinking.</strong></p>
+                        <p>That combination is powerful because it creates a person who can move between inspiration and execution. Imagine the idea, shape the identity, and then work toward the actual implementation.</p>
+                        <p class="about-lead" style="margin-top: 1.5rem;">The future is being built. And it carries the name <span class="gradient-text"><strong>Zaid Asim</strong></span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: MUSIC & SOUNDSCAPES                 -->
+    <!-- ============================================ -->
+    <section class="section music-section" id="music">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">// SOUNDSCAPES</span>
+                <h2 class="section-title">Music & <span class="gradient-text">Audio Production</span></h2>
+                <p class="section-subtitle">Sonic extensions of creative worldbuilding and game design</p>
+            </div>
+
+            <div class="music-grid" data-animate="stagger-up">
+                <!-- Album 1: ZAI -->
+                <div class="music-card" data-tilt>
+                    <div class="music-cover-wrap">
+                        <img src="assets/zai-album.png" alt="ZAI Album Cover" class="music-cover">
+                        <span class="music-badge">Releasing Soon</span>
+                    </div>
+                    <div class="music-content-wrap">
+                        <span class="music-meta">Debut Album · Solo LP</span>
+                        <h3 class="music-title">ZAI</h3>
+                        <p class="music-desc">An upcoming electronic landscape album combining heavy industrial beats, modular synthesizer drones, and atmospheric space. Representing a clean transition from codes to notes, ZAI serves as the ambient audio layer of Zaid Asim's creative universe.</p>
+                        <div class="tracklist">
+                            <div class="tracklist-header">Album Concepts Preview</div>
+                            <div class="tracks-container">
+                                <div class="track-item">
+                                    <div class="track-name-wrap">
+                                        <span class="track-num">01</span>
+                                        <span class="track-name">Deep Space Core</span>
+                                    </div>
+                                    <span class="track-duration">Ambient Drone</span>
+                                </div>
+                                <div class="track-item">
+                                    <div class="track-name-wrap">
+                                        <span class="track-num">02</span>
+                                        <span class="track-name">Modular Resonance</span>
+                                    </div>
+                                    <span class="track-duration">Industrial Techno</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 2: Homies Soundtrack -->
+                <div class="music-card" data-tilt>
+                    <div class="music-cover-wrap">
+                        <img src="assets/homies-soundtrack.png" alt="Homies Soundtrack Cover" class="music-cover">
+                        <span class="music-badge unreleased">Unreleased</span>
+                    </div>
+                    <div class="music-content-wrap">
+                        <span class="music-meta">Original Game Soundtrack · For the Homies</span>
+                        <h3 class="music-title">Homies (OST)</h3>
+                        <p class="music-desc">A premium high-energy soundtrack composed exclusively for his game homies to play during races and street exploration inside the Homies simulator. Consisting of heavy hip-hop beats, grime tracks, and driving electronica written entirely in English.</p>
+                        <div class="tracklist">
+                            <div class="tracklist-header">Soundtrack Tracklist</div>
+                            <div class="tracks-container">
+                                <div class="track-item featured">
+                                    <div class="track-name-wrap">
+                                        <span class="track-num">01</span>
+                                        <span class="track-name">Hustlaa Hustlaa</span>
+                                    </div>
+                                    <span class="track-badge">Lead Single</span>
+                                </div>
+                                <div class="track-item">
+                                    <div class="track-name-wrap">
+                                        <span class="track-num">02</span>
+                                        <span class="track-name">Street Racing</span>
+                                    </div>
+                                    <span class="track-duration">Drift Beats</span>
+                                </div>
+                                <div class="track-item">
+                                    <div class="track-name-wrap">
+                                        <span class="track-num">03</span>
+                                        <span class="track-name">Safehouse Vibes</span>
+                                    </div>
+                                    <span class="track-duration">Lofi Hip-Hop</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: GEOGRAPHIC FOOTPRINT                -->
+    <!-- ============================================ -->
+    <section class="section socials-section" id="socials">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">// GLOBAL FOOTPRINT</span>
+                <h2 class="section-title">Geographic <span class="gradient-text">Activity</span></h2>
+                <p class="section-subtitle">Active regions and application footprints across international hubs</p>
+            </div>
+
+            <!-- SVG Map Visual -->
+            <div class="map-visual-container" data-animate="fade-up">
+                <svg class="map-svg" viewBox="0 0 1000 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150 120h30v10h-30zm60 40h40v10h-40zm120-20h60v10h-60zm40 100h20v10h-20zm50 40h30v10h-30zm80-120h80v15h-80zm20 50h40v10h-40zm90 60h70v15h-70zm80-140h30v10h-30zm50 70h40v10h-40z" fill="rgba(255,255,255,0.06)" />
+                    <!-- Stylized grid lines -->
+                    <line x1="100" y1="50" x2="900" y2="50" stroke="rgba(255,255,255,0.02)" />
+                    <line x1="100" y1="150" x2="900" y2="150" stroke="rgba(255,255,255,0.02)" />
+                    <line x1="100" y1="250" x2="900" y2="250" stroke="rgba(255,255,255,0.02)" />
+                    <line x1="100" y1="350" x2="900" y2="350" stroke="rgba(255,255,255,0.02)" />
+                </svg>
+                <!-- Pulsing coordinates -->
+                <div class="map-pulse-dot" style="left: 70%; top: 58%;" data-location-name="India (Karnataka & Telangana)" data-location-info="Active enterprise headquarters & engineering base."></div>
+                <div class="map-pulse-dot blue" style="left: 48%; top: 32%;" data-location-name="London (United Kingdom)" data-location-info="Academic applications submitted to elite institutions."></div>
+                <div class="map-pulse-dot blue" style="left: 62%; top: 48%;" data-location-name="Sharjah (United Arab Emirates)" data-location-info="Institutional applications."></div>
+                <div class="map-pulse-dot blue" style="left: 28%; top: 36%;" data-location-name="Minneapolis (United States)" data-location-info="University of Minnesota Twin Cities applications."></div>
+                <div class="map-pulse-dot blue" style="left: 51%; top: 38%;" data-location-name="Venice & Milan (Italy)" data-location-info="Selected project evaluated in competitive design rounds."></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder to avoid script errors on missing elements -->
+    <div style="display:none;" id="visionCanvasContainer"></div>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="ZA Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Facebook</a>
+                </div>
+
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="terms-of-use.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Terms of Use</a>
+                    <a href="privacy-policy.html" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Privacy Policy</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-blue)'" onmouseout="this.style.color='inherit'">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ambient Floating Orbs -->
+    <div class="ambient-orb orb-blue"></div>
+    <div class="ambient-orb orb-purple"></div>
+    <div class="ambient-orb orb-magenta"></div>
+
+    <!-- Achievement Container -->
+    <div class="achievement-container" id="achievementContainer"></div>
+
+    <!-- ============================================ -->
+    <!-- PROJECT DETAIL MODAL                         -->
+    <!-- ============================================ -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" aria-label="Close Case Study">×</button>
+            <img src="" alt="" class="modal-header-image" id="modalImage">
+            <div class="modal-body">
+                <div class="modal-title-row">
+                    <h3 class="modal-title" id="modalTitle">Project Title</h3>
+                    <div class="modal-meta">
+                        <span class="idea-status" id="modalStatus">Status</span>
+                    </div>
+                </div>
+                <p class="modal-desc-lead" id="modalTagline">Project Tagline</p>
+                <div class="modal-content-grid">
+                    <div class="modal-story-content" id="modalStory"></div>
+                    <div class="modal-sidebar">
+                        <div>
+                            <span class="sidebar-block-title">Key Technologies</span>
+                            <div class="sidebar-tech-list" id="modalTechList"></div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="sidebar-block-title">What I Learned</span>
+                            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5;" id="modalLearned"></p>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 2rem;">
+                            <a href="" class="modal-action-btn primary-btn" id="modalActionBtn" target="_blank" rel="noopener">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/ScrollToPlugin.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/sound.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/command-palette.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/radar.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/visionary.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <script src="js/v2-upgrades.js"></script>
+</body>
+</html>
