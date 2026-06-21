@@ -86,6 +86,26 @@
       status: '🚧 Prototype Phase',
       image: 'assets/titan.png',
       link: '#contact'
+    },
+    'qta-x': {
+      title: 'QTA-X',
+      tagline: 'Validation-Gated Atomic Manufacturing Platform',
+      story: '<h4>The Vision</h4><p>QTA-X is a next-generation Validation-Gated Atomic Manufacturing Platform designed to design, validate, and orchestrate atomic-scale fabrication systems. It features isolated operating modes: Cryogenic Baseline (Mode A), Laser-assisted Atomic Manufacturing (Mode B), Recovery and Isolation (Mode C), and Defect Characterization/Sensing (Mode D) to enforce scientific reproducibility and claim integrity.</p><h4>The Digital Twin</h4><p>A multiphysics digital twin continuously models heat transfer, gas transport, vibration coupling, and uncertainty propagation to predict outcomes and manage risks before actual cryogenic experiments occur.</p>',
+      learned: 'Designing QTA-X taught me that separating fabrication from characterization is crucial. Operating cryogenic baseline steps before manufacturing eliminates vibrational/thermal noise correlation mistakes completely.',
+      tech: ['Cryogenics', 'Vacuum Systems', 'Laser Deposition', 'Digital Twin', 'Scientific Governance'],
+      status: '🚧 Research Phase',
+      image: 'assets/qta-x.png',
+      link: '#contact'
+    },
+    'android-xr-research': {
+      title: 'Android XR Systems Research',
+      tagline: 'Spatial systems analysis, Qualcomm platform bottlenecks & bystander-privacy gates',
+      story: '<h4>The Research</h4><p>A deep systems-level review paper exploring the scaling Moats and hard limits of Android XR devices (Snapdragon AR1/AR2 architectures). The paper outlines the necessary hardware-visible recording gates and event-triggered vision pipelines required for all-day smart glasses.</p><h4>Inventions Proposed</h4><p>The paper proposes intent-aware AI compression, speculative edge-cloud decoding orchestrators, and social interaction modes to overcome vergence-accommodation display conflicts and power constraints.</p>',
+      learned: 'This research taught me that smart glasses are ultimately a low-power sensing and edge orchestration problem. Tiered scheduling (local to edge to cloud) is the absolute moat for comfortable spatial computing.',
+      tech: ['Android XR', 'Spatial Computing', 'Qualcomm AR1/AR2', 'Event Sensing', 'Edge AI', 'Gemini'],
+      status: '📚 Research Paper',
+      image: 'assets/android-xr.png',
+      link: '/android-xr-research'
     }
   };
 

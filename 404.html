@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    
+    <title>404 // Route Unresolved | Zaid Asim Softwares</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/v2-upgrades.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .error-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 15vw, 10rem);
+            font-weight: 700;
+            line-height: 1;
+            margin: 0;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.05em;
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 10px rgba(9, 137, 216, 0.2)); }
+            100% { filter: drop-shadow(0 0 30px rgba(108, 59, 255, 0.4)); }
+        }
+
+        .error-subtitle {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--color-accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .error-desc {
+            color: var(--color-text-secondary);
+            font-size: 1.15rem;
+            max-width: 500px;
+            line-height: 1.6;
+            margin: 0 auto 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <div class="nav-controls" style="margin-left: auto;">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <span class="theme-icon-dark">🌙</span>
+                    <span class="theme-icon-light">☀️</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Error Content -->
+    <div class="error-layout">
+        <h1 class="error-code">404</h1>
+        <div class="error-subtitle">// Route Unresolved</div>
+        <p class="error-desc">The requested spatial link or subpage does not exist or has been relocated within the zaidasim.com routing schema.</p>
+        <a href="/" id="backHomeBtn" class="contact-btn primary-btn" style="padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; text-decoration: none;">
+            Return to Core Interface &rarr;
+        </a>
+    </div>
+
+    <!-- Ambient orbs -->
+    <div class="ambient-orb orb-blue"></div>
+    <div class="ambient-orb orb-purple"></div>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    
+    <!-- Sound and Theme Singeltons -->
+    <script src="js/sound.js"></script>
+    <script src="js/theme.js"></script>
+    
+    <!-- Canvas BG Particles -->
+    <script src="js/three-bg.js"></script>
+    
+    <!-- Interactions -->
+    <script src="js/cursor.js"></script>
+    <script src="js/hud.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof window.initTheme === 'function') window.initTheme();
+            if (typeof window.initThreeBg === 'function') window.initThreeBg();
+            if (typeof window.initCursor === 'function') window.initCursor();
+            if (typeof window.initHud === 'function') window.initHud();
+
+            var homeBtn = document.getElementById('backHomeBtn');
+            if (homeBtn) {
+                homeBtn.addEventListener('click', function (e) {
+                    if (window.soundSynth && typeof window.soundSynth.playWarp === 'function') {
+                        window.soundSynth.playWarp();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

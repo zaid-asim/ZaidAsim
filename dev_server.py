@@ -25,14 +25,14 @@ class RedirectHandler(SimpleHTTPRequestHandler):
         if os.path.exists(local_path) and os.path.isfile(local_path):
             return super().do_GET()
 
-        # Define redirect mapping based on _redirects config
+        # Natively check if clean path maps to an HTML file (e.g. /biography -> biography.html)
+        html_path = local_path + '.html'
+        if os.path.exists(html_path) and os.path.isfile(html_path):
+            self.path = '/' + html_path
+            return super().do_GET()
+
+        # Custom redirect mappings (e.g. for PDFs/Assets)
         redirects = {
-            '/biography': '/biography.html',
-            '/swadesh': '/swadesh.html',
-            '/homies': '/homies.html',
-            '/support': '/support.html',
-            '/privacy-policy': '/privacy-policy.html',
-            '/terms-of-use': '/terms-of-use.html',
             '/udyam-certificate': '/assets/udyam-registration-certificate.pdf'
         }
 
@@ -40,9 +40,9 @@ class RedirectHandler(SimpleHTTPRequestHandler):
             print(f"[Redirect] {clean_path} -> {redirects[clean_path]}")
             self.path = redirects[clean_path]
         else:
-            # Catch-all: rewrite to index.html
-            print(f"[Fallback] {clean_path} -> /index.html")
-            self.path = '/index.html'
+            # 404 fallback: serve custom 404.html
+            print(f"[404 Fallback] {clean_path} -> /404.html")
+            self.path = '/404.html'
 
         return super().do_GET()
 

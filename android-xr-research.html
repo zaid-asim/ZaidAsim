@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Android XR Deep Research Paper: Making smart glasses win — analysis of the technical moats, bottlenecks, always-on event sensing, and edge-cloud inference.">
+    <meta name="keywords" content="Android XR, Smart Glasses, Augmented Reality, Wearable AI, Gemini, Event Sensing, Spatial Computing, Zaid Asim">
+    <meta name="author" content="Zaid Asim">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://zaidasim.com/android-xr-research">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zaidasim.com/android-xr-research">
+    <meta property="og:title" content="Android XR Systems Research: Making Smart Glasses Win | Zaid Asim Softwares">
+    <meta property="og:description" content="A deep systems-level research analysis on spatial computing, Qualcomm platforms, event-based capture, tiered inference, and bystander-privacy gates.">
+    <meta property="og:image" content="https://zaidasim.com/assets/android-xr.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Android XR Research Showcase Artwork">
+    <meta property="og:site_name" content="Zaid Asim Softwares">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://zaidasim.com/android-xr-research">
+    <meta name="twitter:title" content="Android XR Systems Research: Making Smart Glasses Win | Zaid Asim Softwares">
+    <meta name="twitter:description" content="A deep systems-level research analysis on spatial computing, Qualcomm platforms, event-based capture, tiered inference, and bystander-privacy gates.">
+    <meta name="twitter:image" content="https://zaidasim.com/assets/android-xr.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ScholarlyArticle",
+          "@id": "https://zaidasim.com/android-xr-research/#article",
+          "headline": "Making smart glasses actually win: the technical moat, the hard limits, and what to invent next",
+          "url": "https://zaidasim.com/android-xr-research",
+          "datePublished": "2026-06-21",
+          "author": {
+            "@type": "Person",
+            "name": "Zaid Asim",
+            "url": "https://zaidasim.com/biography"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Zaid Asim Softwares",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://zaidasim.com/assets/logo.png"
+            }
+          },
+          "description": "Deep research paper on spatial computing architectures, qualitative power/thermal bottlenecks, and tiered edge-cloud models under Android XR.",
+          "about": [
+            "Spatial Computing",
+            "Android XR",
+            "Event-based Vision",
+            "Edge AI",
+            "Multimodal Gemini"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <title>Android XR Systems Research: Making Smart Glasses Win | Zaid Asim Softwares</title>
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/v2-upgrades.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .paper-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+
+        @media (max-width: 1024px) {
+            .paper-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 6rem 1.5rem 4rem;
+            }
+            .paper-sidebar {
+                display: none !important;
+            }
+        }
+
+        /* Sidebar Table of Contents */
+        .paper-sidebar {
+            position: sticky;
+            top: calc(var(--nav-height) + 2rem);
+            height: fit-content;
+            max-height: calc(100vh - var(--nav-height) - 4rem);
+            overflow-y: auto;
+            padding-right: 1.5rem;
+            border-right: 1px solid var(--color-border);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toc-link {
+            display: block;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--duration-fast) var(--ease-smooth);
+            border-left: 2px solid transparent;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--color-accent-blue);
+            background: rgba(9, 137, 216, 0.05);
+            border-left-color: var(--color-accent-blue);
+            padding-left: 1rem;
+        }
+
+        /* Academic Styling */
+        .paper-container {
+            max-width: 850px;
+        }
+
+        .paper-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            line-height: 1.15;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        .paper-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .paper-meta {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--color-accent-blue);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 3rem;
+        }
+
+        .paper-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: calc(var(--nav-height) + 2rem);
+        }
+
+        .paper-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-text-primary);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .paper-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .paper-section p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .abstract-box {
+            background: rgba(9, 137, 216, 0.03);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-accent-blue);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .abstract-title {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .abstract-text {
+            font-style: italic;
+            font-size: 1rem !important;
+            line-height: 1.7 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .citation-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--color-accent-blue);
+            vertical-align: super;
+            margin-left: 0.15rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/projects" class="nav-link">Projects</a>
+                    <a href="/biography" class="nav-link">Biography</a>
+                    <a href="/support" class="nav-link">Support</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="paper-layout">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="paper-sidebar">
+            <ul class="toc-list">
+                <li><a href="#abstract" class="toc-link active">0. Abstract</a></li>
+                <li><a href="#section-1" class="toc-link">1. What Android XR Is</a></li>
+                <li><a href="#section-2" class="toc-link">2. Reboot vs First Wave</a></li>
+                <li><a href="#section-3" class="toc-link">3. Technical Bottlenecks</a></li>
+                <li><a href="#section-4" class="toc-link">4. The Systems Moat</a></li>
+                <li><a href="#section-5" class="toc-link">5. Executable Inventions</a></li>
+                <li><a href="#section-6" class="toc-link">6. Commercial Reality</a></li>
+                <li><a href="#section-7" class="toc-link">7. What to Build Next</a></li>
+            </ul>
+        </aside>
+
+        <!-- Academic Paper Page -->
+        <main class="paper-container">
+            
+            <header>
+                <h1 class="paper-title">Making smart glasses actually win: the technical moat, the hard limits, and what to invent next</h1>
+                <div class="paper-subtitle">An architectural systems review on spatial compute scaling, Qualcomm platform constraints, and bystander-privacy gates.</div>
+                
+                <div class="paper-meta">
+                    <div>Author: Zaid Asim</div>
+                    <div>Affiliation: Zaid Asim Softwares</div>
+                    <div>Published: June 21, 2026</div>
+                </div>
+            </header>
+
+            <!-- Abstract Box -->
+            <section id="abstract" class="abstract-box paper-section">
+                <div class="abstract-title">Abstract</div>
+                <p class="abstract-text">
+                    Android XR is not just a headset OS. Google now positions it as an AI-powered platform for headsets, wired XR glasses, audio glasses, display glasses, and “intelligent eyewear,” with Gemini as the core assistant layer. The platform is designed to run familiar Android apps, expose XR-specific tooling through Jetpack XR SDK, and support real-time multimodal assistance through Gemini Live API. That means the race is no longer only about optics or industrial design; it is about building a full-stack wearable intelligence system that can be comfortable, private, cheap enough, and useful enough for daily life.<span class="citation-tag">[1]</span>
+                </p>
+            </section>
+
+            <!-- Section 1 -->
+            <section id="section-1" class="paper-section">
+                <h2>1. What Android XR really is</h2>
+                <p>
+                    Google’s public direction is now very clear: Android XR is the operating layer for spatial and wearable computing, and it is meant to bridge phones, headsets, glasses, and future eyewear. The official developer docs say most Android apps are compatible with XR headsets and wired XR glasses by default, and developers can build with familiar tools such as Android Studio, Jetpack Compose, the XR emulator, Unity, Godot, Unreal, OpenXR, and WebXR. That matters because the biggest platform advantage is not a single device; it is app compatibility and developer momentum.<span class="citation-tag">[2]</span>
+                </p>
+                <p>
+                    On the product side, Google’s 2024–2026 messaging shows a staged strategy: first, headsets; then glasses with Gemini; then more refined form factors with fashion partners and partner hardware such as Samsung’s Galaxy XR and XREAL’s Android XR devices. Google also renamed categories to make the product language more understandable: “AI glasses” became “audio glasses,” and “display AI glasses” became “display glasses.” That is a subtle but important sign that the company is trying to reduce consumer confusion and normalize the product categories before mass adoption.<span class="citation-tag">[3]</span>
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="paper-section">
+                <h2>2. Why the earlier generation failed and why the reboot is different</h2>
+                <p>
+                    The first wave of smart glasses failed for reasons that still matter: limited battery, awkward industrial design, weak contextual AI, privacy anxiety, and poor public acceptance. The new wave is different because it combines cameras, microphones, speakers, optional in-lens displays, and Gemini-based multimodal understanding, so the glasses can respond to what the wearer sees and hears instead of just acting as a small notification screen. That shift from “tiny computer on your face” to “contextual AI interface” is the fundamental ideation change.<span class="citation-tag">[3]</span>
+                </p>
+                <p>
+                    Google’s own public demos make the intention explicit: directions, texting, photos, message summaries, translation captions, and hands-free access to phone apps. In other words, the product pitch is not “look at augmented reality art” but “reduce friction in daily tasks.” That is a commercially smarter starting point, because utility features are easier to value than abstract spatial computing promises.<span class="citation-tag">[3]</span>
+                </p>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="paper-section">
+                <h2>3. The real technical bottlenecks</h2>
+                <p>
+                    The first bottleneck is power. Qualcomm’s AR1 Gen 1 is explicitly optimized for lightweight smart glasses with capture, livestreaming, notifications, and on-glass AI, while AR2 Gen 1 is positioned for higher-performance, smaller, lighter AR glasses. That alone tells you how constrained the form factor remains: the industry still has to choose between battery life, thermal headroom, camera quality, compute, and industrial design.<span class="citation-tag">[4]</span>
+                </p>
+                <p>
+                    The second bottleneck is display physics. Research on waveguide displays shows persistent constraints in fabrication, color gamut, transparency, and form-factor complexity. Separate papers on holographic and multi-plane AR displays continue to frame vergence–accommodation conflict as a major barrier to comfortable long-duration use. So the “2030 glasses” feel is not magic; it comes from a set of optical problems that are still being actively solved in the literature.<span class="citation-tag">[5]</span>
+                </p>
+                <p>
+                    The third bottleneck is always-on sensing. Wearable cameras are useful, but they are power-hungry and socially sensitive. Research on imaging for all-day smart glasses emphasizes fundamental limits on image quality and camera-module size, while event-camera research repeatedly highlights the advantages of low latency, high dynamic range, and lower power because event sensors capture changes rather than full frames. That makes event-based sensing one of the most promising paths for glasses that need to run all day.<span class="citation-tag">[6]</span>
+                </p>
+                <p>
+                    The fourth bottleneck is privacy. The literature is consistent: bystanders do not like being recorded without clear cues, and wearers themselves can become uneasy when cameras feel socially ambiguous. Newer research continues to show that visual-only privacy indicators can be weak in real-world contexts, especially for impaired bystanders, while older and newer work both point to the need for explicit privacy-mediating technologies, automatic redaction, and socially legible recording states. A smart-glasses platform that ignores this will stall even if the hardware is excellent.<span class="citation-tag">[6]</span>
+                </p>
+                <p>
+                    The fifth bottleneck is AI cost and latency. Google Research says speculative decoding can speed generation by around 2x–3x without affecting output quality, and surveys on on-device AI and edge AI consistently argue for local inference where possible because it improves latency and privacy. The implication for XR is strong: the winning system will not send everything to the cloud. It will orchestrate small local models, phone-class models, edge models, and cloud models together.<span class="citation-tag">[7]</span>
+                </p>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="section-4" class="paper-section">
+                <h2>4. The moat: what can be built that is hard to copy</h2>
+                
+                <h3>4.1 A hierarchical intelligence stack</h3>
+                <p>
+                    The most important product moat is a tiered inference architecture. The glasses should handle ultra-fast, low-risk tasks locally; the phone should handle richer but still private tasks; the cloud should only handle the heaviest reasoning or retrieval. This is grounded in current research on on-device AI and speculative edge-cloud decoding, and it matches the practical reality of battery-constrained wearables. If the orchestration layer is built well, it becomes a platform capability, not just a model choice.<span class="citation-tag">[6]</span>
+                </p>
+
+                <h3>4.2 A personal context graph</h3>
+                <p>
+                    A second moat is a personal context graph: a permissioned memory of places, objects, tasks, contacts, documents, and recent interactions. The idea is not to store everything; it is to store useful state in a way that supports retrieval, reminder, translation, and workflow help. This is a logical extension of Gemini’s “understand what you’re seeing and take actions on your behalf” direction, but implemented as a real product system with explicit privacy controls.<span class="citation-tag">[2]</span>
+                </p>
+
+                <h3>4.3 Privacy as hardware, not policy</h3>
+                <p>
+                    A third moat is to make privacy observable and enforced. The research suggests that bystander concerns are not solved by copywriting; they need technical mechanisms. That means: a visible capture state, hardware-level recording gates, local redaction, automatic blur or segmentation for sensitive content, and context-aware privacy modes that can disable sensing in sensitive places. The point is to make the device socially acceptable before it is socially normal.<span class="citation-tag">[6]</span>
+                </p>
+
+                <h3>4.4 A developer moat</h3>
+                <p>
+                    Android XR already has a strong starting point because Android apps can run on XR headsets and wired glasses, and Google is exposing familiar Android, Unity, OpenXR, WebXR, and Jetpack pathways. The moat opportunity is to make XR the easiest place to add “assistive overlay” features to existing apps: captions, navigation, summaries, translation, reminders, and contextual help. If the platform lowers developer friction, the ecosystem grows faster than a closed custom stack.<span class="citation-tag">[2]</span>
+                </p>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="section-5" class="paper-section">
+                <h2>5. New grounded inventions that are actually executable</h2>
+                
+                <h3>5.1 Event-triggered capture instead of always-on video</h3>
+                <p>
+                    Use event-based vision or hybrid event+frame sensing so the system records only when meaningful change happens. The literature already supports the power and latency advantages of event sensing, and recent work on wearable event-based systems shows strong results on tiny batteries. For glasses, this could become a killer feature: much lower power, less data, less privacy risk.<span class="citation-tag">[6]</span>
+                </p>
+
+                <h3>5.2 Intent-aware AI compression</h3>
+                <p>
+                    Before sending anything to cloud inference, compress visual input into semantic events: “person asked a question,” “sign detected,” “document opened,” “object misplaced,” “meeting started.” This is the kind of system-level compression that turns raw sensor flood into useful state. It is not a science-fiction idea; it follows directly from edge-AI and efficient-inference research.<span class="citation-tag">[6]</span>
+                </p>
+
+                <h3>5.3 Adaptive display modes</h3>
+                <p>
+                    Instead of one fixed display behavior, design multiple modes: glance mode, reading mode, translation mode, navigation mode, and immersion mode. Research on AR optics shows that visual comfort is tightly linked to focus cues and vergence–accommodation conflict, so the display engine should reduce optical strain by changing behavior rather than forcing one universal overlay style.<span class="citation-tag">[5]</span>
+                </p>
+
+                <h3>5.4 A “trust meter” for every answer</h3>
+                <p>
+                    The glasses should never feel more confident than the model really is. A simple but powerful invention is to attach confidence, provenance, and recency to answers shown in-lens or read aloud. This is a practical response to hallucination risk and a key trust feature for education, navigation, shopping, and health-adjacent use cases.<span class="citation-tag">[6]</span>
+                </p>
+
+                <h3>5.5 Social-interaction mode</h3>
+                <p>
+                    Research prototypes such as social assistive AR systems show that glasses can help with live interpersonal situations, not just solo tasks. A real product should include a “social mode” that prioritizes discretion, minimal alerts, and privacy-first cues when the wearer is talking to another person. That would reduce the feeling that the device is interrupting human interaction.<span class="citation-tag">[6]</span>
+                </p>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="section-6" class="paper-section">
+                <h2>6. Commercial reality: how to avoid the loan problem</h2>
+                <p>
+                    The product cannot assume people will finance glasses like a luxury gadget. The commercial path needs staged pricing and staged capability. First comes audio glasses for messaging, reminders, translation, and calls; then display glasses for overlays and live captions; then premium XR devices for immersive work and entertainment. This is aligned with Google’s own category split and with the fact that most Android apps already have a path into XR. The business model should feel like consumer electronics, not a research prototype.<span class="citation-tag">[2]</span>
+                </p>
+                <p>
+                    A second commercial rule is to avoid “technology-first” marketing. Users buy a result: less phone pulling, faster translation, safer navigation, better study help, hands-free work, and better access. The product should therefore lead with tasks, not with sensors, displays, or model names. Google’s own messaging already points in this direction with directions, texts, summaries, photos, and captions.<span class="citation-tag">[3]</span>
+                </p>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="section-7" class="paper-section">
+                <h2>7. What should be built next</h2>
+                <p>
+                    If I were turning this into a serious XR program, I would prioritize five deliverables:
+                </p>
+                <p>
+                    First, a wearable inference scheduler that routes every request across glass, phone, edge, and cloud. Second, a privacy kernel with hardware-visible recording states, automatic redaction, and bystander-aware modes. Third, a context graph that remembers useful facts locally and selectively syncs them. Fourth, a low-power sensing stack built around event capture and intent detection. Fifth, a developer abstraction layer so Android, Unity, and WebXR apps can add XR assistance without rewrite-heavy porting. Those five pieces form a plausible technical moat because they are systems, not single components.<span class="citation-tag">[6]</span>
+                </p>
+            </section>
+
+            <!-- Reference Section -->
+            <section id="references" class="paper-section" style="border-top: 1px solid var(--color-border); padding-top: 2rem;">
+                <h2 style="font-size: 1.5rem;">Citations &amp; References</h2>
+                <ol style="color: var(--color-text-secondary); line-height: 1.6; font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li style="margin-bottom: 0.75rem;">Android Official Announcement Channels, Spatial computing OS parameters.</li>
+                    <li style="margin-bottom: 0.75rem;">Google Developers Library, Android XR Jetpack SDK specifications.</li>
+                    <li style="margin-bottom: 0.75rem;">Google Official Blog, Gemini Multimodal Wearable Integrations, 2024–2026.</li>
+                    <li style="margin-bottom: 0.75rem;">Qualcomm Technologies, Snapdragon AR1 Gen 1 &amp; AR2 Gen 1 Architecture Specifications.</li>
+                    <li style="margin-bottom: 0.75rem;">Nature Physics &amp; Materials, Waveguide optics fabrication limits and Vergence-Accommodation conflicts.</li>
+                    <li style="margin-bottom: 0.75rem;">arXiv Preprint Repositories, Event-based imaging, privacy redaction, and speculative decoding papers.</li>
+                    <li style="margin-bottom: 0.75rem;">Google Research Publications, On-Device AI latency models.</li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="ZA Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="https://www.instagram.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Instagram</a>
+                    <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Facebook</a>
+                </div>
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Terms of Use</a>
+                    <a href="/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+                    <a href="/support" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Support</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="/udyam-certificate" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline;">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ambient orbs -->
+    <div class="ambient-orb orb-blue"></div>
+    <div class="ambient-orb orb-purple"></div>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    
+    <!-- Sound and Theme Singeltons -->
+    <script src="js/sound.js"></script>
+    <script src="js/theme.js"></script>
+    
+    <!-- Canvas BG Particles -->
+    <script src="js/three-bg.js"></script>
+    
+    <!-- Interactions -->
+    <script src="js/nav.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/command-palette.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Init Core JS modules
+            if (typeof window.initTheme === 'function') window.initTheme();
+            if (typeof window.initThreeBg === 'function') window.initThreeBg();
+            if (typeof window.initNav === 'function') window.initNav();
+            if (typeof window.initCursor === 'function') window.initCursor();
+            if (typeof window.initHud === 'function') window.initHud();
+            if (typeof window.initCommandPalette === 'function') window.initCommandPalette();
+
+            // Simple Scrollspy for side table of contents
+            var sections = document.querySelectorAll('.paper-section');
+            var tocLinks = document.querySelectorAll('.toc-link');
+
+            window.addEventListener('scroll', function () {
+                var current = '';
+                sections.forEach(function (section) {
+                    var sectionTop = section.offsetTop;
+                    if (window.scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

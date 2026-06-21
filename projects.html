@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Zaid Asim Softwares projects. Case studies in cognitive AI systems, open-world simulators, full stack applications, and experimental systems.">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Projects, Swadesh AI, Homies, Crafty Kids, Storm of Kings, UrgeGuard, TITAN OS, Chronos">
+    <meta name="author" content="Zaid Asim">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://zaidasim.com/projects">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zaidasim.com/projects">
+    <meta property="og:title" content="Our Work & Technical Case Studies | Zaid Asim Softwares">
+    <meta property="og:description" content="Explore Zaid Asim Softwares projects. Case studies in cognitive AI systems, open-world simulators, full stack applications, and experimental systems.">
+    <meta property="og:image" content="https://zaidasim.com/assets/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Zaid Asim Softwares Logo">
+    <meta property="og:site_name" content="Zaid Asim Softwares">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://zaidasim.com/projects">
+    <meta name="twitter:title" content="Our Work & Technical Case Studies | Zaid Asim Softwares">
+    <meta name="twitter:description" content="Explore Zaid Asim Softwares projects. Case studies in cognitive AI systems, open-world simulators, full stack applications, and experimental systems.">
+    <meta name="twitter:image" content="https://zaidasim.com/assets/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://zaidasim.com/projects/#webpage",
+          "url": "https://zaidasim.com/projects",
+          "name": "Our Work & Technical Case Studies | Zaid Asim Softwares",
+          "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://zaidasim.com",
+            "name": "Zaid Asim Softwares"
+          },
+          "about": {
+            "@type": "Organization",
+            "name": "Zaid Asim Softwares",
+            "url": "https://zaidasim.com"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <title>Our Work & Technical Case Studies | Zaid Asim Softwares</title>
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/v2-upgrades.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .projects-header {
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .filter-btn {
+            background: rgba(30, 30, 30, 0.3);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-smooth);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--color-accent-blue);
+            color: var(--color-text-primary);
+            background: rgba(9, 137, 216, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .projects-portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 8rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-portfolio-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem 6rem;
+            }
+        }
+
+        .portfolio-card {
+            background: rgba(20, 20, 20, 0.4);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            transition: all var(--duration-medium) var(--ease-smooth);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(9, 137, 216, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(9, 137, 216, 0.1);
+        }
+
+        .portfolio-img-wrap {
+            position: relative;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--duration-medium) var(--ease-smooth);
+        }
+
+        .portfolio-card:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-body {
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .portfolio-tag {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+
+        .tag-ai { background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue); }
+        .tag-game { background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple); }
+        .tag-web { background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal); }
+        .tag-research { background: rgba(255, 59, 108, 0.1); color: var(--color-accent-pink); }
+
+        .portfolio-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin: 0 0 1rem 0;
+            color: var(--color-text-primary);
+        }
+
+        .portfolio-desc {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.75rem;
+            flex-grow: 1;
+        }
+
+        .portfolio-tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-tech-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/projects" class="nav-link active">Projects</a>
+                    <a href="/biography" class="nav-link">Biography</a>
+                    <a href="/support" class="nav-link">Support</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Projects Header -->
+    <section class="projects-header">
+        <span class="tag">Engineering Catalog</span>
+        <h1 class="gradient-text" style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); margin-top: 1.5rem; margin-bottom: 1.5rem;">Case Studies</h1>
+        <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.6;">
+            A complete log of software applications, game titles, cognitive reasoning graphs, and causal hardware diagnostics systems shipped from India.
+        </p>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">ALL PROJECTS</button>
+        <button class="filter-btn" data-filter="ai">COGNITIVE AI</button>
+        <button class="filter-btn" data-filter="game">GAME STUDIOS</button>
+        <button class="filter-btn" data-filter="web">ENTERPRISE PLATFORMS</button>
+        <button class="filter-btn" data-filter="research">EXPERIMENTAL &amp; RESEARCH</button>
+    </div>
+
+    <!-- Projects Portfolio Grid -->
+    <main class="projects-portfolio-grid" id="projectsGrid">
+        
+        <!-- Showcase 1: Swadesh AI -->
+        <article class="portfolio-card" data-category="ai">
+            <div class="portfolio-img-wrap">
+                <img src="assets/swadesh-ai.png" alt="Swadesh AI Interface" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-ai">AI Platform</span>
+                <h3 class="portfolio-title">Swadesh AI</h3>
+                <p class="portfolio-desc">A cognitive multi-agent platform designed to maintain persistent context loops and long-term semantic memory across separate API sessions.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Python</span>
+                    <span class="portfolio-tech-tag">n8n</span>
+                    <span class="portfolio-tech-tag">VectorDB</span>
+                    <span class="portfolio-tech-tag">FastAPI</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/swadesh" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <button class="project-deep-btn" data-project-id="swadesh-ai" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 2: Project Chronos -->
+        <article class="portfolio-card" data-category="research">
+            <div class="portfolio-img-wrap">
+                <img src="assets/chronos.png" alt="Project Chronos Observability" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-research">Fault Diagnostics</span>
+                <h3 class="portfolio-title">Project Chronos</h3>
+                <p class="portfolio-desc">A topology-aware causal observabilty fusion pipeline diagnosing failures when telemetry is degraded or clock domains are loose.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Causal Logic</span>
+                    <span class="portfolio-tech-tag">Observability</span>
+                    <span class="portfolio-tech-tag">Virtualization</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="chronos" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 3: TITAN -->
+        <article class="portfolio-card" data-category="research">
+            <div class="portfolio-img-wrap">
+                <img src="assets/titan.png" alt="TITAN reasoning graph" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-research">Reasoning Architecture</span>
+                <h3 class="portfolio-title">TITAN</h3>
+                <p class="portfolio-desc">Executable intelligence system treating reasoning as a graph verification process, optimizing planning over connected semantic maps.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Reasoning Graphs</span>
+                    <span class="portfolio-tech-tag">Semantic Memory</span>
+                    <span class="portfolio-tech-tag">Verification</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="titan" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 4: QTA-X -->
+        <article class="portfolio-card" data-category="research">
+            <div class="portfolio-img-wrap">
+                <img src="assets/qta-x.png" alt="QTA-X Manufacturing Platform" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-research">Atomic Manufacturing</span>
+                <h3 class="portfolio-title">QTA-X</h3>
+                <p class="portfolio-desc">A Validation-Gated Atomic Manufacturing Platform capable of designing, validating, and orchestrating atomic-scale fabrication systems under cryogenics.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Cryogenics</span>
+                    <span class="portfolio-tech-tag">Digital Twin</span>
+                    <span class="portfolio-tech-tag">Vacuum</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="qta-x" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 5: Android XR Systems Research -->
+        <article class="portfolio-card" data-category="research">
+            <div class="portfolio-img-wrap">
+                <img src="assets/android-xr.png" alt="Android XR Glasses" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-research">Research Paper</span>
+                <h3 class="portfolio-title">Android XR Systems Research</h3>
+                <p class="portfolio-desc">A deep systems-level review paper draft addressing spatial computing moats, hardware-visible privacy gates, and event-based vision pipelines.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Android XR</span>
+                    <span class="portfolio-tech-tag">Spatial compute</span>
+                    <span class="portfolio-tech-tag">Edge AI</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/android-xr-research" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">Read Paper</a>
+                    <button class="project-deep-btn" data-project-id="android-xr-research" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 6: UrgeGuard AI -->
+        <article class="portfolio-card" data-category="web">
+            <div class="portfolio-img-wrap">
+                <img src="assets/urgeguard.png" alt="UrgeGuard AI Interface" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-web">Habit Tracker</span>
+                <h3 class="portfolio-title">UrgeGuard AI</h3>
+                <p class="portfolio-desc">Gamified habit tracker designed around behavioral psychology, variable reward loops, and glassmorphic stats widgets.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">React</span>
+                    <span class="portfolio-tech-tag">TailwindCSS</span>
+                    <span class="portfolio-tech-tag">LocalStorage</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="urgeguard" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 7: Zaid Asim Softwares -->
+        <article class="portfolio-card" data-category="web">
+            <div class="portfolio-img-wrap">
+                <img src="assets/zaid-asim-softwares.png" alt="Zaid Asim Softwares Logo" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-web">Official Enterprise</span>
+                <h3 class="portfolio-title">Zaid Asim Softwares</h3>
+                <p class="portfolio-desc">Official UDYAM-registered development and AI consulting platform delivering enterprise platforms globally.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Full Stack</span>
+                    <span class="portfolio-tech-tag">Automation</span>
+                    <span class="portfolio-tech-tag">Cloudflare</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="zaid-asim-softwares" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 8: Crafty Kids of India -->
+        <article class="portfolio-card" data-category="game">
+            <div class="portfolio-img-wrap">
+                <img src="assets/crafty-kids.png" alt="Crafty Kids of India" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-game">Educational Game</span>
+                <h3 class="portfolio-title">Crafty Kids of India</h3>
+                <p class="portfolio-desc">Interactive cultural crafting game celebrating Indian toy-making traditions, recognized at the STEM Innovation League.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Unity</span>
+                    <span class="portfolio-tech-tag">C#</span>
+                    <span class="portfolio-tech-tag">Blender</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="crafty-kids" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 9: Storm of Kings -->
+        <article class="portfolio-card" data-category="game">
+            <div class="portfolio-img-wrap">
+                <img src="assets/storm-of-kings.png" alt="Storm of Kings" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-game">Adventure RPG</span>
+                <h3 class="portfolio-title">Storm of Kings</h3>
+                <p class="portfolio-desc">A 2D adventure RPG layout combining narrative episodic progress, character stats logic, and customized pixel-art environment configurations.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Unity</span>
+                    <span class="portfolio-tech-tag">C#</span>
+                    <span class="portfolio-tech-tag">Pixel Art</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <button class="project-deep-btn" data-project-id="storm-of-kings" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 10: Homies -->
+        <article class="portfolio-card" data-category="game">
+            <div class="portfolio-img-wrap">
+                <img src="assets/homies.png" alt="Homies open world" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-game">Open World Simulator</span>
+                <h3 class="portfolio-title">Homies</h3>
+                <p class="portfolio-desc">GTA-style open-world life simulator with custom vehicles, economy modules, real property assets, and permanent progression.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Unity</span>
+                    <span class="portfolio-tech-tag">C#</span>
+                    <span class="portfolio-tech-tag">Web Audio API</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/homies" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <button class="project-deep-btn" data-project-id="homies" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="ZA Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="https://www.instagram.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Instagram</a>
+                    <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Facebook</a>
+                </div>
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Terms of Use</a>
+                    <a href="/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+                    <a href="/support" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Support</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="/udyam-certificate" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline;">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ambient orbs -->
+    <div class="ambient-orb orb-blue"></div>
+    <div class="ambient-orb orb-purple"></div>
+    <div class="ambient-orb orb-magenta"></div>
+
+    <!-- Case Study Modal Overlays -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" aria-label="Close Case Study">×</button>
+            <img src="" alt="" class="modal-header-image" id="modalImage">
+            <div class="modal-body">
+                <div class="modal-title-row">
+                    <h3 class="modal-title" id="modalTitle">Project Title</h3>
+                    <div class="modal-meta">
+                        <span class="idea-status" id="modalStatus">Status</span>
+                    </div>
+                </div>
+                <p class="modal-desc-lead" id="modalTagline">Project Tagline</p>
+                <div class="modal-content-grid">
+                    <div class="modal-story-content" id="modalStory"></div>
+                    <div class="modal-sidebar">
+                        <div>
+                            <span class="sidebar-block-title">Key Technologies</span>
+                            <div class="sidebar-tech-list" id="modalTechList"></div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <span class="sidebar-block-title">What I Learned</span>
+                            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5;" id="modalLearned"></p>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 2rem;">
+                            <a href="" class="modal-action-btn primary-btn" id="modalActionBtn" target="_blank" rel="noopener">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    
+    <!-- Sound and Theme Singeltons -->
+    <script src="js/sound.js"></script>
+    <script src="js/theme.js"></script>
+    
+    <!-- Canvas BG Particles -->
+    <script src="js/three-bg.js"></script>
+    
+    <!-- Interactions -->
+    <script src="js/nav.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/command-palette.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Core JS modules
+            if (typeof window.initTheme === 'function') window.initTheme();
+            if (typeof window.initThreeBg === 'function') window.initThreeBg();
+            if (typeof window.initNav === 'function') window.initNav();
+            if (typeof window.initCursor === 'function') window.initCursor();
+            if (typeof window.initHud === 'function') window.initHud();
+            if (typeof window.initModals === 'function') window.initModals();
+            if (typeof window.initCommandPalette === 'function') window.initCommandPalette();
+
+            // Portfolio Filtering Script
+            var filterButtons = document.querySelectorAll('.filter-btn');
+            var cards = document.querySelectorAll('.portfolio-card');
+
+            filterButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Play click sound
+                    if (window.soundSynth && typeof window.soundSynth.playClick === 'function') {
+                        window.soundSynth.playClick();
+                    }
+
+                    var category = button.dataset.filter;
+
+                    cards.forEach(function (card) {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'flex';
+                            gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4 });
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
