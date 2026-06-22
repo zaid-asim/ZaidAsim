@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Homies: a massive open-world multiplayer sandbox game set in a vibrant Indian metropolis, blending social, economic, and emergent systems.">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Zaid Asim developer, Zaid Asim software engineer, Zaid Asim Hyderabad, Homies, Homies game, Open-World Simulator, Sandbox Game India">
+    <meta name="author" content="Zaid Asim">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://zaidasim.com/projects/homies">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zaidasim.com/projects/homies">
+    <meta property="og:title" content="Homies | Open-World Multiplayer Sandbox">
+    <meta property="og:description" content="Explore Homies: a massive open-world multiplayer sandbox game set in a vibrant Indian metropolis, blending social, economic, and emergent systems.">
+    <meta property="og:image" content="https://zaidasim.com/assets/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Zaid Asim Softwares Logo">
+    <meta property="og:site_name" content="Zaid Asim Softwares">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://zaidasim.com/projects/homies">
+    <meta name="twitter:title" content="Homies | Open-World Multiplayer Sandbox">
+    <meta name="twitter:description" content="Explore Homies: a massive open-world multiplayer sandbox game set in a vibrant Indian metropolis, blending social, economic, and emergent systems.">
+    <meta name="twitter:image" content="https://zaidasim.com/assets/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "VideoGame",
+          "@id": "https://zaidasim.com/projects/homies/#game",
+          "name": "Homies",
+          "description": "An open-world multiplayer sandbox game set in a vibrant Indian metropolis, inspired by Hyderabad, blending social and economic progression systems.",
+          "genre": "Sandbox, Multiplayer, Open-World Simulator",
+          "author": {
+            "@type": "Person",
+            "name": "Zaid Asim"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Zaid Asim Softwares"
+          },
+          "gamePlatform": ["PC", "Android"]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://zaidasim.com/projects/homies/#webpage",
+          "url": "https://zaidasim.com/projects/homies",
+          "name": "Homies | Open-World Multiplayer Sandbox",
+          "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://zaidasim.com",
+            "name": "Zaid Asim Softwares"
+          },
+          "about": {
+            "@id": "https://zaidasim.com/projects/homies/#game"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <title>Homies | Open-World Multiplayer Sandbox | Zaid Asim Softwares</title>
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <!-- Custom page styling -->
+    <style>
+        .homies-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .homies-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            .homies-sidebar {
+                display: none !important;
+            }
+        }
+
+        /* Sidebar TOC */
+        .homies-sidebar {
+            position: sticky;
+            top: calc(var(--nav-height) + 2rem);
+            height: fit-content;
+            max-height: calc(100vh - var(--nav-height) - 4rem);
+            overflow-y: auto;
+            padding-right: 1.5rem;
+            border-right: 1px solid var(--color-border);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toc-link {
+            display: block;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--duration-fast) var(--ease-smooth);
+            border-left: 2px solid transparent;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--color-accent-blue);
+            background: rgba(9, 137, 216, 0.05);
+            border-left-color: var(--color-accent-blue);
+            padding-left: 1rem;
+        }
+
+        /* Content Styles */
+        .homies-section {
+            margin-bottom: 6rem;
+            scroll-margin-top: calc(var(--nav-height) + 2rem);
+        }
+
+        .homies-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            color: var(--color-text-primary);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            letter-spacing: var(--letter-spacing-tight);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0.75rem;
+        }
+
+        .homies-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-text-primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        .homies-section p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+        }
+
+        .homies-section ul {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .homies-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Statistics Card Block */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-box {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color var(--duration-fast);
+        }
+
+        .stat-box:hover {
+            border-color: var(--color-accent-blue);
+        }
+
+        .stat-val {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent-blue);
+            margin-bottom: 0.5rem;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-lbl {
+            font-size: 0.9rem;
+            color: var(--color-text-primary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-desc {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Callout */
+        .callout-box {
+            background: rgba(9, 137, 216, 0.05);
+            border-left: 4px solid var(--color-accent-blue);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .callout-box p {
+            margin-bottom: 0;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--color-text-primary);
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(30, 30, 30, 0.3);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all var(--duration-fast) var(--ease-smooth);
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-accent-blue);
+            background: rgba(9, 137, 216, 0.03);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-text-primary);
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Roadmap Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding-left: 2rem;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: calc(-2rem - 6px);
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-accent-blue);
+            box-shadow: 0 0 10px var(--color-accent-blue);
+        }
+
+        .timeline-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: var(--color-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-meta {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--color-accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content {
+            background: rgba(30, 30, 30, 0.2);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        .timeline-content ul {
+            margin-bottom: 0;
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        /* Table styling */
+        .submission-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .submission-table th, .submission-table td {
+            border: 1px solid var(--color-border);
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .submission-table th {
+            background: rgba(20, 20, 20, 0.8);
+            font-family: var(--font-display);
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+
+        .submission-table td {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .submission-table tr:nth-child(even) td {
+            background: rgba(15, 15, 15, 0.2);
+        }
+    </style>
+    <link rel="stylesheet" href="../css/bundle.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Nav Bar -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/logo.png" alt="Zaid Asim Softwares Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/projects" class="nav-link">Projects</a>
+                    <a href="/biography" class="nav-link">Biography</a>
+                    <a href="/ideas" class="nav-link">Ideas Lab</a>
+                    <a href="/ideas/youtube" class="nav-link">YouTube</a>
+                    <a href="/support" class="nav-link">Support</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Homies Hero Section -->
+    <section class="section homies-hero" style="padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 4rem;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 900px; margin: 0 auto 4rem;" data-animate="fade-up">
+                <span class="section-tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue); padding: 0.35rem 1rem; border-radius: 100px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">GAME PROJECT</span>
+                <h1 style="font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 6.5rem); line-height: 1.05; letter-spacing: var(--letter-spacing-tight); margin-top: 1.5rem; margin-bottom: 2rem;">
+                    Homies
+                </h1>
+                <p class="section-subtitle" style="font-size: 1.35rem; color: var(--color-text-secondary); line-height: 1.6; max-width: 800px; margin: 0 auto 3rem;">
+                    A massive open-world multiplayer sandbox set in a vibrant, ultra-realistic Indian metropolis.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#part-8" class="contact-btn primary-btn" style="padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px;">View Submission →</a>
+                    <a href="/#projects" class="contact-btn secondary-btn" style="padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border);">View Project Catalog</a>
+                </div>
+            </div>
+            
+            <!-- Showcase Image Card -->
+            <div style="max-width: 1100px; margin: 0 auto; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-xl);" data-animate="scale-in">
+                <img src="../assets/homies.png" alt="Homies City Showcase" style="width: 100%; display: block; filter: brightness(0.95);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Column Layout -->
+    <div class="homies-layout">
+        
+        <!-- Sticky Table of Contents Sidebar -->
+        <aside class="homies-sidebar">
+            <h4 style="font-family: var(--font-display); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; color: var(--color-text-primary);">Document Sections</h4>
+            <ul class="toc-list">
+                <li><a href="#intro" class="toc-link">Project Overview</a></li>
+                <li><a href="#part-1" class="toc-link">Part I: Market & Competitors</a></li>
+                <li><a href="#part-2" class="toc-link">Part II: Engagement & Monetization</a></li>
+                <li><a href="#part-3" class="toc-link">Part III: Game Concept & Features</a></li>
+                <li><a href="#soundtrack" class="toc-link">Soundtrack & Audio</a></li>
+                <li><a href="#part-4" class="toc-link">Part IV: Technology & Platforms</a></li>
+                <li><a href="#part-5" class="toc-link">Part V: Revenue & Partnerships</a></li>
+                <li><a href="#part-6" class="toc-link">Part VI: Roadmap & Budget</a></li>
+                <li><a href="#part-7" class="toc-link">Part VII: Positioning & Audience</a></li>
+                <li><a href="#part-8" class="toc-link">Part VIII: PlayStation Submission</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="homies-main">
+            
+            <!-- Introduction Section -->
+            <section id="intro" class="homies-section">
+                <h2>Project Overview</h2>
+                <p>
+                    <strong>Homies</strong> is conceived as a <em>massive open-world multiplayer sandbox</em> set in a vibrant, ultra-realistic Indian metropolis (inspired by Hyderabad), blending the freedom of <em>GTA</em>-style gameplay with deep social, economic, and emergent systems. The ambition is to create an online living world with <em>permanent progression</em> – not a finite story campaign – where players can own property, run businesses, customize vehicles, and forge social ties and rivalries.
+                </p>
+                
+                <div class="stat-grid" style="margin-top: 2rem;">
+                    <div class="stat-box">
+                        <span class="stat-val">$56.2B</span>
+                        <span class="stat-lbl">Global Sandbox Market</span>
+                        <span class="stat-desc">Projected sandbox/open-world game revenue by 2033, growing at 11.2% CAGR.</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val">$17.8B</span>
+                        <span class="stat-lbl">India Gaming Sector</span>
+                        <span class="stat-desc">Projected size of the Indian gaming market by 2035 with a CAGR of 15.6%.</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val">84.6%</span>
+                        <span class="stat-lbl">Mobile/Cloud Driven</span>
+                        <span class="stat-desc">India's gaming revenue is heavily mobile-first, with a strong shift to cloud.</span>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <p>
+                        "Key Market Statistic: Indian gamers skew young (15–24 years old account for ~44% of spend) and mobile-first, yet there is a rising interest in high-fidelity titles via cloud streaming enabled by 5G rollouts."
+                    </p>
+                </div>
+            </section>
+
+            <!-- Part I: Market & Competitive Landscape -->
+            <section id="part-1" class="homies-section">
+                <h2>Part I: Market & Competitive Landscape</h2>
+                <p>
+                    Broad market data confirm that open-world and live-service games are a massive growth category. Global open-world game revenue is scaling from $21.8B in 2024 to $56.2B by 2033. The Asia-Pacific region, driven by India's rapidly expanding internet economy, represents one of the fastest-growing geographical segments.
+                </p>
+
+                <h3>Global Trends</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>📈 Sandbox Dominance</h4>
+                        <p>Open-world simulators dominate sales charts. <em>GTA V</em> is the second-best-selling game ever (≈230M copies, ≈$10B revenue), and its persistent mode <em>GTA Online</em> generates billions annually through microtransactions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔄 Live-Service Transition</h4>
+                        <p>The industry has shifted to games-as-a-service (GaaS). Fortnite generated over $3.5B in 2023 by keeping players engaged with regular seasonal cosmetic rollouts and massive multiplayer live events.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>☁️ Cloud & Cross-Play</h4>
+                        <p>Players expect accessibility. Cloud services (like PlayStation Cloud Streaming) and cross-platform accounts allow console-quality AAA titles to run on high-end and budget mobile devices alike.</p>
+                    </div>
+                </div>
+
+                <h3>Competitor Analysis</h3>
+                <ul>
+                    <li><strong>Rockstar & AAA Benchmarks:</strong> Rockstar’s titles set the standard for city sandboxes. However, developing at this scale is immensely costly; <em>Red Dead Redemption 2</em> employed over 1,600 developers and had a combined development and marketing budget near $500M.</li>
+                    <li><strong>Emerging Franchises:</strong> Franchises like Ubisoft's <em>Assassin's Creed</em> and CD Projekt Red's <em>Cyberpunk 2077</em> showcase the appetite for large open maps, but their business models often lean on single-player campaigns. Call of Duty's live service out-earns standard releases (Black Ops Cold War cost ~$700M lifetime).</li>
+                    <li><strong>Multiplayer Open Worlds:</strong> While games like <em>Destiny 2</em> and <em>Black Desert Online</em> have strong communities, there is a relative gap: no existing title serves as a living, cultural Indian metropolis gangster simulator. Homies leverages this unique positioning.</li>
+                    <li><strong>Regional Focus (India):</strong> India's gaming audience consumes localized vernacular content (Hindi, Telugu, etc.) far more deeply. Authenticity in dialogue, regional music, and Hyderabad's visual aesthetic offers a massive competitive differentiator.</li>
+                </ul>
+            </section>
+
+            <!-- Part II: Player Engagement & Monetization -->
+            <section id="part-2" class="homies-section">
+                <h2>Part II: Player Engagement & Monetization</h2>
+                <p>
+                    Open-world players crave freedom, exploration, and self-expression. By providing a sandbox where players can continuously set their own goals, Homies builds a gameplay loop that avoids the drop-off seen in traditional story campaigns.
+                </p>
+
+                <h3>Player Motivations & Retention</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>⚡ Emergent Progression</h4>
+                        <p>A lifestyle RPG structure where skills level up through usage (e.g., driving improves handling, business deals increase trade margins) to reward natural play.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>👥 Social Systems</h4>
+                        <p>Support for custom player gangs, co-op robberies/heists, crew properties, and competitive PvP turf wars to establish long-term social retention hooks.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🗓️ Live Operations</h4>
+                        <p>A continuous calendar of events, adding seasonal vehicles, unique festival-themed missions, and limited-time competitive leaderboards to keep the city fresh.</p>
+                    </div>
+                </div>
+
+                <h3>Monetization Strategy</h3>
+                <p>
+                    Homies is designed as a premium purchase on PC and consoles, paired with optional cosmetics and convenience packages. On mobile platforms, it will leverage a free-to-play tier to maximize player acquisition, backed by a strict anti-pay-to-win system:
+                </p>
+                <ul>
+                    <li><strong>Cosmetics & Customization:</strong> In-game stores offering custom car decals, neon body kits, high-end housing layouts, and character apparel. A seasonal Battle Pass will provide themed rewards.</li>
+                    <li><strong>In-Game Currency Packs:</strong> Optional packs to acquire in-game cash (Shark Card style) for immediate property or business upgrades, carefully balanced so active players can comfortably earn currency through standard gameplay.</li>
+                    <li><strong>Contextual Brand Integration:</strong> Subtle, non-intrusive sponsorships matching real-world urban landscapes (e.g., branded soda vending machines, real-world billboard advertisements, event sponsors). The in-game ad market is projected to reach $17.7B by 2030.</li>
+                    <li><strong>Major Expansions:</strong> Post-launch paid DLC packages that open new map expansions, additional story missions, and unique mechanics.</li>
+                </ul>
+            </section>
+
+            <!-- Part III: Game Concept & Core Features -->
+            <section id="part-3" class="homies-section">
+                <h2>Part III: Game Concept & Core Features</h2>
+                <p>
+                    Homies merges racing, RPG mechanics, strategy, and business management into a single, cohesive ecosystem.
+                </p>
+
+                <h3>Setting & Theme</h3>
+                <p>
+                    The environment is a massive representation of Hyderabad and its surrounding countryside. The map transitions between dense urban slums, modern skyscraper business parks, industrial shipyards, and rustic rural highways. The atmosphere features ultra-realistic textures, monsoon rain simulations, local street food stalls, dynamic traffic, and signage in Telugu, Hindi, and English.
+                </p>
+
+                <h3>Core Gameplay Pillars</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>💼 Business Ownership</h4>
+                        <p>Buy, manage, and upgrade apartments, custom garages, or commercial businesses (restaurants, taxi fleets). Commercial assets yield passive income based on pricing strategy, employee hire ratings, and supply logistics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>⚖️ Factions & Law</h4>
+                        <p>The city reacts dynamically. Commit crimes to trigger law enforcement responses (police checkpoints, SWAT raids, business audits) or complete corporate missions to shift reputation and unlock faction benefits.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🏎️ Deep Vehicle Culture</h4>
+                        <p>Vehicles are central characters. Includes realistic Chaos Physics handling, drift tuning, weight shifts based on trunk cargo, performance part modifications, and a massive array of collectible cars and bikes.</p>
+                    </div>
+                </div>
+
+                <h3>Unique Selling Points (USPs)</h3>
+                <ol>
+                    <li><strong>Indian Cultural Context:</strong> Features parodies of local media (satirical news channels, roasting YouTubers like "Dhurrathee Katti"), authentic vernacular dialogue, and street life elements.</li>
+                    <li><strong>Social Living World:</strong> Real-time in-game economies that respond to supply and demand. Players can buy corporate shares in each other's businesses or trade commodities in real-time.</li>
+                    <li><strong>Emergent Storytelling:</strong> Instead of a fixed campaign, the city tells stories. Random NPC gang fights, celebrity rumors, or unexpected police chases provide constant gameplay opportunities.</li>
+                </ol>
+            </section>
+
+            <!-- Soundtrack & Audio Section -->
+            <section id="soundtrack" class="homies-section">
+                <h2>Soundtrack & Audio Experience</h2>
+                <p>
+                    Sound is the pulse of <strong>Homies</strong>. To capture the raw energy of urban street culture, the game features a curated sonic ecosystem that reflects its high-speed racing and gritty underground lore. The soundtrack acts as the narrative bridge, blending regional Indian influences with global street music.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; margin-bottom: 2rem; align-items: center;">
+                    <div>
+                        <h3>The "ZAI" Album & "Hustlaa Hustlaa"</h3>
+                        <p>
+                            At the center of this audio experience is the upcoming original soundtrack album, <strong>"ZAI"</strong>. The flagship lead single, <strong>"Hustlaa Hustlaa"</strong>, is a high-octane English hip-hop track specifically produced to set the tone for the city's night racing scene.
+                        </p>
+                        <p>
+                            Combining heavy synthetic 808 sub-bass, rapid hi-hat rolls, and sharp lyrical delivery, the track plays exclusively during high-stakes drift events and illegal underground highway runs. It encapsulates the ambition, grind, and relentless hustle of the Hyderabad metropolis.
+                        </p>
+                    </div>
+                    <div style="border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+                        <img src="../assets/zai-album.png" alt="ZAI Album Cover" style="width: 100%; display: block; object-fit: cover;">
+                    </div>
+                </div>
+
+                <h3>Emergent Audio Engine</h3>
+                <p>
+                    The game doesn't just play tracks; it adapts them. Using a dynamic spatial audio system:
+                </p>
+                <ul>
+                    <li><strong>Adaptive Radio:</strong> Radio stations fade and glitch when entering tunnels or underground complexes, simulating real-world signal attenuation.</li>
+                    <li><strong>RPM-Synced Beats:</strong> The soundtrack's low-end frequencies dynamically filter and sync with high-RPM engine notes and turbo spooling during intense racing sequences, heightening player adrenaline.</li>
+                    <li><strong>Metropolitan Soundscapes:</strong> Dynamic street noise, roadside food vendor chatter, localized Telugu/Hindi street calls, and passing vehicle audio reflections create an incredibly rich, living acoustic environment.</li>
+                </ul>
+            </section>
+
+            <!-- Part IV: Technology & Platforms -->
+            <section id="part-4" class="homies-section">
+                <h2>Part IV: Technology & Platforms</h2>
+                <p>
+                    To support next-generation details alongside wide accessibility, Homies adopts a highly scalable cross-platform backend.
+                </p>
+
+                <h3>Platform Strategy</h3>
+                <p>
+                    Homies will launch primarily on <strong>PlayStation 5</strong> (with PS4 support), Xbox Series X/S, and PC, featuring full cross-play accounts. Additionally, a mobile tier will allow players on Android/iOS to access the persistent world, either via a lightweight mobile client or console-quality cloud streaming through PlayStation Plus Premium.
+                </p>
+
+                <h3>Engine and Architecture</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🎮 Unreal Engine 5</h4>
+                        <p>Leveraging <strong>Nanite</strong> geometry and <strong>Lumen</strong> global illumination for photorealistic lighting and dense city structures. <strong>World Partition</strong> streams large 10+ km maps seamlessly without load screens.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>☁️ Authoritative Backend</h4>
+                        <p>A dedicated server cluster (AWS/Azure/GCP) to track world states and handle transactions securely, minimizing hacking and client-side desync.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>⚙️ Networking Netcode</h4>
+                        <p>Advanced lag compensation and server-side prediction systems designed to maintain sync during high-speed vehicle chases and large-scale PvP combat.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part V: Monetization and Partnerships -->
+            <section id="part-5" class="homies-section">
+                <h2>Part V: Monetization and Partnerships</h2>
+                <p>
+                    The monetization model is built on multiple, non-intrusive revenue channels that prioritize long-term player goodwill.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🛒 Microtransactions</h4>
+                        <p>Optional purchases for character apparel, vehicle wraps, housing items, or seasonal battle passes. Features no pay-to-win locks.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📺 Immersive Ads</h4>
+                        <p>Dynamic, contextual advertising in partnership with agencies like Anzu. Billboards, buses, and soda machines display real ads to enhance immersion and revenue.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🤝 Sony Ecosystem</h4>
+                        <p>Cross-promotional collaborations with Sony Music to introduce licensed regional and global radio tracks, and PlayStation-themed easter eggs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part VI: Development Roadmap & Budget -->
+            <section id="part-6" class="homies-section">
+                <h2>Part VI: Development Roadmap & Budget</h2>
+                <p>
+                    Homies requires a disciplined development pipeline to deliver on its large-scale sandbox promises.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item" data-animate="fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-title">Phase 1: Pre-Production & Prototyping</div>
+                        <div class="timeline-meta">Year 1 · Core Team (20-50 people)</div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Finalize core design documents and layout the initial 10+ km city map grid.</li>
+                                <li>Build a playable <em>vertical slice</em> (a single race, mini-robbery, and basic economy transaction) to validate core loops.</li>
+                                <li>Configure Unreal Engine 5 toolchains, asset pipelines, and initial network replication tests.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-animate="fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-title">Phase 2: Full Production</div>
+                        <div class="timeline-meta">Years 2–4 · Scale-Up (300-500+ people)</div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Concurrent development of city districts, detailed interior modeling, and advanced vehicle systems.</li>
+                                <li>Scripting hundreds of open-world encounters, business structures, and faction logic.</li>
+                                <li>Regular closed multiplayer testing (Tech Alpha, closed Beta) to stress-test cloud servers and netcode.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-animate="fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-title">Phase 3: Launch & Live Service</div>
+                        <div class="timeline-meta">Year 5+ · Operations Team (20-40 people)</div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Staggered global launch: primary exclusive release on PlayStation, followed by PC, Xbox, and mobile.</li>
+                                <li>Maintain a dedicated Live-Ops team for customer support, server maintenance, anti-cheat, and regular patches.</li>
+                                <li>Execute a monthly update calendar, delivering seasonal cosmetics, content updates, and in-game brand promotions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Budget Projections</h3>
+                <p>
+                    To achieve global AAA quality, the projected financial layout scales up to a total of <strong>$450M USD</strong>:
+                </p>
+                <ul>
+                    <li><strong>Development Costs:</strong> $300M USD (covering engineering, writing, art, QA, and licensing).</li>
+                    <li><strong>Marketing & PR:</strong> $150M USD (leveraging global campaigns, regional events, and influencer partnerships).</li>
+                    <li><strong>Infrastructure:</strong> Server hosting and CDN expenses are projected at $1–3M/year at launch, scaling with concurrent player counts.</li>
+                </ul>
+            </section>
+
+            <!-- Part VII: Positioning & Audience -->
+            <section id="part-7" class="homies-section">
+                <h2>Part VII: Positioning & Audience</h2>
+                <p>
+                    Homies is designed to stand out in the crowded open-world market through unique thematic choices.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🏷️ Working Title</h4>
+                        <p><strong>"Homies"</strong> (capturing the colloquial urban Indian slang for close friends/associates).</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎯 Primary Target</h4>
+                        <p>Gamers aged 18–35 who play titles like <em>GTA V</em>, <em>Yakuza</em>, or open-world MMOs, with a strong focus on self-directed sandbox loops.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🗓️ Release Window</h4>
+                        <p>Targeting a <strong>2029–2030</strong> release window, strategically scheduled to avoid major competing open-world launches (e.g., post-2027/2028).</p>
+                    </div>
+                </div>
+
+                <p>
+                    <strong>Diversity & Inclusion:</strong> The game features inclusive customization options (male, female, non-binary character models) and comprehensive accessibility filters, reflecting the growing diversity of global and regional gaming demographics.
+                </p>
+            </section>
+
+            <!-- Part VIII: PlayStation Submission Summary -->
+            <section id="part-8" class="homies-section">
+                <h2>Part VIII: Project Summary for PlayStation Submission</h2>
+                <p>
+                    A summarized breakdown of the Homies project proposal designed for publisher evaluation:
+                </p>
+
+                <table class="submission-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Details & Specifications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Working Title</strong></td>
+                            <td>Homies (Persistent open-world multiplayer sandbox/RPG)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Target Platforms</strong></td>
+                            <td>PlayStation 5 (Primary Hero Project / PS4 support), PC, Xbox Series X/S, Mobile/Cloud (PS Plus Premium)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Core Genre</strong></td>
+                            <td>Third-person action-RPG sandbox, vehicle simulator, economic management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Setting</strong></td>
+                            <td>A dynamic, ultra-realistic representation of Hyderabad and surrounding outskirts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Target Launch</strong></td>
+                            <td>Late-2020s (2029–2030)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Demographics</strong></td>
+                            <td>Core gamers aged 18–35, with a primary regional focus on India and global sandbox fans</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monetization</strong></td>
+                            <td>Premium retail sale + non-pay-to-win cosmetics, in-game ads, and seasonal passes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technology</strong></td>
+                            <td>Unreal Engine 5 (Nanite, Lumen, World Partition) + authoritative AWS/Azure servers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../assets/logo.png" alt="Zaid Asim Softwares Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="https://open.spotify.com/user/31mag523uo4zxrrjyz6rlqnyfe74" target="_blank" rel="noopener" class="footer-social-link">Spotify</a>
+                </div>
+
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Terms of Use</a>
+                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Privacy Policy</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="../assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-blue)'" onmouseout="this.style.color='inherit'">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Placeholders to avoid script errors -->
+    <div style="display:none;" id="visionCanvasContainer"></div>
+    <div style="display:none;" id="achievementContainer"></div>
+
+    <!-- Scripts -->
+    <!-- App Scripts -->
+    <!-- Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sections = document.querySelectorAll('.homies-section');
+            var navLinks = document.querySelectorAll('.toc-link');
+
+            var observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -60% 0px',
+                threshold: 0
+            };
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var activeId = entry.target.getAttribute('id');
+                        navLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + activeId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(function(section) {
+                observer.observe(section);
+            });
+        });
+    </script>
+    <script src="../js/vendor.bundle.js"></script>
+    <script src="../js/app.bundle.js"></script>
+</body>
+</html>

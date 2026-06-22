@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Zaid Asim developer, Zaid Asim software engineer, Zaid Asim Hyderabad">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
@@ -14,16 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/tokens.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/hud.css">
-    <link rel="stylesheet" href="css/v2-upgrades.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
     <style>
         .error-layout {
             display: flex;
@@ -73,6 +64,7 @@
             margin: 0 auto 3rem;
         }
     </style>
+    <link rel="stylesheet" href="css/bundle.css">
 </head>
 <body>
 
@@ -87,7 +79,7 @@
     <header class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="nav-brand">
-                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <img src="assets/logo.png" alt="Zaid Asim Softwares Logo" class="nav-logo">
                 <span class="nav-brand-text">
                     Zaid Asim
                     <span class="nav-brand-subtext">Softwares</span>
@@ -117,20 +109,9 @@
     <div class="ambient-orb orb-purple"></div>
 
     <!-- Scripts -->
-    <script src="js/three.min.js"></script>
-    <script src="js/gsap.min.js"></script>
-    
     <!-- Sound and Theme Singeltons -->
-    <script src="js/sound.js"></script>
-<script src="js/theme.js"></script>
-    
     <!-- Canvas BG Particles -->
-    <script src="js/three-bg.js"></script>
-    
     <!-- Interactions -->
-    <script src="js/cursor.js"></script>
-    <script src="js/hud.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (typeof window.initTheme === 'function') window.initTheme();
@@ -148,5 +129,7 @@
             }
         });
     </script>
+    <script src="js/vendor.bundle.js"></script>
+    <script src="js/app.bundle.js"></script>
 </body>
 </html>

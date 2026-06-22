@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ideas Lab: Explore conceptual blueprints, hardware proposals, and active research by Zaid Asim Softwares.">
-    <meta name="keywords" content="Zaid Asim, Ideas Lab, Blueprints, Active Research, AI Memory Bridge, Aeroxnet, Cloud Handheld, Zaid Asim Softwares">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Zaid Asim developer, Zaid Asim software engineer, Zaid Asim Hyderabad, Ideas Lab, Blueprints, Active Research, AI Memory Bridge, Aeroxnet, Cloud Handheld">
     <meta name="author" content="Zaid Asim">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="robots" content="index, follow">
@@ -65,16 +65,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/tokens.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/hud.css">
-    <link rel="stylesheet" href="css/v2-upgrades.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
     <style>
         .filter-container {
             display: flex;
@@ -153,6 +143,7 @@
             pointer-events: none;
         }
     </style>
+    <link rel="stylesheet" href="css/bundle.css">
 </head>
 <body>
 
@@ -172,7 +163,7 @@
     <header class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="nav-brand">
-                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <img src="assets/logo.png" alt="Zaid Asim Softwares Logo" class="nav-logo">
                 <span class="nav-brand-text">
                     Zaid Asim
                     <span class="nav-brand-subtext">Softwares</span>
@@ -189,7 +180,7 @@
                     <a href="/projects" class="nav-link">Projects</a>
                     <a href="/biography" class="nav-link">Biography</a>
                     <a href="/ideas" class="nav-link active">Ideas Lab</a>
-                    <a href="/youtube" class="nav-link">YouTube</a>
+                    <a href="/ideas/youtube" class="nav-link">YouTube</a>
                     <a href="/support" class="nav-link">Support</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
@@ -212,9 +203,16 @@
         <div class="container" style="position: relative; z-index: 2; text-align: center;">
             <span class="tag" style="background: rgba(139, 0, 255, 0.1); color: var(--color-accent-purple);">Conceptual Space</span>
             <h1 class="gradient-text" style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); margin-top: 1.5rem; margin-bottom: 1.5rem;">Ideas Lab</h1>
-            <p style="font-size: 1.15rem; color: var(--color-text-secondary); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            <p style="font-size: 1.15rem; color: var(--color-text-secondary); max-width: 800px; margin: 0 auto 3rem; line-height: 1.6;">
                 A futuristic blueprints center and testing ground for next-generation platforms, automated workflows, regional hardware projects, and narrative games.
             </p>
+            
+            <!-- Search Bar -->
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="catalogSearch" placeholder="Search blueprints by name or tech..." class="search-input">
+            </div>
+            <div id="searchResultsBadge" class="search-results-badge" style="display: none; margin-bottom: 0;"></div>
         </div>
     </section>
 
@@ -233,7 +231,7 @@
     <main class="ideas-portfolio-grid" id="ideasGrid">
         
         <!-- Blueprint 1: AI Memory Bridge -->
-        <a href="/ai-memory-bridge" class="blueprint-card" data-category="research" style="text-decoration: none;">
+        <a href="/ideas/ai-memory-bridge" class="blueprint-card" data-category="research" style="text-decoration: none;">
             <div class="blueprint-grid-bg"></div>
             <div class="idea-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-purple);">#01</span>
@@ -250,7 +248,7 @@
         </a>
 
         <!-- Blueprint 2: Aeroxnet -->
-        <a href="/aeroxnet" class="blueprint-card" data-category="conceptual" style="text-decoration: none;">
+        <a href="/projects/aeroxnet" class="blueprint-card" data-category="conceptual" style="text-decoration: none;">
             <div class="blueprint-grid-bg"></div>
             <div class="idea-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-purple);">#02</span>
@@ -267,7 +265,7 @@
         </a>
 
         <!-- Blueprint 3: Cloud Handheld -->
-        <a href="/cloud-handheld" class="blueprint-card" data-category="pitched" style="text-decoration: none;">
+        <a href="/ideas/cloud-handheld" class="blueprint-card" data-category="pitched" style="text-decoration: none;">
             <div class="blueprint-grid-bg"></div>
             <div class="idea-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-purple);">#03</span>
@@ -284,7 +282,7 @@
         </a>
 
         <!-- Blueprint 4: ZA Sentinel -->
-        <a href="/za-sentinel" class="blueprint-card" data-category="conceptual" style="text-decoration: none;">
+        <a href="/ideas/za-sentinel" class="blueprint-card" data-category="conceptual" style="text-decoration: none;">
             <div class="blueprint-grid-bg"></div>
             <div class="idea-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-purple);">#04</span>
@@ -301,7 +299,7 @@
         </a>
 
         <!-- Blueprint 5: Cosmos Universe -->
-        <a href="/cosmos-universe" class="blueprint-card" data-category="research" style="text-decoration: none;">
+        <a href="/ideas/cosmos-universe" class="blueprint-card" data-category="research" style="text-decoration: none;">
             <div class="blueprint-grid-bg"></div>
             <div class="idea-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-purple);">#05</span>
@@ -318,7 +316,7 @@
         </a>
 
         <!-- Blueprint 6: Programmatic SEO -->
-        <a href="/programmatic-seo" class="blueprint-card" data-category="prototype" style="text-decoration: none;">
+        <a href="/ideas/programmatic-seo" class="blueprint-card" data-category="prototype" style="text-decoration: none;">
             <div class="blueprint-grid-bg"></div>
             <div class="idea-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-purple);">#06</span>
@@ -341,8 +339,8 @@
             <div class="footer-content" style="text-align: center; padding: 4rem 2rem 2rem;">
                 <p>&copy; 2026 Zaid Asim Softwares · <a href="assets/udyam-registration-certificate.pdf" target="_blank" style="color: inherit; text-decoration: underline;">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
                 <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem;">
-                    <a href="/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none;">Terms of Use</a>
-                    <a href="/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none;">Privacy Policy</a>
+                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none;">Terms of Use</a>
+                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none;">Privacy Policy</a>
                     <a href="/support" style="color: var(--color-text-secondary); text-decoration: none;">Support</a>
                 </div>
             </div>
@@ -350,30 +348,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/three.min.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/ScrollToPlugin.min.js"></script>
-
     <!-- App Scripts -->
-    <script src="js/sound.js"></script>
-<script src="js/theme.js"></script>
-    <script src="js/three-bg.js"></script>
-    <script src="js/parallax.js"></script>
-    <script src="js/scroll-animations.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/cursor.js"></script>
-    <script src="js/hud.js"></script>
-    <script src="js/command-palette.js"></script>
-    <script src="js/terminal.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/modals.js"></script>
-    <script src="js/radar.js"></script>
-    <script src="js/tilt.js"></script>
-    <script src="js/visionary.js"></script>
-    <script src="js/easter-eggs.js"></script>
-    <script src="js/v2-upgrades.js"></script>
-
     <!-- Filtering Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -403,5 +378,7 @@
             });
         });
     </script>
+    <script src="js/vendor.bundle.js"></script>
+    <script src="js/app.bundle.js"></script>
 </body>
 </html>

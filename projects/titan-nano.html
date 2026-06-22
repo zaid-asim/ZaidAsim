@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Titan Nano — Redefining Intelligence via Non-Euclidean Cognitive Operating Fabrics: The TITAN Architecture for Sub-2GB Hardware.">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Zaid Asim developer, Zaid Asim software engineer, Zaid Asim Hyderabad, Titan Nano, Non-Euclidean AI, Edge Computing, Snapdragon Hexagon DSP">
+    <meta name="author" content="Zaid Asim">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://zaidasim.com/projects/titan-nano">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zaidasim.com/projects/titan-nano">
+    <meta property="og:title" content="Titan Nano | Non-Euclidean AI Operating Fabric | Zaid Asim Softwares">
+    <meta property="og:description" content="Ternary AI operating fabric executing complex cognitive reasoning loops on Snapdragon HVX Vector hardware within 216MB.">
+    <meta property="og:image" content="https://zaidasim.com/assets/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Zaid Asim Softwares Logo">
+    <meta property="og:site_name" content="Zaid Asim Softwares">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://zaidasim.com/projects/titan-nano">
+    <meta name="twitter:title" content="Titan Nano | Non-Euclidean AI Operating Fabric | Zaid Asim Softwares">
+    <meta name="twitter:description" content="Ternary AI operating fabric executing complex cognitive reasoning loops on Snapdragon HVX Vector hardware within 216MB.">
+    <meta name="twitter:image" content="https://zaidasim.com/assets/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CreativeWork",
+          "name": "TITAN Architecture for Sub-2GB Hardware",
+          "genre": "System Architecture Case Study",
+          "description": "Ternary AI operating fabric executing complex cognitive reasoning loops on Snapdragon HVX Vector hardware within 216MB."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://zaidasim.com/projects/titan-nano/#webpage",
+          "url": "https://zaidasim.com/projects/titan-nano",
+          "name": "Titan Nano | Non-Euclidean AI Operating Fabric | Zaid Asim Softwares",
+          "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://zaidasim.com",
+            "name": "Zaid Asim Softwares"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <title>Titan Nano | Non-Euclidean AI Operating Fabric | Zaid Asim Softwares</title>
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/bundle.css">
+
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Canvas Background -->
+    <div class="three-canvas-container" id="canvasContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Nav Bar -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/logo.png" alt="Zaid Asim Softwares Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/projects" class="nav-link active">Projects</a>
+                    <a href="/biography" class="nav-link">Biography</a>
+                    <a href="/ideas" class="nav-link">Ideas Lab</a>
+                    <a href="/ideas/youtube" class="nav-link">YouTube</a>
+                    <a href="/support" class="nav-link">Support</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section custom-hero" style="padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 6rem;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 1000px; margin: 0 auto 4rem;" data-animate="fade-up">
+                <span class="section-tag" style="background: rgba(108, 59, 255, 0.1); color: #00d4aa; padding: 0.35rem 1rem; border-radius: 100px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">PROJECT · COGNITIVE AI</span>
+                <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: var(--letter-spacing-tight); margin-top: 1.5rem; margin-bottom: 2rem;">
+                    Titan Nano: Non-Euclidean <span class="gradient-text" style="background: linear-gradient(135deg, #6c3bff, #ff00dc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cognitive Fabric</span>
+                </h1>
+                <p class="section-subtitle" style="font-size: 1.25rem; color: var(--color-text-secondary); line-height: 1.6; max-width: 900px; margin: 0 auto 3rem;">
+                    Redefining Intelligence via Non-Euclidean Cognitive Operating Fabrics: The TITAN Architecture for Sub-2GB Hardware.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/#contact" class="contact-btn primary-btn" style="padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; background: linear-gradient(135deg, #6c3bff, #ff00dc); border: none; text-decoration: none; color: white;">Get In Touch →</a>
+                    <a href="/projects" class="contact-btn secondary-btn" style="padding: 1rem 2.5rem; font-weight: 600; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); text-decoration: none; color: var(--color-text-primary);">Back to Portfolio</a>
+                </div>
+            </div>
+            
+            <!-- Showcase Image Card -->
+            <div style="max-width: 1100px; margin: 0 auto; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-xl);" data-animate="scale-in">
+                <img src="../assets/titan.png" alt="Titan Nano Architecture Showcase" style="width: 100%; display: block; filter: brightness(0.95);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section class="section custom-abstract" style="border-top: 1px solid var(--color-border); padding-block: 6rem; background: rgba(10, 10, 10, 0.4);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 2rem; color: var(--color-text-primary);">Abstract</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem; text-align: justify;">
+                    Conventional artificial intelligence is constrained by a false equivalence: $$\text{Model Size} = \text{Intelligence}$$ This paradigm scales compute linearly or quadratically with context length, trapping semantic state inside dense floating-point weight matrices. This paper introduces the <strong>TITAN (Ternary Phase State Automata) Architecture</strong>, a radical departure from continuous vector spaces and traditional next-token prediction.
+                </p>
+                <p style="color: var(--color-text-secondary); font-size: 1.15rem; line-height: 1.8; text-align: justify;">
+                    By replacing high-precision floating-point matrix multiplications ($W \cdot x$) with <strong>Topological Action Operators (TAOs)</strong> operating over discrete finite fields $\mathbb{F}_p$, TITAN decouples cognitive routing from world knowledge. The underlying neural core is demoted to a micro-planner ($\le 300\text{M}$ parameters), while state, memory, and reasoning emerge from an executable, self-assembling knowledge fabric. This architecture optimizes execution at the bare-metal instruction level for legacy and modern Qualcomm Snapdragon SoCs, enabling deterministic, zero-hallucination agentic intelligence within a strict $2\text{GB}$ total system RAM envelope.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mathematical Foundation Section -->
+    <section class="section custom-math" style="border-top: 1px solid var(--color-border); padding-block: 6rem; background: rgba(10, 10, 10, 0.2);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 2rem; color: var(--color-text-primary);">1. The Mathematical Foundation: Ternary Phase State Automata (TPSA)</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                    To eliminate the memory and compute overhead of multi-head attention ($O(N^2)$ scaling), TITAN introduces <strong>Ternary Phase State Automata (TPSA)</strong>. Traditional LLMs project tokens into dense, continuous vector spaces $\mathbb{R}^d$. TITAN projects inputs into a discrete, topological graph space where semantic meaning is determined by state transitions rather than geometric distance.
+                </p>
+
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1.25rem; color: var(--color-text-primary);">1.1 Discrete Residue-Number Graph Algebras (RNGA)</h3>
+                <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    Instead of continuous float weights, the internal representation layer leverages finite fields to compress semantic networks. Let the global knowledge state be represented as an active sub-graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where vertices $\mathcal{V}$ are localized conceptual entities and edges $\mathcal{E}$ define executable transition rules.
+                </p>
+                <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    Rather than calculating dot-product attention scores via standard models:
+                    $$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+                    TITAN computes a deterministic state transition using a Ternary Matrix Shift over the field $\mathbb{F}_3$, where weights $\mathbf{W} \in \{-1, 0, 1\}^{m \times n}$. The transition operator $\Psi$ maps the current intent vector directly to a graph coordinate:
+                    $$\Psi(\mathbf{x}) = \text{sign}(\mathbf{W} \cdot \mathbf{x}) \pmod 3$$
+                    Because $\mathbf{W}$ contains only ternary states, standard floating-point multiplications are completely eliminated. The entire operation collapses into bitwise <strong>AND</strong>, <strong>XOR</strong>, and <strong>POPCOUNT</strong> primitives executed natively inside the processor's registers.
+                </p>
+
+                <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.85rem; color: #00d4aa; text-align: center; margin-block: 2rem;">
+                    [Input Vector x] &mdash;&gt; [Bitwise AND / XOR Matrix W] &mdash;&gt; [Popcount / Mod 3] &mdash;&gt; [Graph Coordinate]
+                </div>
+
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1.25rem; color: var(--color-text-primary);">1.2 Asymptotic Information Deselection (AID)</h3>
+                <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    To maintain a strict $O(1)$ memory footprint regardless of conversation or task length, TITAN rejects the traditional linear expansion of context windows. It utilizes <strong>Asymptotic Information Deselection (AID)</strong>.
+                </p>
+                <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7;">
+                    As new data streams into the system, an active compiler translates incoming text into graph nodes. If the total active sub-graph exceeds a fixed topological radius $r \le 4$, peripheral nodes are systematically compressed into structural invariants (hashed graph signatures) and flushed to persistent flash storage. The active context memory never exceeds $128\text{MB}$.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Low-Level Optimization Section -->
+    <section class="section custom-hardware" style="border-top: 1px solid var(--color-border); padding-block: 6rem; background: rgba(10, 10, 10, 0.4);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 2rem; color: var(--color-text-primary);">2. Low-Level Hardware Optimization for Legacy & Modern Snapdragon SoCs</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                    Traditional edge AI frameworks (e.g., TensorFlow Lite, ONNX Runtime) are built for static tensor execution graphs. They suffer from high allocation overhead, context-switching latencies, and poor cache locality on low-memory mobile hardware. TITAN interacts directly with the silicon layer.
+                </p>
+
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-text-primary);">2.1 Hexagon DSP Vector Extensions (HVX) Exploitation</h3>
+                <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    On Qualcomm Snapdragon architectures (spanning from legacy architectures like Snapdragon 835/845 up to modern Snapdragon 8 Gen-series platforms), the <strong>Hexagon DSP</strong> is an underutilized, highly parallel execution engine. TITAN maps its Ternary Phase State Automata directly onto Hexagon Vector Extensions (HVX).
+                </p>
+                <ul style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li><strong>Bit-Packed Tensors:</strong> Weights are bit-packed at $2\text{-bits}$ per parameter. A $300\text{M}$ parameter model requires only $75\text{MB}$ of physical space, fitting entirely within the high-speed L2/L3 system cache structures of old mobile processors.</li>
+                    <li><strong>Hardware Vectorization:</strong> TITAN bypasses the ARM CPU clusters during execution loops, performing parallel $1024\text{-bit}$ vector operations on the DSP. A single instruction cycle evaluates hundreds of semantic transitions simultaneously.</li>
+                </ul>
+
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-text-primary);">2.2 Zero-Copy Unified Virtual Memory Allocation</h3>
+                <p style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+                    On $2\text{GB}$ RAM devices (such as legacy Vivo S1 or Samsung C7 Pro configurations), copying data between the CPU, GPU, and DSP spaces triggers the kernel's Out-Of-Memory (OOM) killer. TITAN implements a <strong>Zero-Copy Unified Virtual Memory Fabric</strong>:
+                </p>
+                <ul style="color: var(--color-text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <li>The Knowledge Graph, Semantic Memory, and Execution Graphs share a permanently pinned, non-swappable hardware memory allocation.</li>
+                    <li>Pointers are passed across execution layers without data duplication.</li>
+                    <li>The memory structure is rigidly budgeted to survive intense workloads without page thrashing:</li>
+                </ul>
+
+                <div style="overflow-x: auto; background: rgba(15, 15, 15, 0.6); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 2rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--color-border); font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-primary);">
+                                <th style="padding: 1rem;">Memory Layer</th>
+                                <th style="padding: 1rem;">Allocation Target</th>
+                                <th style="padding: 1rem;">Operational Target</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 0.9rem; color: var(--color-text-secondary);">
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Micro-Planner Core</td>
+                                <td style="padding: 1rem; font-family: var(--font-mono); color: var(--color-accent-blue);">75 MB</td>
+                                <td style="padding: 1rem;">Cached Tensor State (Bit-packed)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Active Knowledge Graph Cache</td>
+                                <td style="padding: 1rem; font-family: var(--font-mono); color: var(--color-accent-blue);">64 MB</td>
+                                <td style="padding: 1rem;">Live Working Nodes & Adjacency Lists</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Verification Registers</td>
+                                <td style="padding: 1rem; font-family: var(--font-mono); color: var(--color-accent-blue);">32 MB</td>
+                                <td style="padding: 1rem;">Compiler Outputs & Sandboxed Scripts</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">System Scratchpad / Thread Pools</td>
+                                <td style="padding: 1rem; font-family: var(--font-mono); color: var(--color-accent-blue);">45 MB</td>
+                                <td style="padding: 1rem;">Dynamic I/O Buffer</td>
+                            </tr>
+                            <tr style="background: rgba(108, 59, 255, 0.05);">
+                                <td style="padding: 1rem; font-weight: 700; color: var(--color-text-primary);">Total Silicon Footprint</td>
+                                <td style="padding: 1rem; font-family: var(--font-mono); color: #00d4aa; font-weight: 700;">216 MB</td>
+                                <td style="padding: 1rem; color: #00d4aa; font-weight: 700;">Fits safely inside any 2GB RAM limit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cognitive Architecture Section -->
+    <section class="section custom-architecture" style="border-top: 1px solid var(--color-border); padding-block: 6rem; background: rgba(10, 10, 10, 0.2);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 2rem; color: var(--color-text-primary);">3. The Decoupled 10-Layer Cognitive Architecture</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 3rem;">
+                    The core tenet of TITAN is that <strong>System = Intelligence</strong>. The language model acts exclusively as an orchestra conductor, while specialized software structures execute the heavy cognitive workload.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-block: 3rem;">
+                    <!-- Layer 1 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 01</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Micro-Planner</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">An ultra-compact $300\text{M}$ parameter transformer model trained strictly to parse input strings and emit tool sequence graphs.</p>
+                    </div>
+                    <!-- Layer 2 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 02</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Semantic Memory</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Updates a local graph database dynamically with micro-assertions: $\text{Assert}(\text{Subject}, \text{Predicate}, \text{Object})$.</p>
+                    </div>
+                    <!-- Layer 3 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 03</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Knowledge Graph</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Cross-referenced prime factorization states that verify structural connections via division instead of traversal.</p>
+                    </div>
+                    <!-- Layer 4 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 04</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Retrieval Engine</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Locates local sub-graphs within $1.2\text{ms}$ on legacy hardware using integer-only static binary hash tree indexing.</p>
+                    </div>
+                    <!-- Layer 5 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 05</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Knowledge Cache</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Static API data stored in byte-addressable lookup tables. Planner pulls syntaxes via absolute offsets.</p>
+                    </div>
+                    <!-- Layer 6 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 06</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Research Engine</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Halts output to scrape HTML, strips boilerplate layout code via hardware regex, and updates the local graph.</p>
+                    </div>
+                    <!-- Layer 7 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 07</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Candidate Gen</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Micro-Planner runs competitive path generation to produce multiple Action Graph execution pathways.</p>
+                    </div>
+                    <!-- Layer 8 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 08</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Structural Critic</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Rule-based validation matrix checking Action Graphs for logical loops and syntax errors prior to compilation.</p>
+                    </div>
+                    <!-- Layer 9 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 09</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Verification Fabric</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Runs compiler/assertion testing inside sandboxed micro-interpreters (Wasm/micro-C) to prevent hallucinations.</p>
+                    </div>
+                    <!-- Layer 10 -->
+                    <div style="background: rgba(20, 20, 20, 0.6); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-lg);">
+                        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00d4aa; margin-bottom: 0.5rem; font-weight: 600;">LAYER 10</div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Search Intel Loop</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6;">Uses Monte Carlo Tree Search over symbolic states to self-correct reasoning paths before returning answers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Comparison Section -->
+    <section class="section custom-comparison" style="border-top: 1px solid var(--color-border); padding-block: 6rem; background: rgba(10, 10, 10, 0.4);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 2rem; color: var(--color-text-primary);">4. Operational Comparison: TITAN vs. Next-Token Transformers</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                    To understand how TITAN outclasses large-scale foundation models on constrained edge hardware, consider the execution flow comparison below:
+                </p>
+
+                <div style="overflow-x: auto; background: rgba(15, 15, 15, 0.6); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 2rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--color-border); font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-primary);">
+                                <th style="padding: 1rem; width: 30%;">Operational Characteristic</th>
+                                <th style="padding: 1rem; width: 35%;">Standard Transformer Models (e.g., Gemini Nano)</th>
+                                <th style="padding: 1rem; width: 35%;">TITAN-Nano OS Architecture</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 0.9rem; color: var(--color-text-secondary);">
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Compute Primitive</td>
+                                <td style="padding: 1rem;">16-bit Floating Point Matrix Multiplication ($O(N^2)$)</td>
+                                <td style="padding: 1rem; color: #00d4aa; font-weight: 600;">Ternary Integer Bitwise Operators ($O(1)$)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Memory Constraint</td>
+                                <td style="padding: 1rem;">Requires $\ge 3\text{GB}$ to $12\text{GB}$ allocated RAM</td>
+                                <td style="padding: 1rem; color: #00d4aa; font-weight: 600;">Executable within $216\text{MB}$ total physical RAM</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Knowledge Scaling</td>
+                                <td style="padding: 1rem;">Retraining, fine-tuning, or large context windows</td>
+                                <td style="padding: 1rem; color: #00d4aa; font-weight: 600;">Dynamic local Knowledge Graph updates</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Factual Accuracy</td>
+                                <td style="padding: 1rem;">Probabilistic approximation (Hallucination prone)</td>
+                                <td style="padding: 1rem; color: #00d4aa; font-weight: 600;">Deterministic verification via sandboxed execution</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--color-text-primary);">Silicon Lifespan</td>
+                                <td style="padding: 1rem;">Causes thermal throttling on older SoCs</td>
+                                <td style="padding: 1rem; color: #00d4aa; font-weight: 600;">Highly optimized for legacy/modern Hexagon DSPs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="section custom-conclusion" style="border-top: 1px solid var(--color-border); padding-block: 6rem; background: rgba(10, 10, 10, 0.2);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 2rem; color: var(--color-text-primary);">5. Conclusion & Paradigm Shift</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; text-align: justify;">
+                    TITAN proves that the massive infrastructure demands of contemporary AI are a direct byproduct of flawed architecture. High-parameter neural networks spend the majority of their computational budget attempting to memorize facts and approximate logic within static, dense matrices.
+                </p>
+                <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                    By restructuring artificial intelligence as a <strong>Search and Verification Operating System</strong> over discrete, ternary phase state spaces, TITAN shifts the paradigm. The system delivers reliable, self-correcting agentic capabilities on affordable, widely available legacy hardware, making powerful intelligence universally accessible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../assets/logo.png" alt="Zaid Asim Softwares Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('the_lance_vance'); if(window.showZaNotification){window.showZaNotification('Copied Discord handle: the_lance_vance','success');}else{alert('Discord Username (the_lance_vance) copied to clipboard!');} return false;" class="footer-social-link">Discord</a>
+                    <a href="https://open.spotify.com/user/31mag523uo4zxrrjyz6rlqnyfe74" target="_blank" rel="noopener" class="footer-social-link">Spotify</a>
+                </div>
+
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Terms of Use</a>
+                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Privacy Policy</a>
+                    <a href="/support" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Support</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="../assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-blue)'" onmouseout="this.style.color='inherit'">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Placeholders to avoid script errors -->
+    <div style="display:none;" id="visionCanvasContainer"></div>
+    <div style="display:none;" id="achievementContainer"></div>
+
+    <!-- Scripts -->
+    <script src="../js/vendor.bundle.js"></script>
+    <script src="../js/app.bundle.js"></script>
+</body>
+</html>

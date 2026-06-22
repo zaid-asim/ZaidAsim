@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore Zaid Asim Softwares projects. Case studies in cognitive AI systems, open-world simulators, full stack applications, and experimental systems.">
-    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Projects, Swadesh AI, Homies, Crafty Kids, Storm of Kings, UrgeGuard, TITAN OS, Chronos">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, Zaid Asim developer, Zaid Asim software engineer, Zaid Asim Hyderabad, Projects, Swadesh AI, Homies, Crafty Kids, Storm of Kings, UrgeGuard, TITAN OS, Chronos">
     <meta name="author" content="Zaid Asim">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="robots" content="index, follow">
@@ -65,16 +65,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/tokens.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/hud.css">
-    <link rel="stylesheet" href="css/v2-upgrades.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
     <style>
         .projects-header {
             text-align: center;
@@ -216,6 +206,7 @@
             color: var(--color-text-secondary);
         }
     </style>
+    <link rel="stylesheet" href="css/bundle.css">
 </head>
 <body>
 
@@ -235,7 +226,7 @@
     <header class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="nav-brand">
-                <img src="assets/logo.png" alt="ZA Logo" class="nav-logo">
+                <img src="assets/logo.png" alt="Zaid Asim Softwares Logo" class="nav-logo">
                 <span class="nav-brand-text">
                     Zaid Asim
                     <span class="nav-brand-subtext">Softwares</span>
@@ -252,7 +243,7 @@
                     <a href="/projects" class="nav-link active">Projects</a>
                     <a href="/biography" class="nav-link">Biography</a>
                     <a href="/ideas" class="nav-link">Ideas Lab</a>
-                    <a href="/youtube" class="nav-link">YouTube</a>
+                    <a href="/ideas/youtube" class="nav-link">YouTube</a>
                     <a href="/support" class="nav-link">Support</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
@@ -273,9 +264,16 @@
     <section class="projects-header">
         <span class="tag">Engineering Catalog</span>
         <h1 class="gradient-text" style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); margin-top: 1.5rem; margin-bottom: 1.5rem;">Case Studies</h1>
-        <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.6;">
+        <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 3rem;">
             A complete log of software applications, game titles, cognitive reasoning graphs, and causal hardware diagnostics systems shipped from India.
         </p>
+        
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="catalogSearch" placeholder="Search case studies by name or tech..." class="search-input">
+        </div>
+        <div id="searchResultsBadge" class="search-results-badge" style="display: none;"></div>
     </section>
 
     <!-- Filter Tabs -->
@@ -306,8 +304,8 @@
                     <span class="portfolio-tech-tag">FastAPI</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/swadesh" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
-                    <a href="/swadesh" data-project-id="swadesh-ai" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
+                    <a href="/projects/swadesh" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <a href="/projects/swadesh" data-project-id="swadesh-ai" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -327,7 +325,7 @@
                     <span class="portfolio-tech-tag">Virtualization</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/chronos" data-project-id="chronos" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
+                    <a href="/ideas/chronos" data-project-id="chronos" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -347,7 +345,29 @@
                     <span class="portfolio-tech-tag">Verification</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/titan" data-project-id="titan" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
+                    <a href="/ideas/titan" data-project-id="titan" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Showcase 3.5: Titan Nano -->
+        <article class="portfolio-card" data-category="ai">
+            <div class="portfolio-img-wrap">
+                <img src="assets/titan.png" alt="Titan Nano Operating Fabric" class="portfolio-img">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-ai">Cognitive AI</span>
+                <h3 class="portfolio-title">Titan Nano</h3>
+                <p class="portfolio-desc">Ternary AI operating fabric executing complex cognitive reasoning loops on Snapdragon HVX Vector hardware within a strict 216MB footprint.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Ternary AI</span>
+                    <span class="portfolio-tech-tag">Qualcomm HVX</span>
+                    <span class="portfolio-tech-tag">KaTeX</span>
+                    <span class="portfolio-tech-tag">Low-Memory</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/projects/titan-nano" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none; display: inline-block; text-align: center; background: var(--gradient-brand); border: none; color: white;">View Page</a>
+                    <a href="/projects/titan-nano" data-project-id="titan-nano" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -367,7 +387,7 @@
                     <span class="portfolio-tech-tag">Vacuum</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/qta-x" data-project-id="qta-x" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
+                    <a href="/ideas/qta-x" data-project-id="qta-x" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -387,8 +407,8 @@
                     <span class="portfolio-tech-tag">Edge AI</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/android-xr-research" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">Read Paper</a>
-                    <a href="/android-xr-research" data-project-id="android-xr-research" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
+                    <a href="/ideas/android-xr-research" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">Read Paper</a>
+                    <a href="/ideas/android-xr-research" data-project-id="android-xr-research" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -448,7 +468,7 @@
                     <span class="portfolio-tech-tag">Blender</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/crafty-kids" data-project-id="crafty-kids" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
+                    <a href="/projects/crafty-kids" data-project-id="crafty-kids" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -468,7 +488,7 @@
                     <span class="portfolio-tech-tag">Pixel Art</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/storm-of-kings" data-project-id="storm-of-kings" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
+                    <a href="/projects/storm-of-kings" data-project-id="storm-of-kings" class="project-deep-btn contact-btn primary-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: var(--gradient-brand); border: none; color: white; cursor: pointer; flex-grow: 1;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -488,8 +508,8 @@
                     <span class="portfolio-tech-tag">Web Audio API</span>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="/homies" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
-                    <a href="/homies" data-project-id="homies" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
+                    <a href="/projects/homies" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <a href="/projects/homies" data-project-id="homies" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
                 </div>
             </div>
         </article>
@@ -501,19 +521,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="assets/logo.png" alt="ZA Logo" class="footer-logo">
+                    <img src="assets/logo.png" alt="Zaid Asim Softwares Logo" class="footer-logo">
                     <span class="footer-name">Zaid Asim Softwares</span>
                 </div>
                 <div class="footer-socials">
                     <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
                     <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
                     <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
-                    <a href="https://discord.gg/" target="_blank" rel="noopener" class="footer-social-link">Discord</a>
-                    <a href="https://open.spotify.com/" target="_blank" rel="noopener" class="footer-social-link">Spotify</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('the_lance_vance'); if(window.showZaNotification){window.showZaNotification('Copied Discord handle: the_lance_vance','success');}else{alert('Discord Username (the_lance_vance) copied to clipboard!');} return false;" class="footer-social-link">Discord</a>
+                    <a href="https://open.spotify.com/user/31mag523uo4zxrrjyz6rlqnyfe74" target="_blank" rel="noopener" class="footer-social-link">Spotify</a>
                 </div>
                 <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
-                    <a href="/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Terms of Use</a>
-                    <a href="/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Terms of Use</a>
+                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
                     <a href="/support" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Support</a>
                 </div>
                 <div class="footer-bottom">
@@ -562,25 +582,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/three.min.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    
     <!-- Sound and Theme Singeltons -->
-    <script src="js/sound.js"></script>
-<script src="js/theme.js"></script>
-    
     <!-- Canvas BG Particles -->
-    <script src="js/three-bg.js"></script>
-    
     <!-- Interactions -->
-    <script src="js/nav.js"></script>
-    <script src="js/cursor.js"></script>
-    <script src="js/hud.js"></script>
-    <script src="js/modals.js"></script>
-    <script src="js/command-palette.js"></script>
-    <script src="js/terminal.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Initialize Core JS modules
@@ -621,5 +625,7 @@
             });
         });
     </script>
+    <script src="js/vendor.bundle.js"></script>
+    <script src="js/app.bundle.js"></script>
 </body>
 </html>
