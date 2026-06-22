@@ -17,6 +17,8 @@ def check_local_server():
         "http://localhost:8000/projects",
         "http://localhost:8000/contact",
         "http://localhost:8000/android-xr-research",
+        "http://localhost:8000/ideas",
+        "http://localhost:8000/youtube",
         "http://localhost:8000/robots.txt",
         "http://localhost:8000/sitemap.xml",
     ]
@@ -49,7 +51,9 @@ def inspect_html_files():
         "terms-of-use.html",
         "projects.html",
         "contact.html",
-        "android-xr-research.html"
+        "android-xr-research.html",
+        "ideas.html",
+        "youtube.html"
     ]
     
     all_ok = True

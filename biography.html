@@ -129,6 +129,8 @@
                     <a href="/" class="nav-link">Home</a>
                     <a href="/projects" class="nav-link">Projects</a>
                     <a href="/biography" class="nav-link active">Biography</a>
+                    <a href="/ideas" class="nav-link">Ideas Lab</a>
+                    <a href="/youtube" class="nav-link">YouTube</a>
                     <a href="/support" class="nav-link">Support</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
@@ -404,6 +406,86 @@
     </section>
 
     <!-- ============================================ -->
+    <!-- SECTION: SKILLS & METRICS                    -->
+    <!-- ============================================ -->
+    <section class="section skills-section" id="skills" style="border-top: 1px solid var(--color-border); background: rgba(10, 10, 10, 0.2);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;" data-animate="fade-up">
+                <span class="section-tag">// COGNITIVE &amp; TECHNICAL INDEX</span>
+                <h2 class="section-title">Capabilities &amp; <span class="gradient-text">Systems Radar</span></h2>
+                <p class="section-subtitle" style="max-width: 750px; margin: 0 auto;">Quantifying engineering capacities, execution speed, and operational benchmarks across critical domains.</p>
+            </div>
+
+            <!-- Stats Counters Row -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 4rem; text-align: center;" data-animate="stagger-up">
+                <div style="background: rgba(20, 20, 20, 0.4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(10px);">
+                    <div class="giant-counter-val" data-target-val="120" data-suffix="+">0</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-secondary); letter-spacing: 0.1em;">Code Repositories</div>
+                </div>
+                <div style="background: rgba(20, 20, 20, 0.4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(10px);">
+                    <div class="giant-counter-val" data-target-val="45" data-suffix="K">0</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-secondary); letter-spacing: 0.1em;">Lines of Shipped Code</div>
+                </div>
+                <div style="background: rgba(20, 20, 20, 0.4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(10px);">
+                    <div class="giant-counter-val" data-target-val="98" data-suffix="%">0</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-secondary); letter-spacing: 0.1em;">Uptime SLA</div>
+                </div>
+                <div style="background: rgba(20, 20, 20, 0.4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(10px);">
+                    <div class="giant-counter-val" data-target-val="9" data-suffix="">0</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-secondary); letter-spacing: 0.1em;">Completed Platforms</div>
+                </div>
+            </div>
+
+            <!-- Radar Container -->
+            <div class="skills-radar-container" data-animate="fade-up">
+                <!-- Radar Visual -->
+                <div class="skills-radar-visual">
+                    <canvas id="skillsRadarCanvas" class="skills-radar-canvas"></canvas>
+                </div>
+                <!-- Linear Metrics -->
+                <div class="skills-metrics">
+                    <div class="metric-row">
+                        <div class="metric-label-wrap">
+                            <span style="font-family: var(--font-display); color: var(--color-text-primary);">Systems Architecture</span>
+                            <span style="font-family: var(--font-mono); color: var(--color-accent-blue);">9.5 / 10</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric-label-wrap">
+                            <span style="font-family: var(--font-display); color: var(--color-text-primary);">Artificial Intelligence &amp; NLP</span>
+                            <span style="font-family: var(--font-mono); color: var(--color-accent-purple);">9.0 / 10</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric-label-wrap">
+                            <span style="font-family: var(--font-display); color: var(--color-text-primary);">Game Engine Physics</span>
+                            <span style="font-family: var(--font-mono); color: var(--color-accent-teal);">9.5 / 10</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="metric-label-wrap">
+                            <span style="font-family: var(--font-display); color: var(--color-text-primary);">Automation &amp; Context Pipelines</span>
+                            <span style="font-family: var(--font-mono); color: var(--color-accent-pink);">8.5 / 10</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
     <!-- SECTION: MUSIC & SOUNDSCAPES                 -->
     <!-- ============================================ -->
     <section class="section music-section" id="music">
@@ -538,7 +620,7 @@
                     <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
                     <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
                     <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
-                    <a href="https://www.facebook.com/zameer.ahmed.3954/" target="_blank" rel="noopener" class="footer-social-link">Facebook</a>
+                    <a href="https://open.spotify.com/" target="_blank" rel="noopener" class="footer-social-link">Spotify</a>
                 </div>
 
                 <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
@@ -604,7 +686,7 @@
 
     <!-- App Scripts -->
     <script src="js/sound.js"></script>
-    <script src="js/theme.js"></script>
+<script src="js/theme.js"></script>
     <script src="js/three-bg.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/scroll-animations.js"></script>
@@ -612,6 +694,7 @@
     <script src="js/cursor.js"></script>
     <script src="js/hud.js"></script>
     <script src="js/command-palette.js"></script>
+    <script src="js/terminal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/modals.js"></script>
     <script src="js/radar.js"></script>

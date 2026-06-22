@@ -21,6 +21,11 @@
     commander:  { title: '⌨️ Commander — Opened Command Palette', xp: 40 },
     fan:        { title: '📺 Fan — Clicked YouTube Link',          xp: 25 },
     easter_egg: { title: '🥚 Easter Egg — Found the Secret!',     xp: 100 },
+    booted:     { title: '🚀 System Online — ZA-OS Shell Loaded', xp: 50 },
+    hacker:     { title: '👾 Hacker — Opened Terminal Emulator', xp: 40 },
+    the_architect: { title: '📐 The Architect — Altered System Accents', xp: 30 },
+    game_master: { title: '🏆 Game Master — Solved Hacking Minigame', xp: 50 },
+    sudo_hacker: { title: '💀 Sudo Hacker — Invoked Root Override', xp: 50 },
   };
 
   var state = {
@@ -330,6 +335,15 @@
         })
       );
     });
+
+    // Trigger loaded achievement after a delay
+    setTimeout(function () {
+      window.dispatchEvent(
+        new CustomEvent('za_achievement', {
+          detail: { id: 'booted', title: ACHIEVEMENTS.booted.title, xp: ACHIEVEMENTS.booted.xp },
+        })
+      );
+    }, 1500);
   }
 
   /* ---- Init ---- */

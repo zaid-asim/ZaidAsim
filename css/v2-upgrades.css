@@ -1797,6 +1797,7 @@
 .orb-purple {
     background: radial-gradient(circle, rgba(108, 59, 255, 0.15) 0%, transparent 70%) !important;
 }
+.orb-magenta {
     background: radial-gradient(circle, rgba(0, 212, 170, 0.12) 0%, transparent 70%) !important;
 }
 
@@ -1807,6 +1808,153 @@
 }
 [data-tilt] img {
     transition: transform 0.35s var(--ease-smooth);
+}
+
+/* Boot sequence styles removed */
+
+/* ============================================================
+   Terminal Emulator Screen styling
+   ============================================================ */
+.za-terminal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 4, 10, 0.96);
+    backdrop-filter: blur(15px);
+    z-index: 99990;
+    padding: 3rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-accent-primary, #00e676);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    opacity: 0;
+    transform: scale(1.03);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.za-terminal.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.za-terminal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.za-terminal-header-title {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.za-terminal-header-close {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: inherit;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.za-terminal-header-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-accent-primary, #00e676);
+}
+
+.za-terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    padding-right: 1rem;
+}
+
+.za-terminal-output::-webkit-scrollbar {
+    width: 6px;
+}
+.za-terminal-output::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 3px;
+}
+.za-terminal-output::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+.za-terminal-output::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.za-terminal-line {
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+}
+
+.za-terminal-line.command-echo {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
+}
+
+.za-terminal-line.system-output {
+    color: var(--color-accent-primary, #00e676);
+}
+
+.za-terminal-line.error-output {
+    color: #ff3366;
+}
+
+.za-terminal-line.success-output {
+    color: #00e676;
+}
+
+.za-terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+}
+
+.za-terminal-prompt {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.za-terminal-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    flex-grow: 1;
+    caret-color: var(--color-accent-primary, #00e676);
+}
+
+/* CRT Screen Scanline for Terminal overlay too */
+.za-terminal::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+    z-index: 99995;
+    background-size: 100% 4px;
+    pointer-events: none;
 }
 
 

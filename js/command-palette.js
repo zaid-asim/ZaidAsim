@@ -101,6 +101,8 @@
     var el = document.querySelector(selector);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.location.href = '/' + selector;
     }
   }
 

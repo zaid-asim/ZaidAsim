@@ -21,6 +21,8 @@ def verify_all():
         (f"{base}/homies", "Homies"),
         (f"{base}/projects", "Projects"),
         (f"{base}/android-xr-research", "Android XR Research"),
+        (f"{base}/ideas", "Ideas Lab"),
+        (f"{base}/youtube", "YouTube Hub"),
         (f"{base}/support", "Customer Support"),
         (f"{base}/privacy-policy", "Privacy Policy"),
         (f"{base}/terms-of-use", "Terms of Use"),

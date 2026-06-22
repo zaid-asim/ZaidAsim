@@ -119,6 +119,7 @@
     document.addEventListener('click', function (e) {
       var btn = e.target.closest('[data-project-id]');
       if (!btn) return;
+      if (btn.tagName === 'A') return; // Let links navigate directly
 
       var projectId = btn.dataset.projectId;
       var data = projectData[projectId];
