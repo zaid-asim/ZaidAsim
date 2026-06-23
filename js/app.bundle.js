@@ -1270,34 +1270,44 @@
     if (window.hudEngine && typeof window.hudEngine.addXP === 'function') {
       window.hudEngine.addXP(10, 'Accessed: Core System Logs');
     }
+    if (typeof window.showZaNotification === 'function') {
+      window.showZaNotification('Tech stack specifications printed to the developer console log.', 'success');
+    }
+  }
+
+  function navigateToRoute(path, hash) {
+    var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.endsWith('/');
+    if (path === '/' && isHomePage && hash) {
+      var el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
+    if (window.location.pathname === path && !hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    window.location.href = path + (hash || '');
   }
 
   var ACTIONS = [
-    { icon: '🏠', label: 'Home',          shortcut: '',          action: function () { scrollToSection('#hero'); } },
-    { icon: '👤', label: 'About',         shortcut: '',          action: function () { scrollToSection('#about'); } },
-    { icon: '💼', label: 'Projects',      shortcut: '',          action: function () { scrollToSection('#projects'); } },
-    { icon: '📖', label: 'Biography',     shortcut: '',          action: function () { scrollToSection('#biography'); } },
-    { icon: '🎵', label: 'Music & Audio', shortcut: '',          action: function () { scrollToSection('#music'); } },
-    { icon: '🧪', label: 'Ideas Lab',     shortcut: '',          action: function () { scrollToSection('#ideas'); } },
-    { icon: '📺', label: 'YouTube',       shortcut: '',          action: function () { scrollToSection('#youtube'); } },
-    { icon: '🌐', label: 'Socials',       shortcut: '',          action: function () { scrollToSection('#socials'); } },
-    { icon: '✉️', label: 'Contact',       shortcut: '',          action: function () { scrollToSection('#contact'); } },
-    { icon: '🌟', label: 'The Vision',     shortcut: '',          action: function () { scrollToSection('#vision'); } },
+    { icon: '🏠', label: 'Home',          shortcut: '',          action: function () { navigateToRoute('/', '#hero'); } },
+    { icon: '👤', label: 'About',         shortcut: '',          action: function () { navigateToRoute('/', '#about'); } },
+    { icon: '💼', label: 'Projects',      shortcut: '',          action: function () { navigateToRoute('/projects'); } },
+    { icon: '📖', label: 'Biography',     shortcut: '',          action: function () { navigateToRoute('/biography'); } },
+    { icon: '🎵', label: 'Music & Audio', shortcut: '',          action: function () { navigateToRoute('/', '#music'); } },
+    { icon: '🧪', label: 'Ideas Lab',     shortcut: '',          action: function () { navigateToRoute('/ideas'); } },
+    { icon: '📺', label: 'YouTube',       shortcut: '',          action: function () { navigateToRoute('/ideas/youtube'); } },
+    { icon: '🌐', label: 'Socials',       shortcut: '',          action: function () { navigateToRoute('/', '#socials'); } },
+    { icon: '✉️', label: 'Contact',       shortcut: '',          action: function () { navigateToRoute('/contact'); } },
+    { icon: '🌟', label: 'The Vision',     shortcut: '',          action: function () { navigateToRoute('/', '#vision'); } },
     { icon: '🎨', label: 'Toggle Theme',  shortcut: modKey + '+T', action: function () { if (window.toggleTheme) window.toggleTheme(); } },
     { icon: '🔊', label: 'Toggle Sound',  shortcut: modKey + '+M', action: function () { if (window.soundSynth) window.soundSynth.toggleMute(); } },
     { icon: '🌌', label: 'Play Ambient Hum', shortcut: '',       action: function () { toggleAmbientHum(); } },
     { icon: '💀', label: 'Activate Chaos Mode', shortcut: '',    action: function () { activateChaosMode(); } },
     { icon: '🔒', label: 'About this Site', shortcut: '',        action: function () { displayAboutSite(); } }
   ];
-
-  function scrollToSection(selector) {
-    var el = document.querySelector(selector);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      window.location.href = '/' + selector;
-    }
-  }
 
   /* ---- DOM Creation ---- */
   function createOverlay() {
@@ -3929,8 +3939,9 @@
 (function () {
   'use strict';
 
-  const PARTICLE_COUNT   = 1200;
-  const GALAXY_COUNT     = 1800;
+  const isMobile         = typeof window !== 'undefined' && window.innerWidth < 768;
+  const PARTICLE_COUNT   = isMobile ? 300 : 1200;
+  const GALAXY_COUNT     = isMobile ? 500 : 1800;
   const SPREAD           = 600;
   const PARTICLE_SIZE    = 2.2;
   const LINE_PROXIMITY   = 110;
@@ -3949,7 +3960,7 @@
 
   let scene, camera, renderer;
   let particleSystem, lineMesh, galaxySystem, wireframeGroup;
-  let positions, originalPositions, colors, velocities;
+  let positions, originalPositions, colors, originalColors, velocities;
   let mouse = { x: 0, y: 0, ndcX: 0, ndcY: 0 };
   let scrollY = 0;
   let animId = null;
@@ -3961,6 +3972,7 @@
     positions         = new Float32Array(PARTICLE_COUNT * 3);
     originalPositions = new Float32Array(PARTICLE_COUNT * 3);
     colors            = new Float32Array(PARTICLE_COUNT * 3);
+    originalColors    = new Float32Array(PARTICLE_COUNT * 3);
     velocities        = new Float32Array(PARTICLE_COUNT * 3);
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -3988,6 +4000,9 @@
       colors[i3]     = color.r;
       colors[i3 + 1] = color.g;
       colors[i3 + 2] = color.b;
+      originalColors[i3]     = color.r;
+      originalColors[i3 + 1] = color.g;
+      originalColors[i3 + 2] = color.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -4031,13 +4046,14 @@
     let vertexCount = 0;
     const proxSq = LINE_PROXIMITY * LINE_PROXIMITY;
 
-    // Performance sampling: check every 5th particle
-    for (let i = 0; i < PARTICLE_COUNT; i += 5) {
+    // Dynamic performance sampling stride
+    const stride = PARTICLE_COUNT > 500 ? 5 : 3;
+    for (let i = 0; i < PARTICLE_COUNT; i += stride) {
       const ix = positions[i * 3];
       const iy = positions[i * 3 + 1];
       const iz = positions[i * 3 + 2];
 
-      for (let j = i + 5; j < PARTICLE_COUNT; j += 5) {
+      for (let j = i + stride; j < PARTICLE_COUNT; j += stride) {
         const jx = positions[j * 3];
         const jy = positions[j * 3 + 1];
         const jz = positions[j * 3 + 2];
@@ -4187,29 +4203,45 @@
     return camera.position.clone().add(dir.multiplyScalar(distance));
   }
 
-  function updateConstellationParticles() {
+  function updateConstellationParticles(time) {
     const mousePos = projectMouseTo3D();
     const repulseSq = REPULSE_RADIUS * REPULSE_RADIUS;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
 
-      // Mouse repulsion
-      const dx = positions[i3]     - mousePos.x;
-      const dy = positions[i3 + 1] - mousePos.y;
-      const distSq = dx * dx + dy * dy;
+      const px = positions[i3];
+      const py = positions[i3 + 1];
+      const pz = positions[i3 + 2];
+
+      // Mouse repulsion (including Z dimension for true volumetric 3D interaction)
+      const dx = px - mousePos.x;
+      const dy = py - mousePos.y;
+      const dz = pz; // mousePos.z is 0
+      const distSq = dx * dx + dy * dy + dz * dz * 0.15; // weighted Z for a deeper feeling
 
       if (distSq < repulseSq && distSq > 0.01) {
         const dist = Math.sqrt(distSq);
         const force = (1 - dist / REPULSE_RADIUS) * REPULSE_FORCE;
         velocities[i3]     += (dx / dist) * force * 0.08;
         velocities[i3 + 1] += (dy / dist) * force * 0.08;
+        velocities[i3 + 2] += (dz / dist) * force * 0.04;
       }
 
+      // Gentle 3D flow/sway field (simulates cosmic wind)
+      const freq = 0.004;
+      const noiseX = Math.sin(py * freq + time * 0.25) * Math.cos(pz * freq + time * 0.2) * 0.09;
+      const noiseY = Math.cos(px * freq + time * 0.22) * Math.sin(pz * freq + time * 0.28) * 0.09;
+      const noiseZ = Math.sin(px * freq + time * 0.2) * Math.cos(py * freq + time * 0.25) * 0.09;
+
+      velocities[i3]     += noiseX;
+      velocities[i3 + 1] += noiseY;
+      velocities[i3 + 2] += noiseZ;
+
       // Spring physics back to original positions
-      velocities[i3]     += (originalPositions[i3]     - positions[i3])     * 0.004;
-      velocities[i3 + 1] += (originalPositions[i3 + 1] - positions[i3 + 1]) * 0.004;
-      velocities[i3 + 2] += (originalPositions[i3 + 2] - positions[i3 + 2]) * 0.004;
+      velocities[i3]     += (originalPositions[i3]     - px) * 0.004;
+      velocities[i3 + 1] += (originalPositions[i3 + 1] - py) * 0.004;
+      velocities[i3 + 2] += (originalPositions[i3 + 2] - pz) * 0.004;
 
       // Damping friction
       velocities[i3]     *= 0.93;
@@ -4220,9 +4252,16 @@
       positions[i3]     += velocities[i3];
       positions[i3 + 1] += velocities[i3 + 1];
       positions[i3 + 2] += velocities[i3 + 2];
+
+      // Organic shimmering/twinkling of individual stars
+      const shimmer = 0.65 + 0.35 * Math.sin(time * 2.5 + i * 0.7);
+      colors[i3]     = originalColors[i3] * shimmer;
+      colors[i3 + 1] = originalColors[i3 + 1] * shimmer;
+      colors[i3 + 2] = originalColors[i3 + 2] * shimmer;
     }
 
     particleSystem.geometry.attributes.position.needsUpdate = true;
+    particleSystem.geometry.attributes.color.needsUpdate = true;
   }
 
   let lineUpdateCounter = 0;
@@ -4256,7 +4295,11 @@
     // Dramatic scroll zoom-out
     camera.position.z = 800 + scrollDelta * SCROLL_Z_FACTOR;
 
-    updateConstellationParticles();
+    // Slow breathing of the entire spiral galaxy
+    const scale = 1.0 + 0.04 * Math.sin(time * 0.15);
+    galaxySystem.scale.set(scale, scale, scale);
+
+    updateConstellationParticles(time);
 
     // Constellation line calculation throttled to every 3rd frame
     lineUpdateCounter++;

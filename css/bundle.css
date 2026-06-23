@@ -6135,6 +6135,125 @@ blockquote {
     flex-shrink: 0;
 }
 
+/* ============================================================
+   Red Hat Corporate Partnership Badge
+   ============================================================ */
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  background: rgba(238, 0, 0, 0.05);
+  border: 1px solid rgba(238, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.03em;
+  user-select: none;
+  z-index: 10;
+}
+
+.partner-badge:hover {
+  transform: translateY(-2px);
+  background: rgba(238, 0, 0, 0.09);
+  border-color: rgba(238, 0, 0, 0.45);
+  box-shadow: 0 12px 30px rgba(238, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.partner-ping {
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #ee0000;
+  border-radius: 50%;
+}
+
+.partner-ping::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ee0000;
+  border-radius: 50%;
+  animation: partner-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes partner-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.partner-label {
+  opacity: 0.85;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.partner-logo-wrapper {
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 0.75rem;
+  margin-left: 0.15rem;
+}
+
+[data-theme="light"] .partner-logo-wrapper {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.partner-logo.logo-light {
+  display: block;
+}
+
+.partner-logo.logo-dark {
+  display: none;
+}
+
+[data-theme="light"] .partner-badge {
+  background: rgba(238, 0, 0, 0.03);
+  border-color: rgba(238, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .partner-badge:hover {
+  background: rgba(238, 0, 0, 0.06);
+  border-color: rgba(238, 0, 0, 0.35);
+  box-shadow: 0 12px 30px rgba(238, 0, 0, 0.08);
+}
+
+[data-theme="light"] .partner-logo.logo-light {
+  display: none;
+}
+
+[data-theme="light"] .partner-logo.logo-dark {
+  display: block;
+}
+
 
 
 
