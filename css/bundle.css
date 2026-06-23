@@ -6247,11 +6247,11 @@ blockquote {
 }
 
 [data-theme="light"] .partner-logo.logo-light {
-  display: none;
+  display: none !important;
 }
 
 [data-theme="light"] .partner-logo.logo-dark {
-  display: block;
+  display: block !important;
 }
 
 

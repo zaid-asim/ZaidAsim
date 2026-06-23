@@ -44,6 +44,9 @@
           var original = btn.textContent;
           btn.textContent = '✓ Copied!';
           btn.classList.add('copied');
+          if (typeof window.showZaNotification === 'function') {
+            window.showZaNotification('Email copied to clipboard successfully!', 'success');
+          }
 
           setTimeout(function () {
             btn.textContent = original;
@@ -62,6 +65,9 @@
             document.execCommand('copy');
             var original = btn.textContent;
             btn.textContent = '✓ Copied!';
+            if (typeof window.showZaNotification === 'function') {
+              window.showZaNotification('Email copied to clipboard successfully!', 'success');
+            }
             setTimeout(function () {
               btn.textContent = original;
             }, 2000);
@@ -1563,6 +1569,16 @@
   window.initCommandPalette = function () {
     document.addEventListener('keydown', onKeyDown);
     createTriggerButton();
+
+    // Make the header's hotkey hint clickable as well
+    var hint = document.getElementById('cmdPaletteHint');
+    if (hint) {
+      hint.style.cursor = 'pointer';
+      hint.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openOverlay();
+      });
+    }
   };
 })();
 
