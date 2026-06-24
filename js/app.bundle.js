@@ -852,17 +852,20 @@
   ];
 
   var ACHIEVEMENTS = {
-    explorer:   { title: '🧭 Explorer — Scrolled 3+ Sections',   xp: 50 },
-    networker:  { title: '🤝 Networker — Clicked a Social Card',  xp: 30 },
-    night_owl:  { title: '🌙 Night Owl — Dark Mode Activated',    xp: 20 },
-    commander:  { title: '⌨️ Commander — Opened Command Palette', xp: 40 },
-    fan:        { title: '📺 Fan — Clicked YouTube Link',          xp: 25 },
-    easter_egg: { title: '🥚 Easter Egg — Found the Secret!',     xp: 100 },
-    booted:     { title: '🚀 System Online — ZA-OS Shell Loaded', xp: 50 },
-    hacker:     { title: '👾 Hacker — Opened Terminal Emulator', xp: 40 },
-    the_architect: { title: '📐 The Architect — Altered System Accents', xp: 30 },
-    game_master: { title: '🏆 Game Master — Solved Hacking Minigame', xp: 50 },
-    sudo_hacker: { title: '💀 Sudo Hacker — Invoked Root Override', xp: 50 },
+    booted:            { title: '🚀 System Online', desc: 'ZA-OS Shell loaded successfully', xp: 50, hint: 'Launch the site and wait for the initialization sequence to settle.' },
+    explorer:          { title: '🧭 Explorer', desc: 'Scrolled past 3+ sections of the homepage', xp: 50, hint: 'Embark on a scrolling journey down through the home page.' },
+    networker:         { title: '🤝 Networker', desc: 'Connected by clicking a social card link', xp: 30, hint: 'Seek out the developer\'s socials and click one to connect.' },
+    night_owl:         { title: '🌙 Night Owl', desc: 'Activated system dark mode', xp: 20, hint: 'Flick the theme switch to submerge the site into shadow mode.' },
+    commander:         { title: '⌨️ Commander', desc: 'Opened the Command Palette interface', xp: 40, hint: 'Invoke the system menu using Ctrl+K / ⌘K or select its option.' },
+    fan:               { title: '📺 Fan', desc: 'Visited the official YouTube channel link', xp: 25, hint: 'Explore the developer\'s videography link.' },
+    hacker:            { title: '👾 Hacker', desc: 'Opened the retro Terminal Emulator subsystem', xp: 40, hint: 'Press the backtick (`) key or look for the shell entry point.' },
+    the_architect:     { title: '📐 The Architect', desc: 'Altered the system accent color theme', xp: 30, hint: 'Execute a \'theme\' directive within the Terminal subsystem.' },
+    game_master:       { title: '🏆 Game Master', desc: 'Decrypted and solved the security bypass guess minigame', xp: 50, hint: 'Run the \'game\' directive inside the Terminal and bypass security.' },
+    sudo_hacker:       { title: '💀 Sudo Hacker', desc: 'Executed a root override developer backdoor', xp: 50, hint: 'Attempt to invoke a forbidden root permission command in the terminal.' },
+    easter_egg:        { title: '🥚 Easter Egg', desc: 'Found the hidden interactive secret button', xp: 100, hint: 'Discover a secret button nestled near the page footer.' },
+    caffeine_overload: { title: '☕ Caffeine Overload', desc: 'Power-spammed the espresso machine coffee egg', xp: 500, hint: 'A programmer needs fuel. Tap the coffee mug button in the footer multiple times.' },
+    hacker_protocol:   { title: '👾 Hacker Protocol Activated', desc: 'Decrypted the secret input key buffer payload', xp: 250, hint: 'Type the letters of the developer\'s first name anywhere on the home page.' },
+    classified_access: { title: '📂 Classified Access', desc: 'Accessed the developer console and printed system logs', xp: 150, hint: 'Run the \'info\' command or inspect the \'About this Site\' console output.' }
   };
 
   var state = {
@@ -1061,11 +1064,11 @@
     if (!detail || !detail.id) return;
 
     var key = 'za_ach_' + detail.id;
-    if (sessionStorage.getItem(key)) return; // already shown
-    sessionStorage.setItem(key, '1');
+    if (localStorage.getItem(key)) return; // already unlocked
+    localStorage.setItem(key, '1');
 
     var ach = ACHIEVEMENTS[detail.id];
-    var title = detail.title || (ach ? ach.title : 'Achievement Unlocked');
+    var title = (ach ? ach.title : null) || detail.title || 'Achievement Unlocked';
     var xp    = detail.xp    || (ach ? ach.xp : 10);
 
     if (window.soundSynth) window.soundSynth.playAchievement();
@@ -1183,6 +1186,246 @@
     }, 1500);
   }
 
+  /* ---- Reset / Catalog Overlay ---- */
+  function resetProgress() {
+    if (confirm('Are you sure you want to reset all achievements, XP, and levels? This cannot be undone.')) {
+      Object.keys(localStorage).forEach(function(key) {
+        if (key.indexOf('za_ach_') === 0 || key === 'za_dev_xp' || key === 'za_dev_level') {
+          localStorage.removeItem(key);
+        }
+      });
+      if (typeof window.showZaNotification === 'function') {
+        window.showZaNotification('System progress reset. Reloading page...', 'info');
+      }
+      setTimeout(function() {
+        window.location.reload();
+      }, 1000);
+    }
+  }
+
+  function createAchievementsModal() {
+    var modalId = 'za-achievements-modal-overlay';
+    var existing = document.getElementById(modalId);
+    if (existing) {
+      existing.parentNode.removeChild(existing);
+    }
+
+    var overlay = document.createElement('div');
+    overlay.id = modalId;
+    overlay.className = 'za-achievements-overlay';
+
+    var currentLevel = state.level;
+    var currentXP = state.xp;
+    var levelName = LEVEL_NAMES[currentLevel] || 'Novice';
+    var threshold = getThreshold();
+    var pct = threshold > 0 ? Math.min((currentXP / threshold) * 100, 100) : 0;
+
+    var totalAchievements = Object.keys(ACHIEVEMENTS).length;
+    var unlockedCount = 0;
+    Object.keys(ACHIEVEMENTS).forEach(function(key) {
+      if (localStorage.getItem('za_ach_' + key)) {
+        unlockedCount++;
+      }
+    });
+
+    var modal = document.createElement('div');
+    modal.className = 'za-achievements-modal';
+
+    var header = document.createElement('div');
+    header.className = 'za-achievements-header';
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'za-achievements-close';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.title = 'Close (Esc)';
+    closeBtn.onclick = function() { closeAchievementsModal(); };
+    header.appendChild(closeBtn);
+
+    var title = document.createElement('h2');
+    title.className = 'za-achievements-title';
+    title.innerHTML = '🏆 ACHIEVEMENTS';
+    header.appendChild(title);
+
+    var progressContainer = document.createElement('div');
+    progressContainer.className = 'za-achievements-radial-container';
+
+    // SVG Progress ring
+    var svgNS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("class", "za-achievements-progress-ring");
+    svg.setAttribute("width", "70");
+    svg.setAttribute("height", "70");
+
+    var defs = document.createElementNS(svgNS, "defs");
+    defs.innerHTML = 
+      '<linearGradient id="za-radial-gradient" x1="0%" y1="0%" x2="100%" y2="100%">' +
+        '<stop offset="0%" stop-color="#8B00FF" />' +
+        '<stop offset="100%" stop-color="#FF00DC" />' +
+      '</linearGradient>' +
+      '<filter id="za-glow-filter" x="-20%" y="-20%" width="140%" height="140%">' +
+        '<feGaussianBlur stdDeviation="2.5" result="blur" />' +
+        '<feMerge>' +
+          '<feMergeNode in="blur" />' +
+          '<feMergeNode in="SourceGraphic" />' +
+        '</feMerge>' +
+      '</filter>';
+    svg.appendChild(defs);
+
+    var circleBg = document.createElementNS(svgNS, "circle");
+    circleBg.setAttribute("class", "za-progress-ring-circle-bg");
+    circleBg.setAttribute("stroke", "rgba(139, 0, 255, 0.12)");
+    circleBg.setAttribute("stroke-width", "5");
+    circleBg.setAttribute("fill", "transparent");
+    circleBg.setAttribute("r", "28");
+    circleBg.setAttribute("cx", "35");
+    circleBg.setAttribute("cy", "35");
+    svg.appendChild(circleBg);
+
+    var circleProgress = document.createElementNS(svgNS, "circle");
+    circleProgress.setAttribute("class", "za-progress-ring-circle");
+    circleProgress.setAttribute("stroke", "url(#za-radial-gradient)");
+    circleProgress.setAttribute("stroke-width", "5");
+    circleProgress.setAttribute("fill", "transparent");
+    circleProgress.setAttribute("r", "28");
+    circleProgress.setAttribute("cx", "35");
+    circleProgress.setAttribute("cy", "35");
+    circleProgress.setAttribute("filter", "url(#za-glow-filter)");
+    
+    var circ = 175.93;
+    circleProgress.style.strokeDasharray = circ;
+    circleProgress.style.strokeDashoffset = circ;
+    
+    svg.appendChild(circleProgress);
+
+    var infoBox = document.createElement('div');
+    infoBox.className = 'za-achievements-radial-info';
+    infoBox.innerHTML = 
+      '<div class="za-achievements-radial-level">Lv.' + currentLevel + '</div>' +
+      '<div class="za-achievements-radial-xp">' + currentXP + ' / ' + threshold + ' XP</div>';
+
+    var statsBox = document.createElement('div');
+    statsBox.className = 'za-achievements-stats';
+    statsBox.innerHTML = 
+      '<div class="za-achievements-stats-name">' + levelName + '</div>' +
+      '<div class="za-achievements-stats-count">' + unlockedCount + ' / ' + totalAchievements + ' Badges (' + Math.round((unlockedCount/totalAchievements)*100) + '%)</div>';
+
+    progressContainer.appendChild(svg);
+    progressContainer.appendChild(infoBox);
+    progressContainer.appendChild(statsBox);
+    header.appendChild(progressContainer);
+    modal.appendChild(header);
+
+    // Trigger ring animation in next frame
+    setTimeout(function() {
+      circleProgress.style.strokeDashoffset = circ - (pct / 100) * circ;
+    }, 100);
+
+    var body = document.createElement('div');
+    body.className = 'za-achievements-list';
+
+    Object.keys(ACHIEVEMENTS).forEach(function(key) {
+      var ach = ACHIEVEMENTS[key];
+      var isUnlocked = !!localStorage.getItem('za_ach_' + key);
+
+      var item = document.createElement('div');
+      item.className = 'za-achievement-item ' + (isUnlocked ? 'unlocked' : 'locked');
+
+      var iconMatch = ach.title.match(/^([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD00-\uDFFF])/);
+      var emoji = iconMatch ? iconMatch[0] : '🏆';
+      var cleanTitle = ach.title.replace(emoji, '').trim();
+      if (cleanTitle.indexOf('—') === 0) cleanTitle = cleanTitle.substring(1).trim();
+
+      var iconContainer = document.createElement('div');
+      iconContainer.className = 'za-achievement-icon';
+      iconContainer.innerHTML = isUnlocked ? emoji : '🔒';
+      item.appendChild(iconContainer);
+
+      var infoContainer = document.createElement('div');
+      infoContainer.className = 'za-achievement-info';
+
+      var titleRow = document.createElement('div');
+      titleRow.className = 'za-achievement-title-row';
+
+      var itemTitle = document.createElement('span');
+      itemTitle.className = 'za-achievement-item-title';
+      itemTitle.innerHTML = isUnlocked ? cleanTitle : 'Locked Milestone';
+
+      var itemXp = document.createElement('span');
+      itemXp.className = 'za-achievement-xp-tag';
+      itemXp.innerHTML = '+' + ach.xp + ' XP';
+
+      titleRow.appendChild(itemTitle);
+      titleRow.appendChild(itemXp);
+      infoContainer.appendChild(titleRow);
+
+      var itemDesc = document.createElement('span');
+      itemDesc.className = 'za-achievement-desc';
+      itemDesc.innerHTML = isUnlocked ? ach.desc : 'Hint: ' + (ach.hint || 'Explore the website to unlock this developer milestone.');
+      infoContainer.appendChild(itemDesc);
+
+      item.appendChild(infoContainer);
+
+      // Visual Click sound feedback on achievements catalog list
+      item.addEventListener('click', function() {
+        if (isUnlocked) {
+          if (window.soundEngine && typeof window.soundEngine.playSuccess === 'function') {
+            window.soundEngine.playSuccess();
+          } else if (window.soundSynth && typeof window.soundSynth.playSelect === 'function') {
+            window.soundSynth.playSelect();
+          }
+        } else {
+          if (window.soundEngine && typeof window.soundEngine.playTick === 'function') {
+            window.soundEngine.playTick();
+          } else if (window.soundSynth && typeof window.soundSynth.playClick === 'function') {
+            window.soundSynth.playClick();
+          }
+        }
+      });
+
+      body.appendChild(item);
+    });
+
+    modal.appendChild(body);
+
+    var footer = document.createElement('div');
+    footer.className = 'za-achievements-footer';
+    footer.innerHTML = '<span>ZA-OS v1.0.6</span><span>Esc to close</span>';
+    modal.appendChild(footer);
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    var onKeydown = function(e) {
+      if (e.key === 'Escape') {
+        closeAchievementsModal();
+      }
+    };
+    window.addEventListener('keydown', onKeydown);
+    overlay.onKeydownCleanup = onKeydown;
+
+    requestAnimationFrame(function() {
+      overlay.classList.add('show');
+    });
+
+    function closeAchievementsModal() {
+      overlay.classList.remove('show');
+      window.removeEventListener('keydown', overlay.onKeydownCleanup);
+      setTimeout(function() {
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      }, 300);
+    }
+  }
+
+  window.showAchievementsCatalog = function() {
+    createAchievementsModal();
+  };
+
+  window.resetSystemProgress = function() {
+    resetProgress();
+  };
+
   /* ---- Init ---- */
   window.initHUD = function () {
     loadState();
@@ -1192,6 +1435,55 @@
     setupAchievementTriggers();
 
     window.addEventListener('za_achievement', handleAchievement);
+
+    // Click trigger on HUD elements
+    if (state.hudEl) {
+      state.hudEl.style.cursor = 'pointer';
+      state.hudEl.title = 'Click to open Achievements Catalog';
+      state.hudEl.addEventListener('click', function () {
+        if (typeof window.showAchievementsCatalog === 'function') {
+          window.showAchievementsCatalog();
+        }
+      });
+    }
+
+    // Expose hudEngine globally
+    window.hudEngine = {
+      addXP: function (amount, reason) {
+        addXP(amount);
+        if (reason && typeof window.showZaNotification === 'function') {
+          window.showZaNotification(reason + ' (+' + amount + ' XP)', 'success');
+        }
+      },
+      awardAchievement: function (idOrTitle, xpFallback) {
+        var id = idOrTitle;
+        if (idOrTitle === 'Caffeine Overload') id = 'caffeine_overload';
+        else if (idOrTitle === 'Hacker Protocol Actived') id = 'hacker_protocol';
+        else if (idOrTitle === 'Classified Terminal Access') id = 'classified_access';
+
+        var ach = ACHIEVEMENTS[id];
+        var title = ach ? ach.title : idOrTitle;
+        var xp = ach ? ach.xp : (xpFallback || 50);
+
+        window.dispatchEvent(
+          new CustomEvent('za_achievement', {
+            detail: { id: id, title: title, xp: xp }
+          })
+        );
+      },
+      getAchievements: function () {
+        return ACHIEVEMENTS;
+      },
+      getState: function () {
+        return state;
+      },
+      getLevelNames: function () {
+        return LEVEL_NAMES;
+      },
+      getThreshold: function () {
+        return getThreshold();
+      }
+    };
   };
 })();
 
@@ -1308,10 +1600,13 @@
     { icon: '🌐', label: 'Socials',       shortcut: '',          action: function () { navigateToRoute('/', '#socials'); } },
     { icon: '✉️', label: 'Contact',       shortcut: '',          action: function () { navigateToRoute('/contact'); } },
     { icon: '🌟', label: 'The Vision',     shortcut: '',          action: function () { navigateToRoute('/', '#vision'); } },
+    { icon: '🏆', label: 'Achievements Catalog', shortcut: '',    action: function () { if (typeof window.showAchievementsCatalog === 'function') window.showAchievementsCatalog(); } },
+    { icon: '👾', label: 'Open Terminal Emulator', shortcut: '`', action: function () { if (typeof window.toggleTerminal === 'function') window.toggleTerminal(); } },
     { icon: '🎨', label: 'Toggle Theme',  shortcut: modKey + '+T', action: function () { if (window.toggleTheme) window.toggleTheme(); } },
     { icon: '🔊', label: 'Toggle Sound',  shortcut: modKey + '+M', action: function () { if (window.soundSynth) window.soundSynth.toggleMute(); } },
     { icon: '🌌', label: 'Play Ambient Hum', shortcut: '',       action: function () { toggleAmbientHum(); } },
     { icon: '💀', label: 'Activate Chaos Mode', shortcut: '',    action: function () { activateChaosMode(); } },
+    { icon: '🗑️', label: 'Reset System Progress', shortcut: '',  action: function () { if (typeof window.resetSystemProgress === 'function') window.resetSystemProgress(); } },
     { icon: '🔒', label: 'About this Site', shortcut: '',        action: function () { displayAboutSite(); } }
   ];
 
@@ -4244,11 +4539,11 @@
         velocities[i3 + 2] += (dz / dist) * force * 0.04;
       }
 
-      // Gentle 3D flow/sway field (simulates cosmic wind)
-      const freq = 0.004;
-      const noiseX = Math.sin(py * freq + time * 0.25) * Math.cos(pz * freq + time * 0.2) * 0.09;
-      const noiseY = Math.cos(px * freq + time * 0.22) * Math.sin(pz * freq + time * 0.28) * 0.09;
-      const noiseZ = Math.sin(px * freq + time * 0.2) * Math.cos(py * freq + time * 0.25) * 0.09;
+      // Gentle 3D flow/sway field (simulates cosmic wind with O(1) trig optimizations)
+      const phase = i * 0.08 + time * 0.35;
+      const noiseX = Math.sin(phase) * 0.07;
+      const noiseY = Math.cos(phase * 1.25) * 0.07;
+      const noiseZ = Math.sin(phase * 0.75) * 0.07;
 
       velocities[i3]     += noiseX;
       velocities[i3 + 1] += noiseY;
@@ -4355,7 +4650,7 @@
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 3000);
     camera.position.z = 800;
 
-    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: "high-performance", precision: "mediump" });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);

@@ -1,7 +1,7 @@
 import os
 import re
 
-version = "1.0.3"
+version = "1.0.6"
 
 def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
