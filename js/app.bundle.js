@@ -2524,17 +2524,23 @@
   }
 
   function setupScrollProgress() {
+    let tickingProgress = false;
     window.addEventListener(
       'scroll',
       function () {
-        const scrollTop = window.scrollY || window.pageYOffset || 0;
-        const docHeight =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
-        document.documentElement.style.setProperty(
-          '--scroll-progress',
-          progress.toString()
-        );
+        if (tickingProgress) return;
+        tickingProgress = true;
+        requestAnimationFrame(function () {
+          const scrollTop = window.scrollY || window.pageYOffset || 0;
+          const docHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+          document.documentElement.style.setProperty(
+            '--scroll-progress',
+            progress.toString()
+          );
+          tickingProgress = false;
+        });
       },
       { passive: true }
     );
@@ -4168,30 +4174,40 @@
     if (!timeline || !progressLine || !chapters.length) return;
 
     var readChapters = {};
+    var tickingTimeline = false;
 
     window.addEventListener('scroll', function () {
-      var rect = timeline.getBoundingClientRect();
-      var winH = window.innerHeight;
-      
-      // Calculate how far we are down the timeline
-      var startY = rect.top;
-      var totalH = rect.height;
-      var scrolled = -startY + (winH * 0.5); // centered trigger line
+      if (tickingTimeline) return;
+      tickingTimeline = true;
+      requestAnimationFrame(function () {
+        if (!timeline || !progressLine) {
+          tickingTimeline = false;
+          return;
+        }
+        var rect = timeline.getBoundingClientRect();
+        var winH = window.innerHeight;
+        
+        // Calculate how far we are down the timeline
+        var startY = rect.top;
+        var totalH = rect.height;
+        var scrolled = -startY + (winH * 0.5); // centered trigger line
 
-      var percent = Math.min(Math.max(scrolled / totalH * 100, 0), 100);
-      progressLine.style.height = percent + '%';
+        var percent = Math.min(Math.max(scrolled / totalH * 100, 0), 100);
+        progressLine.style.height = percent + '%';
 
-      // Chapter micro-rewards (+5 XP per read chapter)
-      chapters.forEach(function (chapter, idx) {
-        var chRect = chapter.getBoundingClientRect();
-        if (chRect.top < winH * 0.6 && chRect.bottom > 0) {
-          if (!readChapters[idx]) {
-            readChapters[idx] = true;
-            if (window.hudEngine && typeof window.hudEngine.addXP === 'function') {
-              window.hudEngine.addXP(5, 'Chapter ' + (idx + 1) + ' Read');
+        // Chapter micro-rewards (+5 XP per read chapter)
+        chapters.forEach(function (chapter, idx) {
+          var chRect = chapter.getBoundingClientRect();
+          if (chRect.top < winH * 0.6 && chRect.bottom > 0) {
+            if (!readChapters[idx]) {
+              readChapters[idx] = true;
+              if (window.hudEngine && typeof window.hudEngine.addXP === 'function') {
+                window.hudEngine.addXP(5, 'Chapter ' + (idx + 1) + ' Read');
+              }
             }
           }
-        }
+        });
+        tickingTimeline = false;
       });
     }, { passive: true });
   }
@@ -4199,18 +4215,26 @@
   // 6. Biography Era Breaks Parallax Scroll
   function initBioParallax() {
     var breaks = document.querySelectorAll('.bio-chapter-break');
+    if (breaks.length === 0) return;
+
+    var tickingParallax = false;
     window.addEventListener('scroll', function () {
-      var winH = window.innerHeight;
-      breaks.forEach(function (brk) {
-        var rect = brk.getBoundingClientRect();
-        if (rect.top < winH && rect.bottom > 0) {
-          var bg = brk.querySelector('.bio-chapter-break-bg');
-          if (bg) {
-            var progress = (winH - rect.top) / (winH + rect.height);
-            var translateY = (progress - 0.5) * 50; // shift up/down
-            bg.style.transform = 'translateY(' + translateY + 'px)';
+      if (tickingParallax) return;
+      tickingParallax = true;
+      requestAnimationFrame(function () {
+        var winH = window.innerHeight;
+        breaks.forEach(function (brk) {
+          var rect = brk.getBoundingClientRect();
+          if (rect.top < winH && rect.bottom > 0) {
+            var bg = brk.querySelector('.bio-chapter-break-bg');
+            if (bg) {
+              var progress = (winH - rect.top) / (winH + rect.height);
+              var translateY = (progress - 0.5) * 50; // shift up/down
+              bg.style.transform = 'translateY(' + translateY + 'px)';
+            }
           }
-        }
+        });
+        tickingParallax = false;
       });
     }, { passive: true });
   }
@@ -4276,6 +4300,16 @@
   let scrollY = 0;
   let animId = null;
   let isHidden = false;
+  let isScrolling = false;
+  let scrollTimeout = null;
+
+  function onScroll() {
+    isScrolling = true;
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+    }, 150);
+  }
 
   // 1. Layer 3 (Close): Interactive Constellation Particles
   function createConstellationParticles() {
@@ -4612,10 +4646,16 @@
 
     updateConstellationParticles(time);
 
-    // Constellation line calculation throttled to every 3rd frame
+    // Constellation line calculation throttled to every 3rd frame normally, or every 18th frame during scrolling
     lineUpdateCounter++;
-    if (lineUpdateCounter % 3 === 0) {
-      updateConstellationLines();
+    if (isScrolling) {
+      if (lineUpdateCounter % 18 === 0) {
+        updateConstellationLines();
+      }
+    } else {
+      if (lineUpdateCounter % 3 === 0) {
+        updateConstellationLines();
+      }
     }
 
     renderer.render(scene, camera);
@@ -4674,6 +4714,7 @@
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     document.addEventListener('visibilitychange', onVisibility);
 
     animate();
@@ -4731,11 +4772,18 @@
     btn.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>';
     document.body.appendChild(btn);
 
+    var tickingTopBtn = false;
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
+        if (!tickingTopBtn) {
+            window.requestAnimationFrame(function() {
+                if (window.scrollY > 300) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+                tickingTopBtn = false;
+            });
+            tickingTopBtn = true;
         }
     }, { passive: true });
 

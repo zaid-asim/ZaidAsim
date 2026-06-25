@@ -1,1 +1,52 @@
 /udyam-certificate /assets/udyam-registration-certificate.pdf 200
+
+# Canonical 301 redirects for clean URL routing
+/index.html / 301
+/biography.html /biography 301
+/contact.html /contact 301
+/ideas.html /ideas 301
+/projects.html /projects 301
+/support.html /support 301
+
+/projects/aeroxnet.html /projects/aeroxnet 301
+/projects/crafty-kids.html /projects/crafty-kids 301
+/projects/homies.html /projects/homies 301
+/projects/storm-of-kings.html /projects/storm-of-kings 301
+/projects/swadesh.html /projects/swadesh 301
+/projects/titan-nano.html /projects/titan-nano 301
+
+/ideas/ai-memory-bridge.html /ideas/ai-memory-bridge 301
+/ideas/android-xr-research.html /ideas/android-xr-research 301
+/ideas/chronos.html /ideas/chronos 301
+/ideas/cloud-handheld.html /ideas/cloud-handheld 301
+/ideas/cosmos-universe.html /ideas/cosmos-universe 301
+/ideas/programmatic-seo.html /ideas/programmatic-seo 301
+/ideas/qta-x.html /ideas/qta-x 301
+/ideas/titan.html /ideas/titan 301
+/ideas/youtube.html /ideas/youtube 301
+/ideas/za-sentinel.html /ideas/za-sentinel 301
+
+/legal/privacy-policy.html /legal/privacy-policy 301
+/legal/terms-of-use.html /legal/terms-of-use 301
+
+# Legacy root paths redirected to new subdirectories
+/homies /projects/homies 301
+/swadesh /projects/swadesh 301
+/aeroxnet /projects/aeroxnet 301
+/crafty-kids /projects/crafty-kids 301
+/storm-of-kings /projects/storm-of-kings 301
+/titan-nano /projects/titan-nano 301
+
+/qta-x /ideas/qta-x 301
+/android-xr-research /ideas/android-xr-research 301
+/chronos /ideas/chronos 301
+/titan /ideas/titan 301
+/cosmos-universe /ideas/cosmos-universe 301
+/ai-memory-bridge /ideas/ai-memory-bridge 301
+/cloud-handheld /ideas/cloud-handheld 301
+/programmatic-seo /ideas/programmatic-seo 301
+/youtube /ideas/youtube 301
+/za-sentinel /ideas/za-sentinel 301
+
+/privacy-policy /legal/privacy-policy 301
+/terms-of-use /legal/terms-of-use 301

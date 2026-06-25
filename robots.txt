@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /scratch/
+Disallow: /chrome_startup.log
+Disallow: /migrate_antigravity.ps1
+Disallow: /dev_server.py
 
 Sitemap: https://zaidasim.com/sitemap.xml

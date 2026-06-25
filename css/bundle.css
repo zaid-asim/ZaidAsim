@@ -5321,6 +5321,8 @@ blockquote {
     transition: transform 0.1s ease-out;
     letter-spacing: 0.1em;
     white-space: nowrap;
+    will-change: transform;
+    transform: translate3d(0,0,0);
 }
 
 .bio-chapter-break-title {
@@ -6043,12 +6045,13 @@ blockquote {
     cursor: pointer;
     z-index: 9999;
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(15px) translate3d(0,0,0);
     pointer-events: none;
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
                 transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
                 border-color 0.15s ease, 
                 box-shadow 0.15s ease;
+    will-change: transform, opacity;
 }
 
 .scroll-to-top-btn.visible {

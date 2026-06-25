@@ -1,8 +1,16 @@
+# Global HTTP Security & Ranking Signals
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Long-term Immutable Caching for Assets & Media
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Cache-busted bundles are immutable (since changes increment version query string ?v=1.0.6)
 /css/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /js/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=31536000, immutable
