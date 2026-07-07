@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <script>(function(){var t=localStorage.getItem('za_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="API Time Machine — Bringing Zero-Trust security and automatic documentation to legacy, undocumented binary systems.">
+    <meta name="keywords" content="Zaid Asim, Zaid Asim Softwares, API Time Machine, Cybersecurity, Zero-Trust, Protocol Reverse Engineering, Envoy WASM, Legacy Systems">
+    <meta name="author" content="Zaid Asim">
+    <meta name="theme-color" content="#080C14">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://zaidasim.com/projects/atm">
+
+    <title>API Time Machine | Zero-Trust Protocol Firewall | Zaid Asim Softwares</title>
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/bundle.css?v=1.0.7">
+    
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme: 'dark', themeVariables: { primaryColor: '#080C14', primaryTextColor: '#00ffff', primaryBorderColor: '#6366F1', lineColor: '#6366F1' }});</script>
+</head>
+<body class="atm-page">
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar atm-progress-bar" id="scrollProgressBarElement"></div>
+    </div>
+
+    <!-- Background Grid Effect -->
+    <div class="atm-bg-grid"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot atm-cursor" id="cursorDot"></div>
+    <div class="cursor-ring atm-cursor-ring" id="cursorRing"></div>
+
+    <!-- Nav Bar -->
+    <header class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/logo.png" alt="Zaid Asim Softwares Logo" class="nav-logo">
+                <span class="nav-brand-text">
+                    Zaid Asim
+                    <span class="nav-brand-subtext">Softwares</span>
+                </span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span class="menu-bar bar-1"></span>
+                <span class="menu-bar bar-2"></span>
+                <span class="menu-bar bar-3"></span>
+            </button>
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/projects" class="nav-link active">Projects</a>
+                    <a href="/biography" class="nav-link">Biography</a>
+                    <a href="/ideas" class="nav-link">Ideas Lab</a>
+                    <a href="/support" class="nav-link">Support</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <span class="theme-icon-dark">🌙</span>
+                        <span class="theme-icon-light">☀️</span>
+                    </button>
+                    <div class="cmd-palette-hint" id="cmdPaletteHint">
+                        <span class="kbd">⌘</span><span class="kbd">K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section atm-hero">
+        <div class="container">
+            <div class="atm-hero-content" data-animate="fade-up">
+                <div class="atm-terminal-badge">
+                    <span class="pulsing-dot"></span>
+                    <span>SYSTEM.ACTIVE // INGESTION ROUTINE</span>
+                </div>
+                <h1 class="atm-title">
+                    API Time Machine
+                </h1>
+                <p class="atm-subtitle">
+                    Bringing <strong>Zero-Trust security</strong> and <strong>automatic documentation</strong> to legacy, undocumented binary systems via WebAssembly (WASM) filters.
+                </p>
+                <div class="atm-hero-actions">
+                    <button class="atm-btn-primary" onclick="document.getElementById('solution').scrollIntoView({behavior: 'smooth'})">Initialize Diagnostics</button>
+                    <a href="#architecture" class="atm-btn-secondary">View Architecture</a>
+                </div>
+            </div>
+            
+            <!-- Terminal Hex Dump Simulator -->
+            <div class="atm-terminal-window" data-animate="scale-in" role="region" aria-label="Terminal Hex Dump Simulator" style="min-height: 300px;">
+                <div class="atm-terminal-header" aria-hidden="true">
+                    <div class="atm-mac-btns">
+                        <span class="mac-close"></span>
+                        <span class="mac-min"></span>
+                        <span class="mac-max"></span>
+                    </div>
+                    <div class="atm-terminal-title">pcap_ingest_worker --live</div>
+                </div>
+                <div class="atm-terminal-body" id="atmTerminalBody" aria-live="polite" aria-atomic="false">
+                    <!-- Javascript will inject hex stream here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Problem Section -->
+    <section class="section atm-section">
+        <div class="container">
+            <h2 class="atm-section-title">1. The Core Problem</h2>
+            <div class="atm-cards-grid">
+                <div class="atm-card" data-animate="fade-up">
+                    <div class="atm-card-icon">📂</div>
+                    <h3>Documentation Debt</h3>
+                    <p>Original specifications are lost, and the original developers are gone. Systems run blindly on legacy knowledge.</p>
+                </div>
+                <div class="atm-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="atm-card-icon">⚠️</div>
+                    <h3>Security Liability</h3>
+                    <p>Legacy protocols transmit sensitive data (PANs, API keys) in plaintext, lacking modern encryption and authentication.</p>
+                </div>
+                <div class="atm-card" data-animate="fade-up" style="animation-delay: 0.2s;">
+                    <div class="atm-card-icon">🧱</div>
+                    <h3>The Integration Wall</h3>
+                    <p>Connecting mainframes to modern cloud services or secure AI models is impossible without complex, fragile middleware.</p>
+                </div>
+                <div class="atm-card" data-animate="fade-up" style="animation-delay: 0.3s;">
+                    <div class="atm-card-icon">💸</div>
+                    <h3>High Remediation Costs</h3>
+                    <p>Rewriting the mainframe code from scratch is a multi-million dollar, high-risk venture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section atm-section" id="solution" style="background: rgba(17, 24, 39, 0.4);">
+        <div class="container">
+            <h2 class="atm-section-title">2. The Solution</h2>
+            <p class="atm-lead-text">API Time Machine acts as a <strong>non-invasive, active cyber-defense envelope</strong>. Instead of editing the mainframe's code, it listens to the network traffic, reverse-engineers the protocol structure automatically, and deploys a real-time WebAssembly (WASM) security filter onto the edge proxy.</p>
+            
+            <div class="atm-mermaid-wrapper" data-animate="fade-up" style="min-height: 350px;">
+                <div class="mermaid" aria-label="Pipeline Architecture Diagram">
+                    graph TD
+                        A[Legacy Client] -->|Plaintext Binary| B(Envoy Proxy + WASM Filter)
+                        B -->|Verified & Sanitized| C[Legacy Mainframe]
+                        D[Sniffed PCAP / Traffic] -->|1. Ingestion| E[Markov Chain DFA Inference]
+                        E -->|2. Struct Clustering| F[Kaitai Struct PDL Spec]
+                        F -->|3. Compile WASM| B
+                        B -->|4. WAF Telemetry| G[(Telemetry Database Log)]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section class="section atm-section" id="architecture">
+        <div class="container">
+            <h2 class="atm-section-title">3. How the Pipeline Works</h2>
+            
+            <div class="atm-pipeline-steps">
+                
+                <!-- Step 1 -->
+                <div class="atm-step" data-animate="fade-up">
+                    <div class="atm-step-num">01</div>
+                    <div class="atm-step-content">
+                        <h3>PCAP Ingestion & Decoupled Storage</h3>
+                        <p>The system reads network capture files (<code>.pcap</code>) asynchronously. Instead of bloating the SQL database with gigabytes of raw binary files, the backend streams raw payloads into a local storage folder (<code>data/payloads/</code>), saving only a lightweight string path. A transparent Python descriptor shims the database queries so the code remains 100% backward-compatible.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="atm-step" data-animate="fade-up">
+                    <div class="atm-step-num">02</div>
+                    <div class="atm-step-content">
+                        <h3>Markov-Chain State Machine Inference (DFA)</h3>
+                        <p>Packets are grouped by Jaccard similarity and structural attributes (direction, signatures, length buckets, and hex prefixes). The system maps transitions chronologically to build a cyclic Markov-chain transition graph.</p>
+                        
+                        <!-- Interactive D3 Graph Container -->
+                        <div class="atm-graph-container" id="d3GraphContainer" role="figure" aria-label="Interactive Markov-Chain State Machine Graph" style="min-height: 400px;">
+                            <!-- D3 JS injects here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 & 4: Compiler Mock -->
+                <div class="atm-step" data-animate="fade-up">
+                    <div class="atm-step-num">03</div>
+                    <div class="atm-step-content">
+                        <h3>Type Guessing & WASM Compilation</h3>
+                        <p>Analyzes offsets to determine data types (ASCII, integers, timestamps) and generates a declarative Kaitai Struct YAML definition. This schema compiles into a Rust-based WebAssembly module designed for the <strong>Envoy Proxy</strong>, with resilient fallbacks if tools are missing locally.</p>
+                        
+                        <!-- Split Screen Compiler Mock -->
+                        <div class="atm-compiler-split" role="region" aria-label="WASM Compiler Simulator" style="min-height: 350px;">
+                            <div class="atm-compiler-editor" aria-label="Schema Editor">
+                                <div class="atm-editor-header" aria-hidden="true">protocol_schema.ksy</div>
+                                <pre tabindex="0" aria-label="Code Editor Content"><code>meta:
+  id: legacy_banking
+  endian: be
+seq:
+  - id: mti
+    type: u2
+  - id: bitmap
+    type: b64
+  - id: pan
+    type: strz
+    encoding: ascii</code></pre>
+                            </div>
+                            <div class="atm-compiler-console" aria-label="Compiler Console">
+                                <div class="atm-console-header">
+                                    <button class="atm-compile-btn" id="triggerCompileBtn" aria-controls="compilerOutput">Run Compilation</button>
+                                </div>
+                                <div class="atm-console-output" id="compilerOutput" aria-live="polite">
+                                    <span style="color:#6366F1;" aria-hidden="true">></span> Ready for compilation...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="atm-step" data-animate="fade-up">
+                    <div class="atm-step-num">05</div>
+                    <div class="atm-step-content">
+                        <h3>Active Defense WAF & Telemetry Logs</h3>
+                        <p>The proxy inspects incoming payloads. If it detects unencrypted PII (like Credit Card numbers) or anomalous structures, it drops the connection. Security incidents are written to a <code>TelemetryLog</code> database table, keeping audit logs persistent across system restarts.</p>
+                        
+                        <!-- Live Ticker Dashboard -->
+                        <div class="atm-telemetry-dashboard" role="status" aria-label="Live Security Telemetry Dashboard" style="min-height: 200px;">
+                            <div class="atm-dashboard-header" aria-hidden="true">
+                                <span class="pulsing-dot red-dot"></span>
+                                LIVE SECURITY TELEMETRY
+                            </div>
+                            <div class="atm-ticker" id="incidentTicker" aria-live="polite">
+                                <!-- JS inserts ticker items here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Performance Section -->
+    <section class="section atm-section" style="border-top: 1px solid var(--color-border); padding-bottom: 6rem;">
+        <div class="container">
+            <h2 class="atm-section-title">4. Key Performance & Security Hardening</h2>
+            <div class="atm-features-list">
+                <div class="atm-feature-row" data-animate="fade-up">
+                    <div class="atm-feature-icon">🛡️</div>
+                    <div class="atm-feature-text">
+                        <h3>SSRF Blocklist</h3>
+                        <p>The automated fuzzer restricts targets, blocking loops targeting loopback (<code>127.0.0.1</code>), private networks, or AWS Metadata (<code>169.254.169.254</code>).</p>
+                    </div>
+                </div>
+                <div class="atm-feature-row" data-animate="fade-up">
+                    <div class="atm-feature-icon">🧠</div>
+                    <div class="atm-feature-text">
+                        <h3>OOM Protection</h3>
+                        <p>Upload endpoints read data in chunked sizes (5MB for headers, 100MB for PCAP files) rather than dumping whole payloads into memory.</p>
+                    </div>
+                </div>
+                <div class="atm-feature-row" data-animate="fade-up">
+                    <div class="atm-feature-icon">⏱️</div>
+                    <div class="atm-feature-text">
+                        <h3>Anti-Brute Force</h3>
+                        <p>The token key endpoint is rate-limited (<code>20/minute</code>) using <code>slowapi</code> to mitigate credential stuffing.</p>
+                    </div>
+                </div>
+                <div class="atm-feature-row" data-animate="fade-up">
+                    <div class="atm-feature-icon">⚖️</div>
+                    <div class="atm-feature-text">
+                        <h3>GDPR Compliance</h3>
+                        <p>GDPR erasure requests execute chunked deletions in batches of 1000 to prevent SQLite transaction locking while purging all metadata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer" style="border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../assets/logo.png" alt="Zaid Asim Softwares Logo" class="footer-logo">
+                    <span class="footer-name">Zaid Asim Softwares</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
+                    <a href="javascript:void(0)" class="footer-social-link">Discord</a>
+                </div>
+                <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
+                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Terms of Use</a>
+                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zaid Asim Softwares · UDYAM-KR-15-0069715 · All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Placeholders to avoid script errors -->
+    <div style="display:none;" id="visionCanvasContainer"></div>
+    <div style="display:none;" id="achievementContainer"></div>
+
+    <!-- Scripts -->
+    <script src="../js/vendor.bundle.js?v=1.0.7"></script>
+    <script src="../js/app.bundle.js?v=1.0.7"></script>
+    <script src="../js/atm.js?v=1.0.0"></script>
+</body>
+</html>

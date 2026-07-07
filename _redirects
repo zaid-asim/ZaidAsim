@@ -50,3 +50,7 @@
 
 /privacy-policy /legal/privacy-policy 301
 /terms-of-use /legal/terms-of-use 301
+
+/atm /projects/atm.html 200
+/projects/atm.html /atm 301
+/projects/atm /atm 301
