@@ -91,6 +91,17 @@
 </head>
 <body>
 
+    <!-- ============================================ -->
+    <!-- VOLUMETRIC BACKGROUND                        -->
+    <!-- ============================================ -->
+    <div class="volumetric-background">
+        <div class="mesh-aurora aurora-1"></div>
+        <div class="mesh-aurora aurora-2"></div>
+        <div class="mesh-aurora aurora-3"></div>
+        <div class="cyber-grid"></div>
+    </div>
+
+
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-container">
@@ -155,45 +166,92 @@
     <!-- SECTION 1: HERO                              -->
     <!-- ============================================ -->
     <section class="section hero-section" id="hero">
-        <div class="hero-content" data-animate="fade-up">
-            <!-- Red Hat Partnership Badge -->
-            <div class="partner-badge" data-animate="fade-up" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.2rem; border-radius: 100px; background: rgba(238, 0, 0, 0.05); border: 1px solid rgba(238, 0, 0, 0.25); margin-bottom: 2rem; font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation-delay: 0.1s;">
-                <span class="partner-ping" style="position: relative; display: inline-block; width: 6px; height: 6px; background-color: #ee0000; border-radius: 50%;"></span>
-                <span class="partner-label" style="opacity: 0.85; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;">In Partnership with</span>
-                <div class="partner-logo-wrapper" style="display: flex; align-items: center; height: 1.25rem; border-left: 1px solid rgba(255, 255, 255, 0.15); padding-left: 0.75rem; margin-left: 0.15rem;">
-                    <img src="assets/redhat-logo-light.svg" alt="Red Hat Logo" class="partner-logo logo-light" style="height: 18px; width: auto; display: block; object-fit: contain;">
-                    <img src="assets/redhat-logo-dark.svg" alt="Red Hat Logo" class="partner-logo logo-dark" style="height: 18px; width: auto; display: none; object-fit: contain;">
+        <div class="hero-split">
+            <div class="hero-left" data-animate="fade-up">
+                
+                <div class="hero-status-pill">
+                    <div class="status-dot"></div>
+                    Available for Collabs
                 </div>
+
+                <!-- Red Hat Partnership Badge -->
+                <div class="partner-badge" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.2rem; border-radius: 100px; background: rgba(238, 0, 0, 0.05); border: 1px solid rgba(238, 0, 0, 0.25); margin-bottom: 2rem; font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                    <span class="partner-ping" style="position: relative; display: inline-block; width: 6px; height: 6px; background-color: #ee0000; border-radius: 50%;"></span>
+                    <span class="partner-label" style="opacity: 0.85; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;">In Partnership with</span>
+                    <div class="partner-logo-wrapper" style="display: flex; align-items: center; height: 1.25rem; border-left: 1px solid rgba(255, 255, 255, 0.15); padding-left: 0.75rem; margin-left: 0.15rem;">
+                        <img src="assets/redhat-logo-light.svg" alt="Red Hat Logo" class="partner-logo logo-light" style="height: 18px; width: auto; display: block; object-fit: contain;">
+                        <img src="assets/redhat-logo-dark.svg" alt="Red Hat Logo" class="partner-logo logo-dark" style="height: 18px; width: auto; display: none; object-fit: contain;">
+                    </div>
+                </div>
+
+                <!-- Company Name Layout -->
+                <h1 class="hero-name" id="heroName">
+                    Zaid Asim<br>
+                    <span style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 500; opacity: 0.85;">Softwares</span>
+                </h1>
+
+                <!-- Interactive Typewriter Subtitle -->
+                <div class="hero-tagline">
+                    <span class="tagline-text" id="taglineText">AI Platforms · Game Studios · Enterprise Software</span>
+                    <span class="tagline-cursor">|</span>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="hero-actions" style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: flex-start;">
+                    <a href="/atm" class="contact-btn primary-btn btn-shimmer" style="background: linear-gradient(135deg, #00ffff, #6366f1); color: #080c14; font-weight: 700; border: none; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.5); text-shadow: none; display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Explore API Time Machine
+                        <span style="font-size: 0.75rem; background: rgba(8, 12, 20, 0.15); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.25rem;">CURRENT PROJECT</span>
+                    </a>
+                    <a href="#projects" class="contact-btn primary-btn" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary);">Explore Our Work ↓</a>
+                    <a href="#contact" class="contact-btn secondary-btn btn-shimmer" style="background: transparent; border: 1px solid var(--color-border);">Contact Us</a>
+                </div>
+
+                <div class="hero-stats-bar">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">12+</span>
+                        <span class="hero-stat-label">Projects</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">2021</span>
+                        <span class="hero-stat-label">Est.</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">CERT</span>
+                        <span class="hero-stat-label">UDYAM</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">IND</span>
+                        <span class="hero-stat-label">Location</span>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="tag">Software Enterprise</div>
-            
-            <!-- Company Name Layout -->
-            <h1 class="hero-name" id="heroName">
-                Zaid Asim<br>
-                <span style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 500; opacity: 0.85;">Softwares</span>
-            </h1>
-
-            <!-- Interactive Typewriter Subtitle -->
-            <div class="hero-tagline">
-                <span class="tagline-text" id="taglineText">AI Platforms · Game Studios · Enterprise Software</span>
-                <span class="tagline-cursor">|</span>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="hero-actions" style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: flex-start;">
-                <a href="/atm" class="contact-btn primary-btn" style="background: linear-gradient(135deg, #00ffff, #6366f1); color: #080c14; font-weight: 700; border: none; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.5); text-shadow: none; display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    Explore API Time Machine
-                    <span style="font-size: 0.75rem; background: rgba(8, 12, 20, 0.15); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.25rem;">CURRENT PROJECT</span>
-                </a>
-                <a href="#projects" class="contact-btn primary-btn" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary);">Explore Our Work ↓</a>
-                <a href="#contact" class="contact-btn secondary-btn" style="background: transparent; border: 1px solid var(--color-border);">Contact Us</a>
-            </div>
-
-            <div class="hero-badge" style="margin-top: 3rem;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>UDYAM-KR-15-0069715 · Est. 2021</span>
+            <div class="hero-right" data-animate="fade-up">
+                <div class="hero-card-stack">
+                    <a href="/projects/swadesh" class="hero-project-card">
+                        <span class="hpc-tag blue">AI Platform</span>
+                        <img src="assets/swadesh.webp" alt="Swadesh AI" class="hpc-img">
+                        <div class="hpc-title">Swadesh AI</div>
+                        <div class="hpc-desc">Multi-agent cognitive pipeline with long-term semantic memory.</div>
+                        <div class="hpc-arrow">View Project →</div>
+                    </a>
+                    <a href="/ideas/titan" class="hero-project-card">
+                        <span class="hpc-tag purple">Intelligence OS</span>
+                        <img src="assets/titan.webp" alt="TITAN OS" class="hpc-img">
+                        <div class="hpc-title">TITAN</div>
+                        <div class="hpc-desc">Executable intelligence operating system for connected knowledge.</div>
+                        <div class="hpc-arrow">Explore Blueprint →</div>
+                    </a>
+                    <a href="/ideas/chronos" class="hero-project-card">
+                        <span class="hpc-tag teal">Diagnostics</span>
+                        <img src="assets/chronos.webp" alt="Project Chronos" class="hpc-img">
+                        <div class="hpc-title">Project Chronos</div>
+                        <div class="hpc-desc">Causal evidence fusion platform for complex systems.</div>
+                        <div class="hpc-arrow">Read More →</div>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -207,9 +265,33 @@
     </section>
 
     <!-- ============================================ -->
+    <!-- SECTION 1.5: STATS STRIP                     -->
+    <!-- ============================================ -->
+    <section class="stats-strip" style="background: transparent; border: none;"  id="statsStrip">
+        <div class="stats-strip-inner" id="statsContainer">
+            <div class="stat-block">
+                <div class="stat-block-num" data-target="12">0</div>
+                <div class="stat-block-label">Projects Shipped</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-block-num" data-target="2021">0</div>
+                <div class="stat-block-label">Founded</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-block-num" data-target="3">0</div>
+                <div class="stat-block-label">Research Papers</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-block-num">∞</div>
+                <div class="stat-block-label">Ideas in Lab</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
     <!-- SECTION 2: WHAT WE DO (CAPABILITIES)         -->
     <!-- ============================================ -->
-    <section class="section capabilities-section" id="capabilities" style="border-top: 1px solid var(--color-border); background: rgba(10, 10, 10, 0.3);">
+    <section class="section capabilities-section" id="capabilities" >
         <div class="container">
             <div class="section-header" data-animate="fade-up">
                 <span class="tag">What We Do</span>
@@ -217,283 +299,247 @@
                 <p class="section-subtitle">Bridging cognitive intelligence and engineering execution.</p>
             </div>
 
-            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem;" data-animate="stagger-up">
-                <div class="project-card" style="padding: 2.5rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">AI & Intelligent Systems</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">NLP structures, multi-agent cognitive pipelines, semantic context memory integrations, and custom system tools.</p>
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 4rem;" data-animate="stagger-up">
+                <div class="capability-card-v2">
+                    <svg class="capability-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">AI & Intelligent Systems</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">NLP structures, multi-agent cognitive pipelines, semantic context memory integrations, and custom system tools.</p>
                 </div>
-                <div class="project-card" style="padding: 2.5rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎮</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Game Development</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Immersive simulation environments, Open World RPG constructs, multi-season sandbox narratives, and interactive learning concepts.</p>
+                <div class="capability-card-v2">
+                    <svg class="capability-icon purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Game Development</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">Immersive simulation environments, Open World RPG constructs, multi-season sandbox narratives, and interactive learning concepts.</p>
                 </div>
-                <div class="project-card" style="padding: 2.5rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">🌐</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Platform Engineering</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">Fast API deployment, cloud architecture layouts, automated programmatic SEO pipelines, and data systems scaling.</p>
+                <div class="capability-card-v2">
+                    <svg class="capability-icon teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Platform Engineering</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">Fast API deployment, cloud architecture layouts, automated programmatic SEO pipelines, and data systems scaling.</p>
+                </div>
+                <div class="capability-card-v2">
+                    <svg class="capability-icon pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Research & Open Science</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">Publishing deep systems-level reviews, spatial computing drafts, hardware topologies, and post-quantum concepts.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================ -->
-    <!-- SECTION 3: PROJECTS SHOWCASE (Redesigned)    -->
+    <!-- SECTION 3: PROJECTS SHOWCASE                 -->
     <!-- ============================================ -->
-    <section class="section projects-section" id="projects" style="border-top: 1px solid var(--color-border);">
+    <section class="section projects-section" id="projects" >
         <div class="container">
-            <div class="section-header" data-animate="fade-up" style="margin-bottom: 6rem;">
+            <div class="section-header" data-animate="fade-up" style="margin-bottom: 4rem;">
                 <span class="tag">Our Work</span>
                 <h2 class="section-title" style="margin-top: 1.5rem;">Corporate <span class="gradient-text">Project Catalog</span></h2>
                 <p class="section-subtitle">Active technologies and software platforms built for scale.</p>
             </div>
 
-            <!-- Alternating Large Showcases -->
-            <div class="showcase-list" style="display: flex; flex-direction: column; gap: 8rem;">
+            <!-- Hero Feature (Swadesh AI) -->
+            <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; margin-bottom: 4rem; padding: 2rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 24px;" data-animate="fade-up">
+                <div style="flex: 1 1 450px;" data-tilt>
+                    <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
+                        <img src="assets/swadesh.webp" alt="Swadesh AI" style="width: 100%; display: block;">
+                    </div>
+                </div>
+                <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
+                    <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Hero Feature</span>
+                    <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Swadesh AI</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                        India's flagship multi-agent AI platform incorporating long-term semantic context loops, vector database tracking, and localized LLM orchestrations.
+                    </p>
+                    <div class="project-tech" style="margin-bottom: 2rem;">
+                        <span>Python</span>
+                        <span>AI/ML</span>
+                        <span>NLP</span>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="/projects/swadesh" class="contact-btn primary-btn" style="padding: 0.75rem 2rem; border-radius: 9999px;">View Project →</a>
+                        <button data-project-id="swadesh-ai" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Grid for Remaining Projects -->
+            <div class="projects-bento" data-animate="stagger-up">
                 
-                <!-- Showcase 1: Swadesh AI -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/swadesh-ai.png" alt="Swadesh AI" style="width: 100%; display: block;">
+                <a href="/ideas/chronos" class="bento-card">
+                    <img src="assets/chronos.webp" alt="Project Chronos" class="bento-card-img">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal);">Diagnostics</span>
+                        </div>
+                        <h3 class="bento-card-title">Project Chronos</h3>
+                        <p class="bento-card-desc">A hardware-topology-aware causal evidence fusion platform analyzing degraded, incomplete observability data to diagnose complex mixed-criticality systems.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Causal Logic</span>
+                                <span class="bento-tech-pill">Observability</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
                         </div>
                     </div>
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">AI Platform</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Swadesh AI</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            India's flagship multi-agent AI platform incorporating long-term semantic context loops, vector database tracking, and localized LLM orchestrations.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Python</span>
-                            <span>AI/ML</span>
-                            <span>NLP</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/projects/swadesh" class="contact-btn primary-btn" style="padding: 0.75rem 2rem; border-radius: 9999px;">View Project →</a>
-                            <a href="/projects/swadesh" data-project-id="swadesh-ai" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <!-- Showcase 2: Project Chronos -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal);">Diagnostics Infrastructure</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Project Chronos</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            A hardware-topology-aware causal evidence fusion platform analyzing degraded, incomplete observability data to diagnose complex mixed-criticality systems.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Causal Logic</span>
-                            <span>Observability</span>
-                            <span>PMUs</span>
+                <a href="/ideas/titan" class="bento-card">
+                    <img src="assets/titan.webp" alt="TITAN OS" class="bento-card-img">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple);">Intelligence OS</span>
                         </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/ideas/chronos" data-project-id="chronos" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/chronos.png" alt="Project Chronos" style="width: 100%; display: block;">
+                        <h3 class="bento-card-title">TITAN</h3>
+                        <p class="bento-card-desc">An executable intelligence operating system designed to optimize memory, planning, search, and validation over connected knowledge networks.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Reasoning Graph</span>
+                                <span class="bento-tech-pill">Semantic Memory</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Showcase 3: TITAN -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/titan.png" alt="TITAN OS" style="width: 100%; display: block;">
+                <a href="/projects/titan-nano" class="bento-card">
+                    <img src="assets/titan.webp" alt="Titan Nano" class="bento-card-img">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple);">Cognitive AI</span>
+                        </div>
+                        <h3 class="bento-card-title">Titan Nano</h3>
+                        <p class="bento-card-desc">Ternary AI operating fabric executing complex cognitive reasoning loops on Snapdragon HVX Vector hardware within a strict 216MB footprint.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Ternary AI</span>
+                                <span class="bento-tech-pill">Qualcomm HVX</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
                         </div>
                     </div>
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple);">Intelligence OS</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">TITAN</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            An executable intelligence operating system designed to optimize memory, planning, search, and validation over connected knowledge networks.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Reasoning Graph</span>
-                            <span>Semantic Memory</span>
-                            <span>Verification</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/ideas/titan" data-project-id="titan" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <!-- Showcase 3.5: Titan Nano -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple);">Cognitive AI</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Titan Nano</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            Ternary AI operating fabric executing complex cognitive reasoning loops on Snapdragon HVX Vector hardware within a strict 216MB footprint.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Ternary AI</span>
-                            <span>Qualcomm HVX</span>
-                            <span>Low-Memory</span>
+                <a href="/ideas/qta-x" class="bento-card">
+                    <img src="assets/qta-x.webp" alt="QTA-X" class="bento-card-img">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(255, 59, 108, 0.1); color: var(--color-accent-pink);">Manufacturing</span>
                         </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/projects/titan-nano" class="contact-btn primary-btn" style="padding: 0.75rem 2rem; border-radius: 9999px; text-decoration: none; color: white;">View Project →</a>
-                            <a href="/projects/titan-nano" data-project-id="titan-nano" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
+                        <h3 class="bento-card-title">QTA-X</h3>
+                        <p class="bento-card-desc">A Validation-Gated Atomic Manufacturing Platform capable of designing, validating, and orchestrating atomic-scale fabrication systems under cryogenics.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Cryogenics</span>
+                                <span class="bento-tech-pill">Digital Twin</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
                         </div>
                     </div>
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/titan.png" alt="Titan Nano Operating Fabric" style="width: 100%; display: block;">
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <!-- Showcase 4: QTA-X -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(255, 59, 108, 0.1); color: var(--color-accent-pink);">Atomic Manufacturing</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">QTA-X</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            A Validation-Gated Atomic Manufacturing Platform capable of designing, validating, and orchestrating atomic-scale fabrication systems under cryogenics.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Cryogenics</span>
-                            <span>Digital Twin</span>
-                            <span>Vacuum systems</span>
+                <a href="/projects/crafty-kids" class="bento-card">
+                    <img src="assets/crafty-kids.webp" alt="Crafty Kids" class="bento-card-img">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Educational</span>
                         </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/ideas/qta-x" data-project-id="qta-x" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/qta-x.png" alt="QTA-X Manufacturing Platform" style="width: 100%; display: block;">
+                        <h3 class="bento-card-title">Crafty Kids of India</h3>
+                        <p class="bento-card-desc">An interactive cultural crafting game celebrating Indian toy-making traditions, recognized at the national STEM Innovation League.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Unity</span>
+                                <span class="bento-tech-pill">Game Design</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Showcase 5: Android XR Systems Research -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/android-xr.png" alt="Android XR Glasses" style="width: 100%; display: block;">
+                <a href="/projects/homies" class="bento-card">
+                    <img src="assets/homies.webp" alt="Homies" class="bento-card-img">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal);">Open World</span>
+                        </div>
+                        <h3 class="bento-card-title">Homies</h3>
+                        <p class="bento-card-desc">An expansive open-world simulator built to configure custom businesses, tracking systems, racing tracks, and multiplayer integrations.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Unity</span>
+                                <span class="bento-tech-pill">Multiplayer</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
                         </div>
                     </div>
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Research Paper</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Android XR Systems Research</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            A deep systems-level review paper draft addressing spatial computing moats, hardware-visible privacy gates, and event-based vision pipelines.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Android XR</span>
-                            <span>Spatial computing</span>
-                            <span>Edge AI</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/ideas/android-xr-research" class="contact-btn primary-btn" style="padding: 0.75rem 2rem; border-radius: 9999px; text-decoration: none;">Read Paper &rarr;</a>
-                            <a href="/ideas/android-xr-research" data-project-id="android-xr-research" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <!-- Showcase 6: Crafty Kids of India -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(108, 59, 255, 0.1); color: var(--color-accent-purple);">Educational Game</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Crafty Kids of India</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            An interactive cultural crafting game celebrating Indian toy-making traditions, recognized at the national STEM Innovation League.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>Game Design</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/projects/crafty-kids" data-project-id="crafty-kids" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/crafty-kids.png" alt="Crafty Kids of India" style="width: 100%; display: block;">
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-                <!-- Showcase 7: Storm of Kings -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/storm-of-kings.png" alt="Storm of Kings" style="width: 100%; display: block;">
-                        </div>
-                    </div>
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal);">Adventure RPG</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Storm of Kings</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            A 2D adventure RPG layout combining narrative episodic progress, character stats logic, and customized pixel-art environment configurations.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>Pixel Art</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/projects/storm-of-kings" data-project-id="storm-of-kings" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer;">Deep Dive</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Showcase 8: Homies -->
-                <div class="showcase-item" style="display: flex; flex-wrap: wrap-reverse; gap: 4rem; align-items: center;" data-animate="fade-up">
-                    <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
-                        <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Open World Simulator</span>
-                        <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Homies</h3>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                            An expansive open-world simulator built to configure custom businesses, tracking systems, racing tracks, and multiplayer integrations.
-                        </p>
-                        <div class="project-tech" style="margin-bottom: 2rem;">
-                            <span>Unity</span>
-                            <span>Open World</span>
-                            <span>Multiplayer</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="/projects/homies" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: var(--gradient-brand); color: white; border: none; cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</a>
-                        </div>
-                    </div>
-                    <div style="flex: 1 1 450px;" data-tilt>
-                        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
-                            <img src="assets/homies.png" alt="Homies" style="width: 100%; display: block;">
-                        </div>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 4rem;" data-animate="fade-up">
+                <a href="/projects" class="contact-btn secondary-btn">View All Projects →</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================ -->
-    <!-- SECTION 4: THE FOUNDER (New)                 -->
+    <!-- SECTION 4: THE FOUNDER                       -->
     <!-- ============================================ -->
-    <section class="section founder-section" id="founder" style="border-top: 1px solid var(--color-border); background: rgba(15, 15, 15, 0.4);">
+    <section class="section founder-section" id="founder" >
         <div class="container" style="max-width: 900px;">
-            <div class="section-header" data-animate="fade-up" style="text-align: center; margin-bottom: 4rem;">
+            <div class="section-header" data-animate="fade-up" style="text-align: center; margin-bottom: 3rem;">
                 <span class="tag">The Founder</span>
             </div>
 
             <div class="founder-statement" style="text-align: center;" data-animate="fade-up">
-                <blockquote style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.2; color: var(--color-text-primary); margin-bottom: 2.5rem; font-style: italic;">
-                    "Building the future from India. Releasing it to the world."
+                
+                <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                    <div style="width: 90px; height: 90px; border-radius: 50%; border: 2px solid var(--color-accent-blue); padding: 4px; box-shadow: var(--shadow-glow-blue);">
+                        <img src="assets/logo.png" alt="Zaid Asim" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: var(--color-bg-tertiary);">
+                    </div>
+                </div>
+
+                <blockquote style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 500; line-height: 1.3; color: var(--color-text-primary); margin-bottom: 2.5rem; position: relative;">
+                    <span style="position: absolute; top: -30px; left: -20px; font-size: 6rem; color: var(--color-border-hover); font-family: serif; line-height: 1; z-index: -1;">"</span>
+                    Building the future from India.<br>Releasing it to the world.
+                    <span style="position: absolute; bottom: -50px; right: 20px; font-size: 6rem; color: var(--color-border-hover); font-family: serif; line-height: 1; z-index: -1;">"</span>
                 </blockquote>
                 
-                <p style="font-size: 1.15rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 3rem;">
+                <p style="font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                     Zaid Asim is a 15-year-old technologist, game developer, and AI builder. He founded Zaid Asim Softwares as a UDYAM-registered enterprise, shipping products across AI pipelines, open-world simulators, and cultural educational applications.
                 </p>
 
-                <div style="display: flex; gap: 1.5rem; justify-content: center;">
-                    <a href="/biography" class="contact-btn primary-btn" style="padding: 0.85rem 2.25rem; border-radius: 9999px;">Know About Zaid Asim →</a>
+                <div class="founder-timeline" data-animate="fade-up">
+                    <div class="founder-tl-item">
+                        <div class="founder-tl-year">2021</div>
+                        <div class="founder-tl-event">Studio Founded</div>
+                    </div>
+                    <div class="founder-tl-item">
+                        <div class="founder-tl-year">2022</div>
+                        <div class="founder-tl-event">First Game Shipped</div>
+                    </div>
+                    <div class="founder-tl-item">
+                        <div class="founder-tl-year">2024</div>
+                        <div class="founder-tl-event">Red Hat Partnership</div>
+                    </div>
+                    <div class="founder-tl-item">
+                        <div class="founder-tl-year">2025</div>
+                        <div class="founder-tl-event">AI Systems & Research</div>
+                    </div>
                 </div>
+
+                <div class="founder-socials" data-animate="fade-up">
+                    <a href="/biography" class="founder-social-btn" style="background: var(--color-text-primary); color: var(--color-bg-primary); font-weight: 600;">Know About Zaid Asim →</a>
+                    <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="founder-social-btn">GitHub</a>
+                    <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="founder-social-btn">LinkedIn</a>
+                    <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="founder-social-btn">YouTube</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -501,7 +547,7 @@
     <!-- ============================================ -->
     <!-- SECTION 5: ACTIVE RESEARCH (IDEAS LAB)       -->
     <!-- ============================================ -->
-    <section class="section ideas-section" id="ideas" style="border-top: 1px solid var(--color-border);">
+    <section class="section ideas-section" id="ideas" >
         <div class="container">
             <div class="section-header" data-animate="fade-up" style="margin-bottom: 5rem;">
                 <span class="tag">Blueprints</span>
@@ -510,83 +556,107 @@
             </div>
 
             <div class="ideas-grid" data-animate="stagger-up">
-                <div class="idea-card">
-                    <div class="idea-header">
-                        <span class="idea-id">#01</span>
-                        <span class="idea-status research">Research</span>
+                
+                <a href="/ideas/memory-bridge" class="idea-card-linked status-research">
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <span class="idea-id">#01</span>
+                            <span class="idea-status research">Research</span>
+                        </div>
+                        <h3 class="idea-title">AI Memory Bridge</h3>
+                        <p class="idea-desc">Multi-agent cognitive pipelines designed to maintain semantic history and persistent context loops across disjointed API sessions using vector DBs and local models.</p>
+                        <div class="idea-footer">
+                            <span>Target:</span>
+                            <span class="idea-target">Swadesh AI Integration</span>
+                        </div>
+                        <div class="idea-open-hint">↗ Open Blueprint</div>
                     </div>
-                    <h3 class="idea-title">AI Memory Bridge</h3>
-                    <p class="idea-desc">Multi-agent cognitive pipelines designed to maintain semantic history and persistent context loops across disjointed API sessions using vector DBs and local models.</p>
-                    <div class="idea-footer">
-                        <span>Target:</span>
-                        <span class="idea-target">Swadesh AI Integration</span>
-                    </div>
-                </div>
+                </a>
 
-                <div class="idea-card">
-                    <div class="idea-header">
-                        <span class="idea-id">#02</span>
-                        <span class="idea-status">Conceptual</span>
+                <a href="/ideas/aeroxnet" class="idea-card-linked status-conceptual">
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <span class="idea-id">#02</span>
+                            <span class="idea-status">Conceptual</span>
+                        </div>
+                        <h3 class="idea-title">Aeroxnet</h3>
+                        <p class="idea-desc">High-performance network branding system conceptualized to deliver ultra-fast regional hosting tools and decentralized file distribution protocols.</p>
+                        <div class="idea-footer">
+                            <span>Target:</span>
+                            <span class="idea-target">Infrastructure LP</span>
+                        </div>
+                        <div class="idea-open-hint">↗ Open Blueprint</div>
                     </div>
-                    <h3 class="idea-title">Aeroxnet</h3>
-                    <p class="idea-desc">High-performance network branding system conceptualized to deliver ultra-fast regional hosting tools and decentralized file distribution protocols.</p>
-                    <div class="idea-footer">
-                        <span>Target:</span>
-                        <span class="idea-target">Infrastructure LP</span>
-                    </div>
-                </div>
+                </a>
 
-                <div class="idea-card">
-                    <div class="idea-header">
-                        <span class="idea-id">#03</span>
-                        <span class="idea-status pitched">Pitched</span>
+                <a href="/ideas/cloud-handheld" class="idea-card-linked status-pitched">
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <span class="idea-id">#03</span>
+                            <span class="idea-status pitched">Pitched</span>
+                        </div>
+                        <h3 class="idea-title">Cloud Handheld</h3>
+                        <p class="idea-desc">Hardware proposal and UI designs for an affordable, localized cloud gaming handheld console designed for regional connectivity. Pitched to JioGenNext.</p>
+                        <div class="idea-footer">
+                            <span>Pitch To:</span>
+                            <span class="idea-target">JioGenNext Panels</span>
+                        </div>
+                        <div class="idea-open-hint">↗ Open Blueprint</div>
                     </div>
-                    <h3 class="idea-title">Cloud Handheld</h3>
-                    <p class="idea-desc">Hardware proposal and UI designs for an affordable, localized cloud gaming handheld console designed for regional connectivity. Pitched to JioGenNext.</p>
-                    <div class="idea-footer">
-                        <span>Pitch To:</span>
-                        <span class="idea-target">JioGenNext Panels</span>
-                    </div>
-                </div>
+                </a>
 
-                <div class="idea-card">
-                    <div class="idea-header">
-                        <span class="idea-id">#04</span>
-                        <span class="idea-status">Conceptual</span>
+                <a href="/ideas/za-sentinel" class="idea-card-linked status-conceptual">
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <span class="idea-id">#04</span>
+                            <span class="idea-status">Conceptual</span>
+                        </div>
+                        <h3 class="idea-title">ZA Sentinel</h3>
+                        <p class="idea-desc">An active security daemon model designed to run locally, monitoring background networks, validating port states, and displaying system state on an OLED screen.</p>
+                        <div class="idea-footer">
+                            <span>Target:</span>
+                            <span class="idea-target">Security Daemon</span>
+                        </div>
+                        <div class="idea-open-hint">↗ Open Blueprint</div>
                     </div>
-                    <h3 class="idea-title">ZA Sentinel</h3>
-                    <p class="idea-desc">An active security daemon model designed to run locally, monitoring background networks, validating port states, and displaying system state on an OLED screen.</p>
-                    <div class="idea-footer">
-                        <span>Target:</span>
-                        <span class="idea-target">Security Daemon</span>
-                    </div>
-                </div>
+                </a>
 
-                <div class="idea-card">
-                    <div class="idea-header">
-                        <span class="idea-id">#05</span>
-                        <span class="idea-status research">Research</span>
+                <a href="/ideas/cosmos" class="idea-card-linked status-research">
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <span class="idea-id">#05</span>
+                            <span class="idea-status research">Research</span>
+                        </div>
+                        <h3 class="idea-title">Cosmos Universe</h3>
+                        <p class="idea-desc">A deep narrative universe with multi-character paths, local histories, and episodic timelines planned for cross-media RPG game adaptation.</p>
+                        <div class="idea-footer">
+                            <span>Target:</span>
+                            <span class="idea-target">Multi-season Narrative</span>
+                        </div>
+                        <div class="idea-open-hint">↗ Open Blueprint</div>
                     </div>
-                    <h3 class="idea-title">Cosmos Universe</h3>
-                    <p class="idea-desc">A deep narrative universe with multi-character paths, local histories, and episodic timelines planned for cross-media RPG game adaptation.</p>
-                    <div class="idea-footer">
-                        <span>Target:</span>
-                        <span class="idea-target">Multi-season Narrative</span>
-                    </div>
-                </div>
+                </a>
 
-                <div class="idea-card">
-                    <div class="idea-header">
-                        <span class="idea-id">#06</span>
-                        <span class="idea-status prototype">Prototype</span>
+                <a href="/ideas/programmatic-seo" class="idea-card-linked status-prototype">
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <span class="idea-id">#06</span>
+                            <span class="idea-status prototype">Prototype</span>
+                        </div>
+                        <h3 class="idea-title">Programmatic SEO</h3>
+                        <p class="idea-desc">An automated site-generation pipeline built with local AI models and n8n scripts that writes and publishes high-quality technical documentations.</p>
+                        <div class="idea-footer">
+                            <span>Status:</span>
+                            <span class="idea-target">Finished Prototype</span>
+                        </div>
+                        <div class="idea-open-hint">↗ Open Blueprint</div>
                     </div>
-                    <h3 class="idea-title">Programmatic SEO</h3>
-                    <p class="idea-desc">An automated site-generation pipeline built with local AI models and n8n scripts that writes and publishes high-quality technical documentations.</p>
-                    <div class="idea-footer">
-                        <span>Status:</span>
-                        <span class="idea-target">Finished Prototype</span>
-                    </div>
-                </div>
+                </a>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;" data-animate="fade-up">
+                <a href="/ideas" class="contact-btn secondary-btn">Explore All Blueprints →</a>
             </div>
         </div>
     </section>
@@ -594,7 +664,7 @@
     <!-- ============================================ -->
     <!-- SECTION 6: YOUTUBE CONTENT                   -->
     <!-- ============================================ -->
-    <section class="section youtube-section" id="youtube" style="border-top: 1px solid var(--color-border); background: rgba(10, 10, 10, 0.2);">
+    <section class="section youtube-section" id="youtube" >
         <div class="container">
             <div class="section-header" data-animate="fade-up" style="margin-bottom: 5rem;">
                 <span class="tag">Content Broadcast</span>
@@ -631,7 +701,7 @@
             <div class="youtube-video-grid" style="margin-top: 3rem;" data-animate="stagger-up">
                 <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
                     <div class="yt-thumb-wrap">
-                        <img src="assets/homies.png" alt="Gaming Walkthrough" class="yt-thumb">
+                        <img src="assets/homies.webp" alt="Gaming Walkthrough" class="yt-thumb">
                         <div class="yt-play-icon">▶</div>
                     </div>
                     <div class="yt-video-info">
@@ -642,7 +712,7 @@
                 </a>
                 <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
                     <div class="yt-thumb-wrap">
-                        <img src="assets/swadesh-ai.png" alt="Tech Showcase" class="yt-thumb">
+                        <img src="assets/swadesh.webp" alt="Tech Showcase" class="yt-thumb">
                         <div class="yt-play-icon">▶</div>
                     </div>
                     <div class="yt-video-info">
@@ -669,7 +739,7 @@
     <!-- ============================================ -->
     <!-- SECTION 7: CONNECTIONS (SOCIALS)             -->
     <!-- ============================================ -->
-    <section class="section socials-section" id="socials" style="border-top: 1px solid var(--color-border);">
+    <section class="section socials-section" id="socials" >
         <div class="container">
             <div class="section-header" data-animate="fade-up" style="margin-bottom: 5rem;">
                 <span class="tag">Connect</span>
@@ -790,7 +860,7 @@
     <!-- ============================================ -->
     <!-- SECTION 8: CONTACT                           -->
     <!-- ============================================ -->
-    <section class="section contact-section" id="contact" style="border-top: 1px solid var(--color-border);">
+    <section class="section contact-section" id="contact" >
         <div class="container">
             <div class="contact-content" data-animate="fade-up">
                 <span class="tag">Get In Touch</span>
@@ -817,6 +887,23 @@
 
     <!-- Hidden canvas placeholder to avoid console errors -->
     <div style="display:none;" id="visionCanvasContainer"></div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: TRUST BAR                         -->
+    <!-- ============================================ -->
+    <section class="trust-bar" style="background: transparent; border: none;" >
+        <div class="trust-bar-inner">
+            <div class="trust-bar-text">Trusted By & Built With</div>
+            <div class="trust-logos">
+                <div class="trust-logo-badge">Red Hat Partner</div>
+                <div class="trust-logo-badge">UDYAM-KR-15-0069715</div>
+                <div class="trust-logo-badge">Python</div>
+                <div class="trust-logo-badge">Unity</div>
+                <div class="trust-logo-badge">WebGL</div>
+                <div class="trust-logo-badge">TensorFlow</div>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================ -->
     <!-- FOOTER                                       -->

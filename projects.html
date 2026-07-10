@@ -118,15 +118,10 @@
         }
 
         .portfolio-card {
-            background: rgba(20, 20, 20, 0.4);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            backdrop-filter: blur(10px);
-            transition: all var(--duration-medium) var(--ease-smooth);
-        }
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
         .portfolio-card:hover {
             transform: translateY(-8px);
@@ -211,6 +206,17 @@
 </head>
 <body>
 
+    <!-- ============================================ -->
+    <!-- VOLUMETRIC BACKGROUND                        -->
+    <!-- ============================================ -->
+    <div class="volumetric-background">
+        <div class="mesh-aurora aurora-1"></div>
+        <div class="mesh-aurora aurora-2"></div>
+        <div class="mesh-aurora aurora-3"></div>
+        <div class="cyber-grid"></div>
+    </div>
+
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scrollProgressBarElement"></div>
@@ -288,11 +294,74 @@
 
     <!-- Projects Portfolio Grid -->
     <main class="projects-portfolio-grid" id="projectsGrid">
+        <!-- NEW PROJECT: Nebula Engine -->
+        <article class="portfolio-card glass-panel" data-category="web">
+            <div class="portfolio-img-wrap">
+                <img src="assets/nebula-engine.webp" alt="Nebula WebGPU Engine" class="portfolio-img" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-web">WebGPU Compute</span>
+                <h3 class="portfolio-title">Nebula Engine</h3>
+                <p class="portfolio-desc">A WebGPU compute pipeline designed for running massively parallel LLM inference directly inside the browser.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">WGSL</span>
+                    <span class="portfolio-tech-tag">TypeScript</span>
+                    <span class="portfolio-tech-tag">Transformers</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/nebula-engine" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <a href="/nebula-engine" data-project-id="nebula-engine" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- NEW PROJECT: Project Osiris -->
+        <article class="portfolio-card glass-panel" data-category="web">
+            <div class="portfolio-img-wrap">
+                <img src="assets/osiris.webp" alt="Project Osiris HFT" class="portfolio-img" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-web">FinTech Backend</span>
+                <h3 class="portfolio-title">Project Osiris</h3>
+                <p class="portfolio-desc">A highly-concurrent, low-latency high-frequency trading order matching engine written natively in Go.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">Go</span>
+                    <span class="portfolio-tech-tag">gRPC</span>
+                    <span class="portfolio-tech-tag">PostgreSQL</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/osiris" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <a href="/osiris" data-project-id="osiris" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
+                </div>
+            </div>
+        </article>
+        
+        <!-- NEW PROJECT: Quantum Veil -->
+        <article class="portfolio-card glass-panel" data-category="research">
+            <div class="portfolio-img-wrap">
+                <img src="assets/quantum-veil.webp" alt="Quantum Veil Cryptography" class="portfolio-img" onerror="this.src='assets/logo.png'">
+            </div>
+            <div class="portfolio-body">
+                <span class="portfolio-tag tag-research">Cybersecurity</span>
+                <h3 class="portfolio-title">Quantum Veil</h3>
+                <p class="portfolio-desc">An experimental post-quantum cryptography suite tailored specifically for securing lightweight MQTT IoT communications.</p>
+                <div class="portfolio-tech-tags">
+                    <span class="portfolio-tech-tag">C++</span>
+                    <span class="portfolio-tech-tag">Cryptography</span>
+                    <span class="portfolio-tech-tag">IoT</span>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="/quantum-veil" class="contact-btn primary-btn" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; text-decoration: none;">View Page</a>
+                    <a href="/quantum-veil" data-project-id="quantum-veil" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.6rem 1.5rem; font-size: 0.85rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer;">Deep Dive</a>
+                </div>
+            </div>
+        </article>
+
         
         <!-- Showcase 1: Swadesh AI -->
-        <article class="portfolio-card" data-category="ai">
+        <article class="portfolio-card glass-panel" data-category="ai">
             <div class="portfolio-img-wrap">
-                <img src="assets/swadesh-ai.png" alt="Swadesh AI Interface" class="portfolio-img">
+                <img src="assets/swadesh.webp" alt="Swadesh AI Interface" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-ai">AI Platform</span>
@@ -312,9 +381,9 @@
         </article>
 
         <!-- Showcase 2: Project Chronos -->
-        <article class="portfolio-card" data-category="research">
+        <article class="portfolio-card glass-panel" data-category="research">
             <div class="portfolio-img-wrap">
-                <img src="assets/chronos.png" alt="Project Chronos Observability" class="portfolio-img">
+                <img src="assets/chronos.webp" alt="Project Chronos Observability" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-research">Fault Diagnostics</span>
@@ -332,9 +401,9 @@
         </article>
 
         <!-- Showcase 3: TITAN -->
-        <article class="portfolio-card" data-category="research">
+        <article class="portfolio-card glass-panel" data-category="research">
             <div class="portfolio-img-wrap">
-                <img src="assets/titan.png" alt="TITAN reasoning graph" class="portfolio-img">
+                <img src="assets/titan.webp" alt="TITAN reasoning graph" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-research">Reasoning Architecture</span>
@@ -352,9 +421,9 @@
         </article>
 
         <!-- Showcase 3.5: Titan Nano -->
-        <article class="portfolio-card" data-category="ai">
+        <article class="portfolio-card glass-panel" data-category="ai">
             <div class="portfolio-img-wrap">
-                <img src="assets/titan.png" alt="Titan Nano Operating Fabric" class="portfolio-img">
+                <img src="assets/titan.webp" alt="Titan Nano Operating Fabric" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-ai">Cognitive AI</span>
@@ -374,9 +443,9 @@
         </article>
 
         <!-- Showcase 4: QTA-X -->
-        <article class="portfolio-card" data-category="research">
+        <article class="portfolio-card glass-panel" data-category="research">
             <div class="portfolio-img-wrap">
-                <img src="assets/qta-x.png" alt="QTA-X Manufacturing Platform" class="portfolio-img">
+                <img src="assets/qta-x.webp" alt="QTA-X Manufacturing Platform" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-research">Atomic Manufacturing</span>
@@ -394,9 +463,9 @@
         </article>
 
         <!-- Showcase 5: Android XR Systems Research -->
-        <article class="portfolio-card" data-category="research">
+        <article class="portfolio-card glass-panel" data-category="research">
             <div class="portfolio-img-wrap">
-                <img src="assets/android-xr.png" alt="Android XR Glasses" class="portfolio-img">
+                <img src="assets/android-xr.webp" alt="Android XR Glasses" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-research">Research Paper</span>
@@ -415,9 +484,9 @@
         </article>
 
         <!-- Showcase 6: UrgeGuard AI -->
-        <article class="portfolio-card" data-category="web">
+        <article class="portfolio-card glass-panel" data-category="web">
             <div class="portfolio-img-wrap">
-                <img src="assets/urgeguard.png" alt="UrgeGuard AI Interface" class="portfolio-img">
+                <img src="assets/urgeguard.webp" alt="UrgeGuard AI Interface" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-web">Habit Tracker</span>
@@ -435,9 +504,9 @@
         </article>
 
         <!-- Showcase 7: Zaid Asim Softwares -->
-        <article class="portfolio-card" data-category="web">
+        <article class="portfolio-card glass-panel" data-category="web">
             <div class="portfolio-img-wrap">
-                <img src="assets/zaid-asim-softwares.png" alt="Zaid Asim Softwares Logo" class="portfolio-img">
+                <img src="assets/zaid-asim-softwares.webp" alt="Zaid Asim Softwares Logo" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-web">Official Enterprise</span>
@@ -455,9 +524,9 @@
         </article>
 
         <!-- Showcase 8: Crafty Kids of India -->
-        <article class="portfolio-card" data-category="game">
+        <article class="portfolio-card glass-panel" data-category="game">
             <div class="portfolio-img-wrap">
-                <img src="assets/crafty-kids.png" alt="Crafty Kids of India" class="portfolio-img">
+                <img src="assets/crafty-kids.webp" alt="Crafty Kids of India" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-game">Educational Game</span>
@@ -475,9 +544,9 @@
         </article>
 
         <!-- Showcase 9: Storm of Kings -->
-        <article class="portfolio-card" data-category="game">
+        <article class="portfolio-card glass-panel" data-category="game">
             <div class="portfolio-img-wrap">
-                <img src="assets/storm-of-kings.png" alt="Storm of Kings" class="portfolio-img">
+                <img src="assets/storm-of-kings.webp" alt="Storm of Kings" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-game">Adventure RPG</span>
@@ -495,9 +564,9 @@
         </article>
 
         <!-- Showcase 10: Homies -->
-        <article class="portfolio-card" data-category="game">
+        <article class="portfolio-card glass-panel" data-category="game">
             <div class="portfolio-img-wrap">
-                <img src="assets/homies.png" alt="Homies open world" class="portfolio-img">
+                <img src="assets/homies.webp" alt="Homies open world" class="portfolio-img">
             </div>
             <div class="portfolio-body">
                 <span class="portfolio-tag tag-game">Open World Simulator</span>
