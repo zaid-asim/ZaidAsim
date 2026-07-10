@@ -661,7 +661,7 @@
 .youtube-visual {
   position: relative;
   aspect-ratio: 16 / 9;
-  background-image: url('../assets/swadesh-ai.png'); /* fallback or placeholder visual */
+  background-image: url('../assets/swadesh-ai.webp'); /* fallback or placeholder visual */
   background-size: cover;
   background-position: center;
   display: flex;

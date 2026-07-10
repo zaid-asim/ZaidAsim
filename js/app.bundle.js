@@ -2703,7 +2703,7 @@
       learned: 'Building Swadesh AI taught me the limits of current AI architectures and how robust cache systems and semantic indexing can make AI response times 4x faster. I learned that data ingestion pipelines are 90% of the battle in AI development.',
       tech: ['Python', 'PyTorch', 'n8n', 'FastAPI', 'VectorDB', 'LLMs'],
       status: '🏆 Active Development',
-      image: 'assets/swadesh-ai.png',
+      image: 'assets/swadesh-ai.webp',
       link: 'swadesh.html'
     },
     'crafty-kids': {
@@ -2713,7 +2713,7 @@
       learned: 'This project taught me how to scale assets, build kid-friendly UI architectures, and validate educational concepts with real user testing groups. Translating physical crafts into interactive virtual mechanics was an incredible design challenge.',
       tech: ['Unity', 'C#', 'Blender', 'UI Toolkit', 'Android SDK'],
       status: '🏆 Award-Winning',
-      image: 'assets/crafty-kids.png',
+      image: 'assets/crafty-kids.webp',
       link: '#contact'
     },
     'storm-of-kings': {
@@ -2723,7 +2723,7 @@
       learned: 'Writing a node-based dialogue interpreter in C# taught me the value of clean data representation and serialization. I learned that game storytelling requires a tight coupling of narrative design and systems engineering.',
       tech: ['Unity', 'C#', 'Aseprite', 'Node Graph', 'JSON Data'],
       status: '🚧 In Development',
-      image: 'assets/storm-of-kings.png',
+      image: 'assets/storm-of-kings.webp',
       link: '#contact'
     },
     'homies': {
@@ -2733,7 +2733,7 @@
       learned: 'Designing sandbox ecosystems taught me how to manage hundreds of active game elements without causing CPU bottlenecks. It also taught me the importance of audio design in establishing environmental context and player immersion.',
       tech: ['Unity', 'C#', 'Web Audio API', 'FMOD', 'Vehicle Physics'],
       status: '🚧 Alpha Phase',
-      image: 'assets/homies.png',
+      image: 'assets/homies.webp',
       link: '#music'
     },
     'urgeguard': {
@@ -2743,7 +2743,7 @@
       learned: 'I learned how to integrate gamified mechanics into standard utility apps. Behavioral design requires delicate balancing—if the game elements are too complex, users ignore the utility; if they are too simple, they lose motivation.',
       tech: ['React', 'CSS Glassmorphism', 'Tailwind CSS', 'LocalStorage'],
       status: '✅ Prototype Complete',
-      image: 'assets/urgeguard.png',
+      image: 'assets/urgeguard.webp',
       link: '#contact'
     },
     'zaid-asim-softwares': {
@@ -2753,7 +2753,7 @@
       learned: 'Operating a registered enterprise taught me the business side of engineering—tax laws, business registration, contract negotiations, invoicing, and client relationship management. It made me realize that writing code is only half the puzzle of building a successful studio.',
       tech: ['Full Stack', 'n8n Automation', 'Cloudflare Pages', 'API Systems'],
       status: '✅ UDYAM Registered',
-      image: 'assets/zaid-asim-softwares.png',
+      image: 'assets/zaid-asim-softwares.webp',
       link: '#contact'
     },
     'chronos': {
@@ -2763,7 +2763,7 @@
       learned: 'Building Chronos taught me how hardware interconnects, SMMU mappings, and virtualization layers propagate latency. I learned to model time as a range of uncertainty and use physical topology to bounds causality in distributed environments.',
       tech: ['Causal Logic', 'Observability', 'PMUs', 'System Tracing', 'Virtualization'],
       status: '🚧 Research Phase',
-      image: 'assets/chronos.png',
+      image: 'assets/chronos.webp',
       link: '#contact'
     },
     'titan': {
@@ -2773,7 +2773,7 @@
       learned: 'Designing TITAN taught me that cognitive system architectures can make small models perform with greater precision than large models alone. I learned to structure executable action graphs and integrate compile-time verification loops.',
       tech: ['Reasoning Graphs', 'Semantic Memory', 'n8n Automation', 'Offline AI', 'Verification Fabric'],
       status: '🚧 Prototype Phase',
-      image: 'assets/titan.png',
+      image: 'assets/titan.webp',
       link: '#contact'
     },
     'qta-x': {
@@ -2783,7 +2783,7 @@
       learned: 'Designing QTA-X taught me that separating fabrication from characterization is crucial. Operating cryogenic baseline steps before manufacturing eliminates vibrational/thermal noise correlation mistakes completely.',
       tech: ['Cryogenics', 'Vacuum Systems', 'Laser Deposition', 'Digital Twin', 'Scientific Governance'],
       status: '🚧 Research Phase',
-      image: 'assets/qta-x.png',
+      image: 'assets/qta-x.webp',
       link: '#contact'
     },
     'android-xr-research': {
@@ -2793,7 +2793,7 @@
       learned: 'This research taught me that smart glasses are ultimately a low-power sensing and edge orchestration problem. Tiered scheduling (local to edge to cloud) is the absolute moat for comfortable spatial computing.',
       tech: ['Android XR', 'Spatial Computing', 'Qualcomm AR1/AR2', 'Event Sensing', 'Edge AI', 'Gemini'],
       status: '📚 Research Paper',
-      image: 'assets/android-xr.png',
+      image: 'assets/android-xr.webp',
       link: '/android-xr-research'
     }
   };
@@ -4901,3 +4901,90 @@
 })();
 
 ;
+
+
+/* --- ADVANCED VISUAL OVERHAUL (MAGNETIC & GLOW) --- */
+document.addEventListener("DOMContentLoaded", function() {
+    // Glow effect for cards
+    const cards = document.querySelectorAll('.portfolio-card, .blueprint-card, .idea-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // Magnetic Buttons
+    const btns = document.querySelectorAll('.btn, .primary-btn, .secondary-btn, .project-deep-btn');
+    btns.forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            // scale down the movement
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.05)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0px, 0px) scale(1)';
+        });
+    });
+});
+
+
+/* ============================================================
+   HOMEPAGE JS ENHANCEMENTS (Stats Count-up)
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+    const statsContainer = document.getElementById('statsContainer');
+    if (!statsContainer) return;
+
+    let hasRun = false;
+
+    const runCounters = () => {
+        if (hasRun) return;
+        hasRun = true;
+
+        const blocks = document.querySelectorAll('.stat-block');
+        blocks.forEach((block, index) => {
+            setTimeout(() => {
+                block.classList.add('visible');
+                const numEl = block.querySelector('.stat-block-num');
+                const targetStr = numEl.getAttribute('data-target');
+                if (!targetStr) return; // For the infinity symbol
+
+                const target = parseInt(targetStr, 10);
+                let current = 0;
+                const duration = 2000; // 2 seconds
+                const stepTime = Math.abs(Math.floor(duration / target));
+                
+                // Max 30ms step time to prevent blocking
+                const finalStepTime = Math.max(stepTime, 30);
+                const steps = Math.floor(duration / finalStepTime);
+                const increment = Math.max(1, Math.floor(target / steps));
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        numEl.textContent = target + (target === 12 ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        numEl.textContent = current + (target === 12 ? '+' : '');
+                    }
+                }, finalStepTime);
+            }, index * 200); // stagger
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            runCounters();
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(statsContainer);
+});
