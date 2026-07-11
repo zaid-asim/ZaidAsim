@@ -291,6 +291,7 @@ html[data-theme="light"] {
 }
 
 body {
+  overflow-x: hidden;
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
@@ -567,6 +568,7 @@ blockquote {
 /* ── Print Styles ───────────────────────────────────────── */
 @media print {
   body {
+  overflow-x: hidden;
     background: #fff;
     color: #000;
   }
@@ -1455,6 +1457,7 @@ blockquote {
 }
 
 .card--project .card__body {
+  overflow-x: hidden;
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
@@ -1505,6 +1508,7 @@ blockquote {
 }
 
 .card--featured .card__body {
+  overflow-x: hidden;
   padding: var(--space-8);
   justify-content: center;
 }
@@ -1581,6 +1585,7 @@ blockquote {
 }
 
 .card--youtube .card__body {
+  overflow-x: hidden;
   padding: var(--space-5);
 }
 
@@ -3545,8 +3550,16 @@ blockquote {
   }
   
   .three-canvas-container {
-    display: none !important;
-  }
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: 100vh !important;
+  z-index: -998 !important;
+  pointer-events: none !important;
+  display: block !important;
+}
   
   .cursor-dot,
   .cursor-ring {
@@ -3823,6 +3836,7 @@ blockquote {
 /* Hide browser default cursor on desktop */
 @media (hover: hover) and (pointer: fine) {
   body {
+  overflow-x: hidden;
     cursor: none;
   }
   a, button, [role="button"], .social-card, .card {
@@ -3852,6 +3866,7 @@ blockquote {
 /* Hide custom cursor on touch screens */
 @media (hover: none) or (pointer: coarse) {
   body {
+  overflow-x: hidden;
     cursor: auto;
   }
   .cursor-dot,
@@ -4449,7 +4464,7 @@ blockquote {
 .music-desc {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
@@ -4930,6 +4945,7 @@ blockquote {
 }
 
 .modal-body {
+  overflow-x: hidden;
     padding: 3rem;
 }
 
@@ -4961,7 +4977,7 @@ blockquote {
 .modal-desc-lead {
     font-size: 1.15rem;
     color: rgba(255, 255, 255, 0.85);
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 2rem;
     font-weight: 500;
 }
@@ -5343,7 +5359,7 @@ blockquote {
     border-left: 3px solid #8B00FF;
     padding-left: 1.5rem;
     margin: 1.5rem 0;
-    line-height: 1.6;
+    line-height: 1.7;
     font-family: var(--font-display);
 }
 
@@ -5507,6 +5523,7 @@ blockquote {
         grid-template-columns: 1fr;
     }
     .modal-body {
+  overflow-x: hidden;
         padding: 1.5rem;
     }
     .hero-stats-strip {
@@ -5829,7 +5846,7 @@ blockquote {
     justify-content: flex-start;
     font-family: var(--font-mono), monospace;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--color-accent-primary, #00e676);
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
     opacity: 0;
@@ -6788,7 +6805,7 @@ blockquote {
     color: #94a3b8;
     max-width: 800px;
     margin: 0 auto 3rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .atm-subtitle strong {
@@ -6874,6 +6891,7 @@ blockquote {
 }
 
 .atm-terminal-body {
+  overflow-x: hidden;
     padding: 1.5rem;
     font-family: var(--font-mono);
     font-size: 0.9rem;
@@ -6937,7 +6955,7 @@ blockquote {
 
 .atm-card p {
     color: #94a3b8;
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 0.95rem;
 }
 
@@ -7087,7 +7105,7 @@ blockquote {
     color: #c9d1d9;
     height: 150px;
     overflow-y: auto;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 .atm-log-success { color: #00FFFF; }
 .atm-log-warn { color: #ffbd2e; }
@@ -7155,7 +7173,7 @@ blockquote {
 .atm-feature-text p {
     color: #94a3b8;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Tooltip for graph */
@@ -7590,6 +7608,7 @@ blockquote {
 }
 
 .bento-card-body {
+  overflow-x: hidden;
   padding: 1.5rem;
   flex: 1;
   display: flex;
@@ -7618,7 +7637,7 @@ blockquote {
 .bento-card-desc {
   font-size: 0.85rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   flex: 1;
   margin-bottom: 1rem;
 }
@@ -7848,8 +7867,9 @@ blockquote {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
   height: 100vh;
-  z-index: -2;
+  z-index: -999;
   overflow: hidden;
   background: var(--color-bg-primary);
   pointer-events: none;
@@ -7867,31 +7887,22 @@ blockquote {
 }
 
 .aurora-1 {
-  top: -10%;
-  left: -10%;
-  width: 60vw;
-  height: 60vw;
-  background: radial-gradient(circle, var(--color-accent-blue) 0%, transparent 70%);
-  animation-duration: 25s;
+  top: -20%; left: -10%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(139, 0, 255, 0.15) 0%, rgba(139, 0, 255, 0.05) 40%, transparent 70%);
 }
 
 .aurora-2 {
-  bottom: -20%;
-  right: -10%;
-  width: 70vw;
-  height: 70vw;
-  background: radial-gradient(circle, var(--color-accent-purple) 0%, transparent 70%);
-  animation-duration: 22s;
+  bottom: -20%; right: -10%;
+  width: 70vw; height: 70vw;
+  background: radial-gradient(circle, rgba(9, 137, 216, 0.15) 0%, rgba(9, 137, 216, 0.05) 40%, transparent 70%);
   animation-delay: -5s;
 }
 
 .aurora-3 {
-  top: 40%;
-  left: 30%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, var(--color-accent-teal) 0%, transparent 70%);
-  animation-duration: 18s;
+  top: 30%; left: 30%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(255, 0, 220, 0.1) 0%, rgba(255, 0, 220, 0.03) 40%, transparent 70%);
   animation-delay: -10s;
 }
 
@@ -7949,10 +7960,11 @@ blockquote {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
-  width: 100vw !important;
+  width: 100% !important;
+  max-width: 100vw !important;
   height: 100vh !important;
-  z-index: -1 !important; /* Above void/grid, below content */
-  pointer-events: auto !important; /* Allow mouse interaction globally */
+  z-index: -998 !important;
+  pointer-events: none !important;
   display: block !important;
 }
 
@@ -7960,15 +7972,43 @@ blockquote {
 /* ── Glass Panel Utility ────────────────────────────────── */
 .glass-panel {
   background: rgba(20, 20, 20, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-xl);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: all var(--duration-medium) var(--ease-smooth);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .glass-panel:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(26, 26, 26, 0.5);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(26, 26, 26, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+
+
+
+
+/* --- BIOGRAPHY SPECIFIC CARDS --- */
+.bio-card {
+    padding: 3rem;
+    margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+    .bio-card {
+        padding: 2rem 1.5rem;
+    }
+}
+.bio-image-wrapper {
+    width: 100%;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.bio-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
