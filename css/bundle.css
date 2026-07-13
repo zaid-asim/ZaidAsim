@@ -692,7 +692,7 @@ blockquote {
 /* ── Section Decorations ────────────────────────────────── */
 .section__bg-glow {
   position: absolute;
-  width: 600px;
+  max-width: 600px; width: 100%;
   height: 600px;
   border-radius: 50%;
   filter: blur(120px);
@@ -7868,7 +7868,9 @@ blockquote {
   left: 0;
   width: 100%;
   max-width: 100vw;
-  height: 100vh;
+  bottom: 0;
+  right: 0;
+  height: auto;
   z-index: -999;
   overflow: hidden;
   background: var(--color-bg-primary);
