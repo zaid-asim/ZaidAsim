@@ -175,12 +175,12 @@
                 </div>
 
                 <!-- Red Hat Partnership Badge -->
-                <div class="partner-badge" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.2rem; border-radius: 100px; background: rgba(238, 0, 0, 0.05); border: 1px solid rgba(238, 0, 0, 0.25); margin-bottom: 2rem; font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                <div class="partner-badge">
                     <span class="partner-ping" style="position: relative; display: inline-block; width: 6px; height: 6px; background-color: #ee0000; border-radius: 50%;"></span>
                     <span class="partner-label" style="opacity: 0.85; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em;">In Partnership with</span>
                     <div class="partner-logo-wrapper" style="display: flex; align-items: center; height: 1.25rem; border-left: 1px solid rgba(255, 255, 255, 0.15); padding-left: 0.75rem; margin-left: 0.15rem;">
-                        <img src="assets/redhat-logo-light.svg" alt="Red Hat Logo" class="partner-logo logo-light" style="height: 18px; width: auto; display: block; object-fit: contain;">
-                        <img src="assets/redhat-logo-dark.svg" alt="Red Hat Logo" class="partner-logo logo-dark" style="height: 18px; width: auto; display: none; object-fit: contain;">
+                        <img src="assets/redhat-logo-light.svg" alt="Red Hat Logo" class="partner-logo logo-light" style="height: 1.125rem; width: auto; object-fit: contain;">
+                        <img src="assets/redhat-logo-dark.svg" alt="Red Hat Logo" class="partner-logo logo-dark" style="height: 1.125rem; width: auto; object-fit: contain;">
                     </div>
                 </div>
 
@@ -197,13 +197,13 @@
                 </div>
 
                 <!-- Action buttons -->
-                <div class="hero-actions" style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: flex-start;">
-                    <a href="/atm" class="contact-btn primary-btn btn-shimmer" style="background: linear-gradient(135deg, #00ffff, #6366f1); color: #080c14; font-weight: 700; border: none; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.5); text-shadow: none; display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem;">
+                <div class="hero-actions">
+                    <a href="/atm" class="contact-btn primary-btn btn-shimmer hero-btn-atm">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         Explore API Time Machine
-                        <span style="font-size: 0.75rem; background: rgba(8, 12, 20, 0.15); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.25rem;">CURRENT PROJECT</span>
+                        <span class="hero-btn-badge">CURRENT PROJECT</span>
                     </a>
-                    <a href="#projects" class="contact-btn primary-btn" style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary);">Explore Our Work ↓</a>
+                    <a href="#projects" class="contact-btn primary-btn hero-btn-secondary">Explore Our Work ↓</a>
                     <a href="#contact" class="contact-btn secondary-btn btn-shimmer" style="background: transparent; border: 1px solid var(--color-border);">Contact Us</a>
                 </div>
 
@@ -299,34 +299,34 @@
                 <p class="section-subtitle">Bridging cognitive intelligence and engineering execution.</p>
             </div>
 
-            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 4rem;" data-animate="stagger-up">
+            <div class="capabilities-grid">
                 <div class="capability-card-v2">
                     <svg class="capability-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
                     </svg>
-                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">AI & Intelligent Systems</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">NLP structures, multi-agent cognitive pipelines, semantic context memory integrations, and custom system tools.</p>
+                    <h3 class="capability-title">AI & Intelligent Systems</h3>
+                    <p class="capability-desc">NLP structures, multi-agent cognitive pipelines, semantic context memory integrations, and custom system tools.</p>
                 </div>
                 <div class="capability-card-v2">
                     <svg class="capability-icon purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
-                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Game Development</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">Immersive simulation environments, Open World RPG constructs, multi-season sandbox narratives, and interactive learning concepts.</p>
+                    <h3 class="capability-title">Game Development</h3>
+                    <p class="capability-desc">Immersive simulation environments, Open World RPG constructs, multi-season sandbox narratives, and interactive learning concepts.</p>
                 </div>
                 <div class="capability-card-v2">
                     <svg class="capability-icon teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
                     </svg>
-                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Platform Engineering</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">Fast API deployment, cloud architecture layouts, automated programmatic SEO pipelines, and data systems scaling.</p>
+                    <h3 class="capability-title">Platform Engineering</h3>
+                    <p class="capability-desc">Fast API deployment, cloud architecture layouts, automated programmatic SEO pipelines, and data systems scaling.</p>
                 </div>
                 <div class="capability-card-v2">
                     <svg class="capability-icon pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                     </svg>
-                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Research & Open Science</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6;">Publishing deep systems-level reviews, spatial computing drafts, hardware topologies, and post-quantum concepts.</p>
+                    <h3 class="capability-title">Research & Open Science</h3>
+                    <p class="capability-desc">Publishing deep systems-level reviews, spatial computing drafts, hardware topologies, and post-quantum concepts.</p>
                 </div>
             </div>
         </div>
@@ -345,15 +345,15 @@
 
             <!-- Hero Feature (Swadesh AI) -->
             <div class="showcase-item" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; margin-bottom: 4rem; padding: clamp(1rem, 3vw, 2rem); background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 24px;" data-animate="fade-up">
-                <div style="flex: 1 1 450px;" data-tilt>
+                <div class="showcase-feature-img" data-tilt>
                     <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-lg);">
                         <img src="assets/swadesh.webp" alt="Swadesh AI" style="width: 100%; display: block;">
                     </div>
                 </div>
-                <div style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: flex-start;">
+                <div class="showcase-feature-text">
                     <span class="tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Hero Feature</span>
-                    <h3 style="font-family: var(--font-display); font-size: 2.5rem; margin-top: 1rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Swadesh AI</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                    <h3 class="capability-title">Swadesh AI</h3>
+                    <p class="capability-desc">
                         India's flagship multi-agent AI platform incorporating long-term semantic context loops, vector database tracking, and localized LLM orchestrations.
                     </p>
                     <div class="project-tech" style="margin-bottom: 2rem;">
@@ -361,7 +361,7 @@
                         <span>AI/ML</span>
                         <span>NLP</span>
                     </div>
-                    <div style="display: flex; gap: 1rem;">
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="/projects/swadesh" class="contact-btn primary-btn" style="padding: 0.75rem 2rem; border-radius: 9999px;">View Project →</a>
                         <button data-project-id="swadesh-ai" class="project-deep-btn" style="text-decoration: none; display: inline-block; text-align: center; padding: 0.75rem 2rem; border-radius: 9999px; background: transparent; border: 1px solid var(--color-border); color: var(--color-text-primary); cursor: pointer; transition: all var(--duration-fast) var(--ease-smooth);">Deep Dive</button>
                     </div>
@@ -371,6 +371,78 @@
             <!-- Bento Grid for Remaining Projects -->
             <div class="projects-bento" data-animate="stagger-up">
                 
+                <a href="/atm" class="bento-card bento-featured" data-animate="fade-up">
+                    <img src="assets/api-time-machine.png" alt="API Time Machine" class="bento-card-img" onerror="this.src='assets/logo.png'">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(9, 137, 216, 0.1); color: var(--color-accent-blue);">Zero-Trust</span>
+                        </div>
+                        <h3 class="bento-card-title">API Time Machine</h3>
+                        <p class="bento-card-desc">A zero-trust network protocol firewall performing packet analysis, state-machine inference, and edge WASM compilation.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">WASM</span>
+                                <span class="bento-tech-pill">Network Security</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/nebula-engine" class="bento-card">
+                    <img src="assets/nebula-engine.webp" alt="Nebula Engine" class="bento-card-img" onerror="this.src='assets/logo.png'">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(0, 212, 170, 0.1); color: var(--color-accent-teal);">Compute Engine</span>
+                        </div>
+                        <h3 class="bento-card-title">Nebula Engine</h3>
+                        <p class="bento-card-desc">A WebGPU compute pipeline designed for running massively parallel LLM inference directly inside browser sandboxes.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">WebGPU</span>
+                                <span class="bento-tech-pill">TypeScript</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/osiris" class="bento-card">
+                    <img src="assets/osiris.webp" alt="Project Osiris" class="bento-card-img" onerror="this.src='assets/logo.png'">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(255, 59, 108, 0.1); color: var(--color-accent-pink);">FinTech</span>
+                        </div>
+                        <h3 class="bento-card-title">Project Osiris</h3>
+                        <p class="bento-card-desc">A highly-concurrent, ultra-low latency high-frequency trading order matching engine written natively in Go.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">Go</span>
+                                <span class="bento-tech-pill">gRPC</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/quantum-veil" class="bento-card">
+                    <img src="assets/quantum-veil.webp" alt="Quantum Veil" class="bento-card-img" onerror="this.src='assets/logo.png'">
+                    <div class="bento-card-body">
+                        <div>
+                            <span class="bento-card-tag" style="background: rgba(255, 170, 0, 0.1); color: var(--color-accent-orange);">Cybersecurity</span>
+                        </div>
+                        <h3 class="bento-card-title">Quantum Veil</h3>
+                        <p class="bento-card-desc">An experimental post-quantum cryptography suite tailored specifically for securing lightweight MQTT IoT communications.</p>
+                        <div class="bento-card-footer">
+                            <div class="bento-tech-pills">
+                                <span class="bento-tech-pill">C++</span>
+                                <span class="bento-tech-pill">Cryptography</span>
+                            </div>
+                            <span class="bento-arrow">Deep Dive →</span>
+                        </div>
+                    </div>
+                </a>
+
                 <a href="/ideas/chronos" class="bento-card">
                     <img src="assets/chronos.webp" alt="Project Chronos" class="bento-card-img">
                     <div class="bento-card-body">
@@ -491,7 +563,7 @@
     <!-- SECTION 4: THE FOUNDER                       -->
     <!-- ============================================ -->
     <section class="section founder-section" id="founder" >
-        <div class="container" style="max-width: 900px;">
+        <div class="container container--narrow">
             <div class="section-header" data-animate="fade-up" style="text-align: center; margin-bottom: 3rem;">
                 <span class="tag">The Founder</span>
             </div>
@@ -505,13 +577,13 @@
                 </div>
 
                 <blockquote style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 500; line-height: 1.3; color: var(--color-text-primary); margin-bottom: 2.5rem; position: relative;">
-                    <span style="position: absolute; top: -30px; left: -20px; font-size: 6rem; color: var(--color-border-hover); font-family: serif; line-height: 1; z-index: -1;">"</span>
+                    <span style="position: absolute; top: -10%; left: -10px; font-size: clamp(3rem, 10vw, 6rem); opacity: 0.1; color: var(--color-accent-blue);">"</span>
                     Building the future from India.<br>Releasing it to the world.
-                    <span style="position: absolute; bottom: -50px; right: 20px; font-size: 6rem; color: var(--color-border-hover); font-family: serif; line-height: 1; z-index: -1;">"</span>
+                    <span style="position: absolute; bottom: -20%; right: 10px; font-size: clamp(3rem, 10vw, 6rem); opacity: 0.1; color: var(--color-accent-purple);">"</span>
                 </blockquote>
                 
-                <p style="font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    Zaid Asim is a 15-year-old technologist, game developer, and AI builder. He founded Zaid Asim Softwares as a UDYAM-registered enterprise, shipping products across AI pipelines, open-world simulators, and cultural educational applications.
+                <p class="capability-desc">
+                    Zaid Asim is a 16-year-old technologist, game developer, and AI builder. He founded Zaid Asim Softwares as a UDYAM-registered enterprise, shipping products across AI pipelines, open-world simulators, and cultural educational applications.
                 </p>
 
                 <div class="founder-timeline" data-animate="fade-up">
@@ -698,10 +770,10 @@
             </div>
 
             <!-- Video Cards -->
-            <div class="youtube-video-grid" style="margin-top: 3rem;" data-animate="stagger-up">
+            <div class="youtube-video-grid" data-animate="stagger-up">
                 <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
                     <div class="yt-thumb-wrap">
-                        <img src="assets/homies.webp" alt="Gaming Walkthrough" class="yt-thumb">
+                        <img src="assets/yt_physics.png" alt="Gaming Walkthrough" class="yt-thumb">
                         <div class="yt-play-icon">▶</div>
                     </div>
                     <div class="yt-video-info">
@@ -712,7 +784,7 @@
                 </a>
                 <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
                     <div class="yt-thumb-wrap">
-                        <img src="assets/swadesh.webp" alt="Tech Showcase" class="yt-thumb">
+                        <img src="assets/yt_code.png" alt="Tech Showcase" class="yt-thumb">
                         <div class="yt-play-icon">▶</div>
                     </div>
                     <div class="yt-video-info">
@@ -723,7 +795,7 @@
                 </a>
                 <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="yt-video-card">
                     <div class="yt-thumb-wrap">
-                        <img src="assets/logo.png" alt="Animations" class="yt-thumb">
+                        <img src="assets/yt_quantum.png" alt="Animations" class="yt-thumb">
                         <div class="yt-play-icon">▶</div>
                     </div>
                     <div class="yt-video-info">
@@ -920,18 +992,18 @@
                     <a href="https://github.com/zaid-asim/" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
                     <a href="https://www.linkedin.com/in/zaid-asim-191535309/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
                     <a href="https://youtube.com/@zaid_asim" target="_blank" rel="noopener" class="footer-social-link">YouTube</a>
-                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('the_lance_vance'); if(window.showZaNotification){window.showZaNotification('Copied Discord handle: the_lance_vance','success');}else{alert('Discord Username (the_lance_vance) copied to clipboard!');} return false;" class="footer-social-link">Discord</a>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('the_lance_vance'); if(window.showZaNotification){window.showZaNotification('Copied Discord handle: the_lance_vance','success');}else{alert('Discord Username (the_lance_vance) copied to clipboard!');} return false;" class="footer-social-link">Discord</button>
                     <a href="https://open.spotify.com/user/31mag523uo4zxrrjyz6rlqnyfe74" target="_blank" rel="noopener" class="footer-social-link">Spotify</a>
                 </div>
 
                 <div class="footer-legal" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-block: 0.5rem;">
-                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Terms of Use</a>
-                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Privacy Policy</a>
-                    <a href="/support" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='var(--color-text-secondary)'">Support</a>
+                    <a href="/legal/terms-of-use" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);">Terms of Use</a>
+                    <a href="/legal/privacy-policy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);">Privacy Policy</a>
+                    <a href="/support" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: color var(--duration-fast);">Support</a>
                 </div>
 
                 <div class="footer-bottom">
-                    <p>&copy; 2026 Zaid Asim Softwares · <a href="assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-blue)'" onmouseout="this.style.color='inherit'">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
+                    <p>&copy; 2026 Zaid Asim Softwares · <a href="assets/udyam-registration-certificate.pdf" target="_blank" class="footer-legal-link" style="color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast);">UDYAM-KR-15-0069715</a> · All Rights Reserved</p>
                 </div>
             </div>
         </div>

@@ -38,9 +38,12 @@ class RedirectHandler(SimpleHTTPRequestHandler):
             dst, code = redirect_rules[clean_path]
             if code == 200:
                 print(f"[Rewrite] {clean_path} -> {dst}")
-                self.path = dst
                 local_path = dst.lstrip('/')
                 if os.path.exists(local_path) and os.path.isfile(local_path):
+                    self.path = dst
+                    return super().do_GET()
+                elif os.path.exists(local_path + '.html') and os.path.isfile(local_path + '.html'):
+                    self.path = dst + '.html'
                     return super().do_GET()
             else:
                 print(f"[Redirect {code}] {clean_path} -> {dst}")

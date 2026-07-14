@@ -1,47 +1,39 @@
 /udyam-certificate /assets/udyam-registration-certificate.pdf 200
 
-# Canonical 200 Rewrites (Allows short URLs to work instantly without redirecting)
-/biography /biography.html 200
-/contact /contact.html 200
-/ideas /ideas.html 200
-/projects /projects.html 200
-/support /support.html 200
+# Project Rewrites (zaidasim.com/atm -> serves projects/atm.html cleanly)
+/atm /projects/atm 200
+/swadesh /projects/swadesh 200
+/homies /projects/homies 200
+/aeroxnet /projects/aeroxnet 200
+/crafty-kids /projects/crafty-kids 200
+/storm-of-kings /projects/storm-of-kings 200
+/titan-nano /projects/titan-nano 200
+/neon-forge /projects/neon-forge 200
+/sentinel /projects/sentinel 200
+/chronodb /projects/chronodb 200
+/aurora-css /projects/aurora-css 200
+/red-chronos /projects/red-chronos 200
+/nebula-engine /projects/nebula-engine 200
+/osiris /projects/osiris 200
+/quantum-veil /projects/quantum-veil 200
 
-# Project Rewrites (zaidasim.com/swadesh -> serves projects/swadesh.html)
-/atm /projects/atm.html 200
-/swadesh /projects/swadesh.html 200
-/homies /projects/homies.html 200
-/aeroxnet /projects/aeroxnet.html 200
-/crafty-kids /projects/crafty-kids.html 200
-/storm-of-kings /projects/storm-of-kings.html 200
-/titan-nano /projects/titan-nano.html 200
-/neon-forge /projects/neon-forge.html 200
-/sentinel /projects/sentinel.html 200
-/chronodb /projects/chronodb.html 200
-/aurora-css /projects/aurora-css.html 200
-/red-chronos /projects/red-chronos.html 200
-
-# Ideas Rewrites (zaidasim.com/youtube -> serves ideas/youtube.html)
-/youtube /ideas/youtube.html 200
-/qta-x /ideas/qta-x.html 200
-/android-xr-research /ideas/android-xr-research.html 200
-/chronos /ideas/chronos.html 200
-/titan /ideas/titan.html 200
-/cosmos-universe /ideas/cosmos-universe.html 200
-/ai-memory-bridge /ideas/ai-memory-bridge.html 200
-/cloud-handheld /ideas/cloud-handheld.html 200
-/programmatic-seo /ideas/programmatic-seo.html 200
-/za-sentinel /ideas/za-sentinel.html 200
-/echelon /ideas/echelon.html 200
-/holographic-ui /ideas/holographic-ui.html 200
+# Ideas Rewrites (zaidasim.com/youtube -> serves ideas/youtube.html cleanly)
+/youtube /ideas/youtube 200
+/qta-x /ideas/qta-x 200
+/android-xr-research /ideas/android-xr-research 200
+/chronos /ideas/chronos 200
+/titan /ideas/titan 200
+/cosmos-universe /ideas/cosmos-universe 200
+/ai-memory-bridge /ideas/ai-memory-bridge 200
+/cloud-handheld /ideas/cloud-handheld 200
+/programmatic-seo /ideas/programmatic-seo 200
+/za-sentinel /ideas/za-sentinel 200
+/echelon /ideas/echelon 200
+/holographic-ui /ideas/holographic-ui 200
+/bio-synthetix /ideas/bio-synthetix 200
+/kardashev-grid /ideas/kardashev-grid 200
+/hyper-node /ideas/hyper-node 200
 
 # Legal
-/privacy-policy /legal/privacy-policy.html 200
-/terms-of-use /legal/terms-of-use.html 200
-
-/nebula-engine /projects/nebula-engine.html 200
-/osiris /projects/osiris.html 200
-/quantum-veil /projects/quantum-veil.html 200
-/bio-synthetix /ideas/bio-synthetix.html 200
-/kardashev-grid /ideas/kardashev-grid.html 200
-/hyper-node /ideas/hyper-node.html 200
+/privacy-policy /legal/privacy-policy 200
+/terms-of-use /legal/terms-of-use 200
