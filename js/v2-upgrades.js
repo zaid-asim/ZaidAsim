@@ -166,13 +166,14 @@
       
       // Fallback: force reveal after 2.5s in case observer fails to trigger
       setTimeout(function () {
-        sec.classList.add('warped-in');
-      }, 2500);
+        if (!sec.classList.contains('warped-in')) { sec.classList.add('warped-in');
+      } }, 2500);
     });
   }
 
   // 3b. Ambient Rising Cosmic Stars (Visual Depth)
   function initFloatingStars() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var container = document.createElement('div');
     container.className = 'ambient-stars-container';
     container.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-2;overflow:hidden;';

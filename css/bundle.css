@@ -21,6 +21,14 @@
   --color-accent-teal:      #00d4aa;
   --color-accent-primary:   #0989d8;
   --color-accent-secondary: #6c3bff;
+  
+  /* ── Missing Tokens (Fixed) ───────────────────────────── */
+  --color-accent-magenta:   #ff2d8a;
+  --color-accent-pink:      #ff3b6c;
+  --fs-small:               var(--font-size-sm);
+  --color-primary:          var(--color-accent-blue);
+  --brand-gradient:         var(--gradient-brand);
+  --color-primary-glow:     var(--shadow-glow-blue);
 
   /* ── Derived Brand Shades ─────────────────────────────── */
   --color-accent-blue-soft:    rgba(9, 137, 216, 0.1);
@@ -255,6 +263,9 @@
   --glass-bg:               rgba(255, 255, 255, 0.75);
   --glass-bg-hover:         rgba(255, 255, 255, 0.9);
   --glass-border:           1px solid rgba(0, 0, 0, 0.08);
+
+  .logo-dark  { display: block; }
+  .logo-light { display: none; }
 }
 
 
@@ -288,6 +299,9 @@ html {
 [data-theme="light"] html,
 html[data-theme="light"] {
   color-scheme: light;
+
+  .logo-dark  { display: block; }
+  .logo-light { display: none; }
 }
 
 body {
@@ -8014,3 +8028,135 @@ blockquote {
     height: auto;
     display: block;
 }
+
+/* ── Homepage Overhaul Classes ── */
+
+/* CSS-3: Section Header */
+.section-header {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  text-align: center;
+}
+
+/* CSS-4: Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* V1: Bento Featured */
+.bento-card.bento-featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 280px;
+}
+.bento-card.bento-featured .bento-card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .bento-card.bento-featured {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* V2: Hero CTA Buttons */
+.hero-btn-atm {
+  background: linear-gradient(135deg, #00ffff, #6366f1);
+  color: #080c14;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+.hero-btn-badge {
+  font-size: 0.75rem;
+  background: var(--color-bg-tertiary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.25rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* V3: Capability Cards */
+.capability-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+.capability-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* V5: Partner Badge */
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  background: rgba(238, 0, 0, 0.05);
+  border: 1px solid rgba(238, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Q4: Modifier Classes */
+.stats-strip--frameless {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Q5: Utility Class */
+.section-cta-center {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* Q1: Hover states for legal */
+.footer-legal a:hover,
+.footer-legal-link:hover { color: var(--color-text-primary) !important; }
+
+/* Showcase flex fix */
+.showcase-feature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(2rem,4vw,4rem);
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: clamp(1rem,3vw,2.5rem);
+    border-radius: 24px;
+}
+.showcase-feature-img {
+    flex: 1 1 min(400px, 100%);
+}
+.showcase-feature-text {
+    flex: 1 1 min(350px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-btn-secondary { background: var(--color-bg-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary); }
+
