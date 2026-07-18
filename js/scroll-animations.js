@@ -73,7 +73,10 @@
           });
           break;
 
-        case 'stagger-up':
+        case 'stagger-up': {
+          var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+          var blurVal = isTouchDevice ? 'blur(2px)' : 'blur(8px)';
+          var yVal = isTouchDevice ? 30 : 60;
           gsap.from(el.children, {
             scrollTrigger: {
               trigger: el,
@@ -81,14 +84,15 @@
               toggleActions: 'play none none none',
             },
             opacity: 0,
-            y: 60,
-            filter: 'blur(8px)',
-            duration: 1,
+            y: yVal,
+            filter: blurVal,
+            duration: isTouchDevice ? 0.7 : 1,
             ease: 'power3.out',
             stagger: 0.1,
             clearProps: 'filter',
           });
           break;
+        }
       }
     });
   }
